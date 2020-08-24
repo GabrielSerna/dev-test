@@ -1,0 +1,62 @@
+/* 
+https://www.marketo.com/ebooks/building-effective-landing-pages/
+link da rifare
+
+non riesco ad allienare al centro il testo della class="elenco01"
+
+
+*/
+
+body {
+    margin: 0 0;
+}
+
+#top_bar {
+    padding: 1.8rem;
+    background-color: #white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.adobe {
+    color: red;
+    border-right: 1px solid black;
+    padding: 0 2rem 0;
+}
+
+.marketo {
+    padding-left: 2rem;
+}
+
+.div_elenco01 {
+    display: flex;
+    flex: 1;
+    background-color: red;
+}
+
+.elenco01 {
+    text-decoration: none;
+}
+
+.link_view {
+    background-color: #4c50cc;
+    color: white;
+    padding: 0.5rem;
+    border: 0px solid;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.link_sign {
+    padding: 0 2rem 0;
+}
+
+#title {
+    background-color: #4c50cc;
+}
+
+#content {
+    background-color: gray;
+}
