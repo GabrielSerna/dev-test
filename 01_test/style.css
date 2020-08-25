@@ -1,10 +1,6 @@
 /* 
 https://www.marketo.com/ebooks/building-effective-landing-pages/
 link da rifare
-
-non riesco ad allienare al centro il testo della class="elenco01"
-
-
 */
 
 body {
@@ -27,14 +23,17 @@ body {
     color: red;
     border-right: 1px solid black;
     padding: 0 2rem 0;
+    font-size: 1.2rem;
 }
 
 .marketo {
     padding-left: 2rem;
+    font-size: 1.2rem;
 }
 
 .div_elenco01 {
     flex: 1;
+    font-size: 0.9rem;
 }
 
 .elenco01 {
@@ -50,16 +49,78 @@ body {
     border: 0px;
     border-radius: 15px;
     text-decoration: none;
+    font-size: 0.9rem;
 }
 
 .link_sign {
     padding: 0 2rem 0;
+    font-size: 0.9rem;
 }
 
 #title {
-    background-color: #4c50cc;
+    background-image: linear-gradient(to bottom right,#15124b 2%,#4c50cc 60%);
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
 }
 
-#content {
-    background-color: gray;
+.text {
+    padding: 0 0 0 3rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.text01 {
+    color: gray;
+    position: relative;
+    top: 3rem;
+}
+
+.text02 {
+    color: white;
+    font-size: 3rem;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section_sx {
+    display: inline-block;
+    width: 14rem;
+    padding-top: 2.5rem;
+}
+
+.section_sx > p {
+    color: #4c50cc;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    left: 5rem;
+    height: 3rem;
+    width: 3rem;
+    background:  #4c50cc;opacity: 0.1;
+    border: 0px;
+    border-radius: 50%;
+}
+
+.section_center {
+    display: inline-block;
+    background: white;
+    flex: 1;
+    padding: 5rem 5rem 0 0;
+    font-size: 1.2rem;
+}
+
+.section_dx {
+    display: inline-block;
+    background: gray;opacity: 0.5;
+    color: red;
+    width: 20rem;
+    height: 100rem;
+
 }
