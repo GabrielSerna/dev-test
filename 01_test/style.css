@@ -5,6 +5,7 @@ link da rifare
 
 body {
     margin: 0 0;
+    font-family: adobe-clean,Helvetica,Arial,sans-serif;
 }
 
 .top_bar {
@@ -91,7 +92,7 @@ body {
 
 .section_sx {
     display: inline-block;
-    width: 14rem;
+    width: 10rem;
     padding-top: 2.5rem;
 }
 
@@ -118,9 +119,33 @@ body {
 
 .section_dx {
     display: inline-block;
-    background: gray;opacity: 0.5;
+    background: gray;opacity: 0.1;
     color: red;
     width: 20rem;
     height: 100rem;
+}
 
+.foot {
+    background: linear-gradient(to right, #4c50cc 0,#7ac7eb 100%);
+    height: 15rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.last {
+    font-size: 1.8rem;
+    display: inline-block
+}
+
+.link_demo {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+    border: 2px solid white;
+    border-radius: 15px;
+    font-weight: bold;
 }
