@@ -1,0 +1,59 @@
+/*
+https://slack.com/intl/en-it/
+*/
+
+body {
+    font-family: Slack-Circular-Pro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
+}
+
+#top {
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.top_link_l, .top_link_r {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: blue;
+}
+
+.center {
+    display: inline-block;
+}
+
+.slack {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.top_link_l { 
+    padding: 0 1rem;
+}
+
+a.sing:hover, a.sing:active { 
+    text-decoration: underline;
+}
+
+.start {
+    margin: 0 0 0 1rem;
+    color: white;
+    border: 0px solid #611f69;
+    background: #611f69;
+    padding: 0.8rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#center {
+    background: #f6efe8;
+}
+
+#bottom {
+    background: white;
+}
