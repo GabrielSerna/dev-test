@@ -84,8 +84,25 @@ video {
     width: auto;
 }
 
-
-
 #bottom {
     background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video_1 {
+    position: absolute;
+    top: -50px;
+}
+
+.prg {
+    display: inline-block;
+    width: 24rem;
+    padding-left: 3rem;
+}
+
+.prg_r {
+    font-size: 3rem;
+    font-weight: bold;
 }
