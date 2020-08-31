@@ -1,0 +1,215 @@
+JAVASCRIPT --------> LINGUAGGIO AD OGGETTI
+
+//================================================================================================
+
+// OPERATORI:
+
+    *unari: si applicano ad un singolo operando. ES: 10++ = 11
+
+    *binari: si applicano a 2 operandi. ES: 10 + 10 = 20
+
+    *ternari: si applicano a 3 operandi
+
+    *assegnamento (=) assegna dei valori ad una variabile
+
+    *aritmetici (+, -, *, /, %) 
+        % restituisce la differenza della divisione tra 2 fattori. ES: 10 % 6 = 4
+
+    *assegnamento composti (+=, -=, *=, /=)
+        a = 3; a += 2;          // a = 5
+    
+    *incremento/decremento (++,--)
+         a = 3; a++;                // a = 4
+         a = 3; b = ++a + 4;        // b = 7
+         in questo caso "a" viene aumentato prima di eseguire l'operazione
+
+         a = 3; b = a++ + 4;          // b = 6
+         in questo caso "a" viene aumentato prima di eseguire l'operazione
+
+    *relazionali (===, !=, >, <, >=, <=)
+        === operatore identitá, verifica che siano uguali sia i valori che il tipo
+            1 === 1;         // true
+            1 === "1";       // false
+        != verifica che i valori siano diversi
+            1 != 2;          // true
+            1 = "1";         // false
+        
+
+    *logiici (!, &&, ||)
+        ! é l operatore di negazione NOT. ha un unico operando (booleano) posto alla sua destra e il suo risultato é l opposto del valore dell operando
+            !true           // false
+            !false          // true
+        
+        && é l operatore AND. opera su due operandi booleani
+            se entrambi sono true           // true
+            se uno é true e uno false       // false
+
+        || é l operatore OR. opera su due operandi booleani
+            se almeno uno é true            // true
+            se entrambi sono false          // false
+
+    *condizionale o ternario (condizione ? expr1:expr2)
+        valuta una espressione booleana (condizione) e restituisce un valore diverso a seconda che tale valore sia true (expr1) oppure false (expr2)
+            a = 3;
+            b = (a > 2) ? 1 : 0;            // b = 1
+
+    *parentesi e punto () [] .
+        (3*5) + 2; usati per racchiudere espressioni o dare prioritá alle operazioni
+        console.log("Hello World"); eseguire delle chiamate di un oggetto
+        array[0]; accedere agli attributi di un oggetto
+        testo.length; richiamare la proprietá (la caratteristica) di un oggetto
+
+
+// CONDIZIONI:
+    *if, else       // quando la condizione viene soddisfatta il programma esegue le istruzioni che gli specifichiamo
+                                a = 1
+        if (condizione) {
+            istruzioni.....
+        }   else {
+            istruzioni.....                            
+        }
+
+                                                                    
+        if (a === 1) {  
+            istruzioni.....
+        }    altrimenti { 
+            istruzioni.....
+        }
+
+
+        if (condizione) {
+            istruzioni.....
+        }   else if (altra condizione) {            //ELSE IF posso usarlo tutte le volte che voglio per creare infinite condizioni
+            istruzioni seconda condizione.....        alla prima condizione che si verifica il programma esegue le istruzioni
+        }   else {
+            istruzioni terza condizione.....
+        }
+        
+
+
+    *switch, case
+        switch (risposta)           // la risposta puó essere una stringa, un booleano, una variabile
+        {
+            case "Home":
+                console.log("hai selezionato Home");
+                break               // viene inserito BREAK per interrompere il comando, altrimenti il programma va avanti
+            case "Notizie":
+                console.log("hai selezionato Notizie");
+                break
+        }
+
+
+// ISTRUZIONI:
+        *la ripetizione controllata di una parte di codice puó essere eseguita in 3 modi:
+            while
+            do-while
+            for
+
+            // while
+            count = 0;
+            while (count < 5) {                             // la condizione
+                console.log("contatore: " + count);         // l azione che viene eseguita
+                count++;                                    // il programma fa un check della condizione e riesegue l azione finché viene soddisfatta la condizione
+            }
+
+
+            // do-while                                             // in questo caso il codice viene eseguito ALMENO una volta
+            count = 0;
+            do {                                                    // la condizione
+                console.log(count + " * 7 = " + count * 7);         // l azione che viene eseguita
+            } while (count++ < 10);                                 // il programma fa un check della condizione e riesegue l azione finché viene soddisfatta la condizione
+            
+
+            // for                                                  // é composto da tre elementi
+            for (count = 0 ; count <= 10 ; count++) {               // ([indica la nostra variabile] ; [condizione da rispettare] ; [aggiorno la variabile])
+                console.log(count + " * 7 = " + count * 7);         // é il comando da eseguire
+            }
+
+
+// FUNZIONI:
+        *permettono di eseguire un comando senza doverlo riscrivere tutto, tutte le volte. riducono il numero di codice da scrivere.
+        
+            function nomeFunzione (parametro_1, parametro_2, ecc) {
+        
+            }
+
+
+        *variabili locali e globali, le locali vengono coinvolte solo dalla funzione che la comprende, le globali da tutte le funzioni del codice:
+            all esterno della funzione 
+                a = 1                   // variabile globale
+                let b = 2               // variabile globale
+
+            all interno della funzione
+                function test() {
+                    a = 1                   // variabile globale
+                    let b = 2               // variabile locale
+                    let c = 3               // variabile locale
+                }
+            
+
+// SINTASSI:
+
+    '' singolo apice
+    "" doppio apice. "stringa con \"doppi apici\" ";
+    `` 
+    commento su una singola riga //
+    commento su più righe /* per aprire e */ per chiudere
+
+
+// ARRAY
+
+    *posso pensarli come tabelle nelle quali andare ad inserire dei dati
+
+    // array indicizzato per posizione
+    array_1 = (1, 2, 3);            // array_1 = [1, 2, 3]
+
+    // aggiungere un elemento in coda all array
+    array_1.push(4);                // array_1 = [1, 2, 3, 4]
+
+    // rimuovi l elemento in posizione 2
+    array_1.splice(2,1);            // [1, 3, 4] array_1 viene modificato
+    array_1.slice(2,1);             // [1, 3. 4] array_1 non viene modificato (ma ne crea una copia)
+
+
+// CICLI:
+    loop su un array tramite "for" e "for-each"
+        *for
+            for(let index = 0; index < array_1.length; index++) {       // index viene ricalcolato ogni volta e il comando lanciato se rispetta la condizione
+                console.log(array_1[index];
+            };
+        
+        *for-each
+            array_1.forEach(function(element) {                         // il comando viene lanciato per ogni elemento che fa parte di array_1
+            console.log(element);
+            });
+
+
+
+
+
+
+
+
+
+
+
+// TYPE:
+
+// OGGETTI:
+    sono oggetti tutti gli elementi diversi booleani, stringhe, valori numerici e undefined
+    
+//================================================================================================
+
+// PROPRIETÀ
+    caratteristica di un oggetto. esempio la sua lunghezza, qualcosa che ha.
+
+// MEDOTO
+    una funzione che puó svolgere l'oggetto.
+
+//================================================================================================
+
+// comandi da NON usare MAI per nessun motivo
+
+    ==
+    impure ()
+    var
