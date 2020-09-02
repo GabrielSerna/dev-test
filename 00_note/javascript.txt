@@ -2,6 +2,16 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI
 
 //================================================================================================
 
+
+// PROPRIETÀ
+    caratteristica di un oggetto. esempio la sua lunghezza, qualcosa che ha.
+
+// MEDOTO
+    una funzione che puó svolgere l'oggetto.
+
+//================================================================================================
+
+
 // OPERATORI:
 
     *unari: si applicano ad un singolo operando. ES: 10++ = 11
@@ -100,30 +110,6 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI
 
 
 // ISTRUZIONI:
-        *la ripetizione controllata di una parte di codice puó essere eseguita in 3 modi:
-            while
-            do-while
-            for
-
-            // while
-            count = 0;
-            while (count < 5) {                             // la condizione
-                console.log("contatore: " + count);         // l azione che viene eseguita
-                count++;                                    // il programma fa un check della condizione e riesegue l azione finché viene soddisfatta la condizione
-            }
-
-
-            // do-while                                             // in questo caso il codice viene eseguito ALMENO una volta
-            count = 0;
-            do {                                                    // la condizione
-                console.log(count + " * 7 = " + count * 7);         // l azione che viene eseguita
-            } while (count++ < 10);                                 // il programma fa un check della condizione e riesegue l azione finché viene soddisfatta la condizione
-            
-
-            // for                                                  // é composto da tre elementi
-            for (count = 0 ; count <= 10 ; count++) {               // ([indica la nostra variabile] ; [condizione da rispettare] ; [aggiorno la variabile])
-                console.log(count + " * 7 = " + count * 7);         // é il comando da eseguire
-            }
 
 
 // FUNZIONI:
@@ -184,29 +170,41 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI
             });
 
 
+            *la ripetizione controllata di una parte di codice puó essere eseguita in 3 modi:
+            while
+            do-while
+            for
 
 
+    *while
+        count = 0;
+        while (count < 5) {                             // la condizione
+            console.log("contatore: " + count);         // l azione che viene eseguita
+            count++;                                    // il programma fa un check della condizione e riesegue l azione finché viene soddisfatta la condizione
+        }
 
 
+        // do-while                                             // in questo caso il codice viene eseguito ALMENO una volta
+        count = 0;
+        do {                                                    // la condizione
+            console.log(count + " * 7 = " + count * 7);         // l azione che viene eseguita
+        } while (count++ < 10);                                 // il programma fa un check della condizione e riesegue l azione finché viene soddisfatta la condizione
+        
 
+        // for                                                  // é composto da tre elementi
+        for (count = 0 ; count <= 10 ; count++) {               // ([indica la nostra variabile] ; [condizione da rispettare] ; [aggiorno la variabile])
+            console.log(count + " * 7 = " + count * 7);         // é il comando da eseguire
+        }
 
-
-
-
-// TYPE:
-
+        
 // OGGETTI:
     sono oggetti tutti gli elementi diversi booleani, stringhe, valori numerici e undefined
+
     
-//================================================================================================
-
-// PROPRIETÀ
-    caratteristica di un oggetto. esempio la sua lunghezza, qualcosa che ha.
-
-// MEDOTO
-    una funzione che puó svolgere l'oggetto.
+// TYPE:
 
 //================================================================================================
+
 
 // comandi da NON usare MAI per nessun motivo
 
