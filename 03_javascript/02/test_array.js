@@ -130,4 +130,95 @@ console.log(movies);
 
 //======================================================================================================================
 //======================================================================================================================
-// .()
+// .sort()
+//  () se lo lascio vuoto il programma effettua il riordino di default con il metodo UNICODE. 
+//     vengono convertiti in stringhe e ordinati secondo: numeri, maiuscole, minuscole.
+
+
+const fruit = ['pesche', 'mele', 'banane'];
+const scores = [01, 2, 10, 24, 55, 46, 05, 11, 3];
+const things = ['libri', 'Libri', '1 libro', '2 libri'];
+
+/*
+function compareNumbers(a, b) {
+  return a - b;
+}
+
+console.log(`ordinato con compareNumbers per grandezza: ${scores.sort(compareNumbers)}` );
+// return: ordinato con compareNumbers per grandezza: 1,2,3,5,10,11,24,46,55
+// riordina per grandezza
+
+function compareNumbers(a, b) {
+  return -1;
+}
+
+console.log(`ordinato con compareNumbers dal fondo: ${scores.sort(compareNumbers)}` );
+// return: ordinato con compareNumbers dal fondo: 3,11,5,46,55,24,10,2,1
+// riordina partendo dal fondo
+*/
+
+/*
+scores.sort(function(a, b) {
+    return a - b;
+});
+
+console.log(scores);
+//return: (9) [1, 2, 3, 5, 10, 11, 24, 46, 55]
+*/
+
+/*
+scores.sort();
+console.log(scores);
+fruit.sort();
+console.log(fruit);
+console.log(scores.sort());
+console.log(things.sort());
+*/
+
+//======================================================================================================================
+//======================================================================================================================
+// .values()
+
+/*
+const valori = ['a', 'b', 'c', 'd', 'e'];
+const estrai = valori.values();
+
+for (const lettere of estrai) {
+console.log(lettere);
+}
+
+return
+a
+b
+c
+d
+e
+*/
+
+/*
+const pranzo = ['pollo', 'salmone']
+
+function pranziConNoi(a) {
+    if ( a === 'no') {
+        return 'buon appetito';
+    } else {
+        return 'pollo o salmone?';
+    }
+}
+
+pranziConNoi('no');
+*/
+
+
+function pranzi(a) {
+    let result;
+    if (a === 'no') {
+      result = 'buon appetito da solo';
+    } else if (a === 'si') {
+      result = 'vuoi il salmone colorato da allevamento oppure il pollo buono del contadino?';
+    }
+    return result;
+  }
+  
+  console.log(pranzi('si'));
+  // le risposte sono 'no'oppure 'si'
