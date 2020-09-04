@@ -196,20 +196,6 @@ e
 */
 
 /*
-const pranzo = ['pollo', 'salmone']
-
-function pranziConNoi(a) {
-    if ( a === 'no') {
-        return 'buon appetito';
-    } else {
-        return 'pollo o salmone?';
-    }
-}
-
-pranziConNoi('no');
-*/
-
-
 function pranzi(a) {
     let result;
     if (a === 'no') {
@@ -222,3 +208,8 @@ function pranzi(a) {
   
   console.log(pranzi('si'));
   // le risposte sono 'no'oppure 'si'
+  */
+
+//======================================================================================================================
+//======================================================================================================================
+//

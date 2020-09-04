@@ -172,18 +172,28 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI
 
 // CICLI:
     loop su un array tramite "for" e "for-each"
-        *for
-            for(let index = 0; index < array_1.length; index++) {               // index viene ricalcolato ogni volta e il comando lanciato se rispetta la condizione
-                console.log(array_1[index];
+        *for                                                                    // é composto da 3 elementi 
+            for(let index = 0; index < array_1.length; index++) {               // ([indica la nostra variabile] ; [condizione da rispettare] ; [aggiorno la variabile])
+                console.log(array_1[index];                                     // index viene ricalcolato ogni volta e il comando lanciato se rispetta la condizione
             };
-        
+
         *for-each
             array_1.forEach(function(element) {                                 // il comando viene lanciato per ogni elemento che fa parte di array_1
             console.log(element);
             });
 
+        *for-of
 
-            *la ripetizione controllata di una parte di codice puó essere eseguita in 3 modi:
+
+        *for in
+
+
+
+
+
+
+
+        *la ripetizione controllata di una parte di codice puó essere eseguita in 3 modi:
             while
             do-while
             for
@@ -203,11 +213,6 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI
             console.log(count + " * 7 = " + count * 7);                         // l azione che viene eseguita
         } while (count++ < 10);                                                 // il programma fa un check della condizione e riesegue l azione finché viene soddisfatta la condizione
         
-
-        // for                                                                  // é composto da tre elementi
-        for (count = 0 ; count <= 10 ; count++) {                               // ([indica la nostra variabile] ; [condizione da rispettare] ; [aggiorno la variabile])
-            console.log(count + " * 7 = " + count * 7);                         // é il comando da eseguire
-        }
 
 //======================================================================================================================
 
