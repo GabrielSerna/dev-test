@@ -1,8 +1,6 @@
-JAVASCRIPT --------> LINGUAGGIO AD OGGETTI
+JAVASCRIPT --------> LINGUAGGIO AD OGGETTI / EVENTI
 
 //======================================================================================================================
-
-
 // PROPRIETÀ
     caratteristica di un oggetto. esempio la sua lunghezza, qualcosa che ha.
 
@@ -10,8 +8,6 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI
     una funzione che puó svolgere l'oggetto.
 
 //======================================================================================================================
-
-
 // OPERATORI:
 
     *unari: si applicano ad un singolo operando. ES: 10++ = 11
@@ -26,23 +22,26 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI
         % restituisce la differenza della divisione tra 2 fattori. ES: 10 % 6 = 4
 
     *assegnamento composti (+=, -=, *=, /=)
-        a = 3; a += 2;          // a = 5
+        a = 3; 
+        a += 2;                                                                 // a = 5
     
     *incremento/decremento (++,--)
-         a = 3; a++;                // a = 4
-         a = 3; b = ++a + 4;        // b = 7
-         in questo caso "a" viene aumentato prima di eseguire l'operazione
+         a = 3; 
+         a++;                                                                   // a = 4
+         a = 3; 
+         b = ++a + 4;                                                           // b = 8
+         in questo caso "a" viene aumentato PRIMA di eseguire l'operazione
 
-         a = 3; b = a++ + 4;          // b = 6
-         in questo caso "a" viene aumentato prima di eseguire l'operazione
+         a = 3; b = a++ + 4;                                                    // b = 7 e successivamente a = 4
+         in questo caso "a" viene aumentato DOPO di eseguire l'operazione
 
     *relazionali (===, !=, >, <, >=, <=)
         === operatore identitá, verifica che siano uguali sia i valori che il tipo
-            1 === 1;         // true
-            1 === "1";       // false
+            1 === 1;                                                            // true
+            1 === "1";                                                          // false
         != verifica che i valori siano diversi
-            1 != 2;          // true
-            1 = "1";         // false
+            1 != 2;                                                             // true
+            1 = "1";                                                            // false
         
 
     *logiici (!, &&, ||)
@@ -68,6 +67,10 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI
         console.log("Hello World"); eseguire delle chiamate di un oggetto
         array[0]; accedere agli attributi di un oggetto
         testo.length; richiamare la proprietá (la caratteristica) di un oggetto
+
+    * ?
+      10 > 5 ? 'primo vero' : 'secondo falso';                                  // se l'operazione é true restituisce 'primo' altrimenti 'secondo'
+      10 < 5 ? 'primo vero' : 'secondo falso';  
 
 //======================================================================================================================
 
@@ -167,6 +170,8 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI
     array_1.splice(2,1);                                                        // [1, 3, 4] array_1 viene modificato
     array_1.slice(2,1);                                                         // [1, 3. 4] array_1 non viene modificato (ma ne crea una copia)
 
+    [] array (indice numerico)
+    {} array (indice stringa) (associativo)
 //======================================================================================================================
 
 

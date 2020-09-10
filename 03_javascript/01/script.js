@@ -1,23 +1,73 @@
-/*  WHILE
-count = 0
-while (count < 5) {
-    console.log("contatore: " + count)
-    count++
+//==============================================================================
+// ex. 01
+function metodiArray () {
+  let numbers = [2, 3, 4, 7, 5, 6];
+
+  console.log(`
+  ========================================================
+  ex: 01 metodi degli array`
+  );
+  // .find => restituisce il primo elemento che soddisfa la condizione
+  console.log(numbers.find(el => el > 5));                                        // 7
+
+  // .map => restituisce un array di elementi true e false indicando se soddisfa la consizione. inoltre é distruttivo in quanto modifica l'array
+  // console.log(numbers.map(el => el > 5));                                      // [false, false, false, true, false, true]
+
+  // .filter => restituisce gli elementi che soddisfano la consizione
+  console.log(numbers.filter(el => el > 5));                                      // [7, 6]
+
+  // .join converte in stringa l'array inserendo un separatore (opzionale)
+  console.log(numbers.join(' - '));                                               // 2 - 3 - 4 - 7 - 5 - 6
 }
-*/
 
+//==============================================================================
+// ex. 02 operatore ternario ?
 
-/* DO-WHILE
-count = 0;
-do {
-    console.log(count + " * 7 = " + count * 7);
-} while (count++ < 10);
-*/
+let valutazione, voto = 22;
 
+function ex02() {
+  console.log(`
+  ========================================================
+  ex: 02 operatore ternario '?'`
+  );
 
-/* FOR
-for (count = 0 ; count <= 10 ; count++) {           
-    console.log(count + " * 7 = " + count * 7);
+  if (voto > 18) {
+    valutazione = true;
+  } else {
+    valutazione = false;
+  }
+  console.log(valutazione);
 }
-*/
 
+
+function ex021() {
+  console.log(`
+  ========================================================
+  ex: 02 operatore ternario '?'`
+  );
+  valutazione = voto >= 18 ? true : false;
+  console.log(valutazione);
+}
+
+//==============================================================================
+// ex. 03 switch
+function ex03 () {
+  let votoRicevuto = 6
+  let valutazione01;
+
+  console.log(`
+  ========================================================
+  ex: 03 switch`
+  );
+
+  switch (votoRicevuto) {
+    case 1 : valutazione01 = 'pessima'; break;
+    case 2 : valutazione01 = 'migliorabile'; break;
+    case 3 : valutazione01 = 'stai migliorando'; break;
+    default : valutazione01 = 'ottimo'; break;                                  // default restituisce qualunque valore diverso dai 'case'
+  }
+  console.log(valutazione01);
+}
+
+//==============================================================================
+// ex. 04
