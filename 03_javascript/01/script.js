@@ -40,7 +40,7 @@ function ex02() {
 }
 
 
-function ex021() {
+function ex02a() {
   console.log(`
   ========================================================
   ex: 02 operatore ternario '?'`
@@ -70,4 +70,46 @@ function ex03 () {
 }
 
 //==============================================================================
-// ex. 04
+// ex. 04 oggetti e le loro proprietá
+
+function objs() {
+  let Ferrari = {
+    modello : '458',
+    motore : {
+      cilindrata : '1600',
+      cavalli : '720',
+      coppia_max : '900'
+    }
+  }
+
+  console.log(`
+  ========================================================
+  ex: 04 oggetti e proprietá`
+  );
+
+  console.log(Ferrari.modello);                                                 // stampa il valore della proprietá dell'oggetto
+  console.log(Ferrari.motore.cavalli);                                          // 
+}
+
+//==============================================================================
+// ex. 05 stringa da modificare
+
+function ex05() {
+  console.log(`
+  ========================================================
+  ex: 05 stringa da modificare`
+  );
+
+  let str = 'stringa da modificare'
+  let arr = str.split(' ');
+
+  for ( let i = 0; i < arr.length; i++) {
+    arr[i] = arr[i][0].toUpperCase() + arr[i].substring(1);
+  }
+
+  str = arr.join(' ');
+  console.log(str);
+}
+
+//==============================================================================
+// ex. 06

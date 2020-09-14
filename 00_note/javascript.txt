@@ -53,9 +53,17 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI / EVENTI
             se entrambi sono true           // true
             se uno é true e uno false       // false
 
+            espressione1 && espressione2
+            se espressione1 é true ritorna espressione2
+            se espressione1 é false ritorna espressione1
+
         || é l operatore OR. opera su due operandi booleani
             se almeno uno é true            // true
             se entrambi sono false          // false
+            
+            espressione1 || espressione2
+            se espressione1 é true ritorna espressione1
+            se espressione1 é false ritorna espressione2
 
     *condizionale o ternario (condizione ? expr1:expr2)
         valuta una espressione booleana (condizione) e restituisce un valore diverso a seconda che tale valore sia true (expr1) oppure false (expr2)
