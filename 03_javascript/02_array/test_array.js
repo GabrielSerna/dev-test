@@ -1,33 +1,28 @@
-const staff = ['Luca', 'Riccardo', 'Gabriel', 'Jessica', 'Mattia', 'Michela', 'Claudio'];
-const numeriDispari = [1,3,5,7,9];
+//==============================================================================
+// ex. 01 medoti dell'arraymedoti dell'array
+function ex01 () {
+  console.log(`
+  ========================================================
+  ex: 01 medoti dell'array`
+  );
+ 
+  let staff = ['Luca', 'Riccardo', 'Gabriel', 'Jessica', 'Mattia', 'Michela', 'Claudio'];
 
-/*
-staff.push('Michele', Francesca(), Francesca());
+  console.log(`l'arrey iniziale é ${staff}`);
 
-console.log(staff);
+  function Francesca() {
+      console.log('Io sono una function');
+  };
 
-let risultato = Francesca();
+  staff.push('Michele', Francesca());                                           // .push aggiunge alla fine gli elementi
+  staff.unshift('Bertaggia');                                                   // adds a new element at the start of an array
+  staff.pop();                                                                  // removes array's last element
+  staff.shift();                                                                // removes array's first element
+  console.log(`l'indice di Riccardo é ${staff.indexOf('Riccardo')}`);           // .indexOf restituisce la posizione dell'elemnento indicato
+}
 
-function Francesca() {
-    console.log('Io sono Francesca');
-    return 1122;
-};
-*/
-
-let position = staff.indexOf('Jessica');
-// console.log(position);
-
-staff.push('Michele', 'Paolo');                                                 // adds a new elements to the end of an array
-
-staff.unshift('Bertaggia');                                                     // adds a new element at the start of an array
-
-staff.pop();                                                                    // removes array's last element
-
-staff.shift();                                                                  // removes array's first element
-
-//======================================================================================================================
-//======================================================================================================================
-// .splice()
+//==============================================================================
+// ex. 02 splice
 
 // staff.splice(staff.length -3);                                               // removes last 3 elements starting from the bottom
 
