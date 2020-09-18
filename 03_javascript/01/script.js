@@ -291,4 +291,102 @@ function ex14() {
 }
 
 //==============================================================================
-// ex. 15
+// ex. 15 elevare un numero alla potenza
+function ex15() {
+  console.log(`
+  ========================================================
+  ex: 15 elevare un numero alla potenza`
+  );
+
+  function potenza(x, n) {
+    if ( x === 1) {
+      return 1;
+    } else {
+    return n === 1 ? x : x * potenza(x, --n);
+    }
+  }  
+    let ris = potenza(5, 3);
+
+    console.log(ris);
+}
+
+//==============================================================================
+// ex. 16 crea stringa casuale
+function ex16() {
+  console.log(`
+  ========================================================
+  ex: 16 crea stringa casuale`
+  );
+
+  function creaStringaCasuale(n) {
+    const caratteri = `abcdefghi1234567890`;
+    const lunghezza = caratteri.length;
+    let casuale = '';
+    for(let i = 0; i < n; i++) {
+      casuale += caratteri[Math.floor(Math.random() * lunghezza)];
+    }
+    return casuale;
+  }
+
+  const pwd = creaStringaCasuale(15);
+  console.log(pwd);
+}
+
+//==============================================================================
+// ex. 17 funzione che inverte il contenuto di una stringa
+function ex17() {
+  console.log(`
+  ========================================================
+  ex: 17 funzione che inverte il contenuto di una stringa`
+  );
+
+  let invertiStringa = (str) => str.split('-').reverse().join('-');
+  
+  let invertita = invertiStringa(`01-02-03-04-05-06-07-08-09-10`);
+  console.log(invertita);
+}
+
+//==============================================================================
+// ex. 
+function ex() {
+  console.log(`
+  ========================================================
+  ex: `
+  );
+}
+
+//==============================================================================
+// ex. 
+function ex() {
+  console.log(`
+  ========================================================
+  ex: `
+  );
+}
+
+//==============================================================================
+// ex. 
+function ex() {
+  console.log(`
+  ========================================================
+  ex: `
+  );
+}
+
+//==============================================================================
+// ex. 
+function ex() {
+  console.log(`
+  ========================================================
+  ex: `
+  );
+}
+
+//==============================================================================
+// ex. 
+function ex() {
+  console.log(`
+  ========================================================
+  ex: `
+  );
+}
