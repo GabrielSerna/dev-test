@@ -5,8 +5,8 @@ function ex01 () {
 
   console.log(`
   ========================================================
-  ex: 01 metodi degli array`
-  );
+  ex: 01 metodi degli array
+  `);
   // .find => restituisce il primo elemento che soddisfa la condizione
   console.log(numbers.find(el => el > 5));                                        // 7
 
@@ -270,17 +270,15 @@ function ex14() {
   ex: 14 constructor function e this`
   );
 
-  function User() {
-    this.name = '';                                                             // tramite this possiamo assegnare valore diversi per ogni singolo oggetto user1 e user2
+  function User(nome) {
+    this.name = nome;                                                             // tramite this possiamo assegnare valori diversi per ogni singolo oggetto user1 e user2
     this.age = null;
     this.type = 'Utente Standard';
   }
 
-  // User.prototype.type = 'utente standard';                                      // creo l'oggetto type dentro User e sará uguale per tutti
-
-  let user1 = new User();
+  let user1 = new User();                                                       // creo la variabile e assegno l'elemento da trasmettere successivamente
   let user2 = new User();
-  let user3 = new User();
+  let user3 = new User("Mario");                                                // passo l'elemento direttamente quando dichiaro la variabile
 
   user1.name = 'Luca';                                                          // assegno alla proprietá name di user1 il valore Luca
   user2.name = 'Claudio';                                                       // assegno alla proprietá name di user2 il valore Claudio
@@ -347,46 +345,142 @@ function ex17() {
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 18 richiamare le proprietá di un oggetto
+function ex18() {
   console.log(`
   ========================================================
-  ex: `
+  ex: 18 richiamare le proprietá di un oggetto`
   );
+
+  let utente = {
+    primo : `validatore valido richiamato con 'obj.proprietá'`,
+    4 : `validatore numerico richiamato con 'obj[]'`,
+    'secondo test' : 'altro validatore'
+  };
+
+  console.log(utente.primo);
+  console.log(utente["secondo test"]);
+  console.log(utente[4]);                                                       // quando la proprietá ha un identificatore non valido va messa senza '.' e va messa tra '[]'
+  console.log(utente[1+3]); 	                                                  // JS prima esegue l'espressione all'interno delle parentesi [] e poi ricerca la proprietá
+  console.log(utente[2*2]);
+  console.log(utente[8/2]);
+  console.log(utente[2**2]);
+  console.log(utente[5-1]);
+
+  let iniziale = 'primo';                                                       // la proprietá 'primo' dell'oggetto utente deve essere passata come stringa per essere richiamata
+
+  console.log(utente[iniziale]);
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 19 esporre solo il necessario - video 45 da rivedere
+function ex19() {
   console.log(`
   ========================================================
-  ex: `
+  ex: 19 esporre solo il necessario`
   );
+
+  function persona(name, altezza) {
+    let privata = `questa variabile é un'informazione privata`;                 // non ritorna fuori dalla funzione
+    this.name = name;
+    this.altezza = altezza;
+    this.pesoIdeale = function() {
+      return `il tuo peso ideale é ${calcolaPesoIdeale()}kg`;
+    };
+    let calcolaPesoIdeale = () => altezza - 100 * 0.95;                         // non ritorna fuori dalla funzione
+  }
+  persona.prototype.type = "Utente Standard";
+
+  let persona1 = new persona('Simone', 175);
+  console.log(persona1.pesoIdeale());
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 20 proprietá e protpotipi
+function ex20() {
   console.log(`
   ========================================================
-  ex: `
-  );
+  ex: 20 proprietá e prototipi. gerarchia dei prototipi
+  video 46
+  `);
+
+  let ferrari = {
+    Marchio : `Ferrari`,
+    dal : 1921,
+    colore : `rosso`
+  };
+
+  let ferrari_458 = Object.create(ferrari);
+  ferrari_458.cilindrata = 2000;                                                // aggiungo le proprietá cilindrata, cavalli, colore
+  ferrari_458.cavalli = 680;
+  // ferrari_458.colore = `rosso opaco`;                                        // se non indico il colore e poi lo richiamo mi prende il colore dell'oggetto padre 
+
+  let ferrari_458_special = Object.create(ferrari_458);
+  ferrari_458_special.colore = 'nero';
+
+  console.log(ferrari_458_special.colore);
+  console.log(`
+  ferrari é il padre
+  ferrari_458 é figlio di ferrari e padre di ferrari_458_special
+  ferrari_458_special é figlio di ferrari_458`);
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 21 getPrototypeOf e setPrototypeOf - prendere e assegnare proprieta da un oggetto ad un altro oggetti
+function ex21() {
   console.log(`
   ========================================================
-  ex: `
-  );
+  ex: 
+  video 49
+  `);
+
+  let obj1 = {   
+    p1 : 'v1',
+    p2 : 'v2',
+    p3 : 'v3',
+    p4 : 'v4'
+  };
+
+  let obj2 = {
+    p5 : 'v5',
+    p6 : 'v6',
+    p7 : 'v7',
+    p8 : 'v8'
+  };
+
+  // console.log(obj2);                                                         //{p5: 'v5', p6: 'v6', p7: 'v7', p8: 'v8'}
+
+  Object.setPrototypeOf(obj2, obj1);                                            // assegna a obj2 le proprietá di obj1
+
+  console.log(obj2.p1);
 }
 
 //==============================================================================
-// ex. 
+// ex. 22
+function ex22() {
+  console.log(`
+  ========================================================
+  ex: 
+  video 
+  `);
+}
+
+//==============================================================================
+// ex. 23
 function ex() {
   console.log(`
   ========================================================
-  ex: `
-  );
+  ex: 
+  video 
+  `);
+}
+
+//==============================================================================
+// ex. 24
+function ex() {
+  console.log(`
+  ========================================================
+  ex: 
+  video 
+  `);
 }
