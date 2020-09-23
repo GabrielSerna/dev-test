@@ -456,31 +456,70 @@ function ex21() {
 }
 
 //==============================================================================
-// ex. 22
+// ex. 22 sostituire i caratteri di una stringa
 function ex22() {
   console.log(`
   ========================================================
-  ex: 
-  video 
+  ex: 22 sostituire i caratteri di una stringa 
   `);
+
+  // describe("maskify", function() {
+  //   it("should work for some examples", function(){
+  //     Test.assertEquals(maskify('4556364607935616'), '############5616');
+  //     Test.assertEquals(maskify('1'), '1');
+  //     Test.assertEquals(maskify('11111'), '#1111');
+  //   });
+  // });
+
+  function maskify(cc) {
+    return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);                   // .slice restituisce l'index indicato () = tutto. (inizio). (inizio, fine)
+  }
+  let newString = maskify('4556364607935616');
+  console.log(newString);
 }
 
 //==============================================================================
-// ex. 23
+// ex. 23 prendere una stringa e fare il return in binary
+function ex23() {
+  console.log(`
+  ========================================================
+  ex: 23 prendere una stringa e fare il return in binary
+  `);
+
+  function addBinary(a, b) {
+    return `${(a + b).toString(2)}`;
+  }
+  let newString = addBinary(1, 2);                                              // in binario 1 = 1 e 2 = 10
+  console.log(newString);
+}
+
+//==============================================================================
+// ex. 24 confrontare 2 array e rimuovere gli elementi di A presenti in B
+function ex24() {
+  console.log(`
+  ========================================================
+  ex: 24 confrontare 2 array e rimuovere gli elementi di A presenti in B
+  `);
+
+  let array1 = [1, 3, 4, 5, 7, 8, 9, 10, 11];
+  let array2 = [2, 4, 6, 8, 10];
+  let array3 = array1.filter(x => !array2.includes(x));                         // mi restituisce gli elementi di array1 che NON sono presenti in array2
+  let array4 = array1.filter(x => !array2.includes(x)).concat(array2.filter(x => !array1.includes(x)));
+  let array5 = array1.filter(x => array2.includes(x));                          // mi restituisce gli elementi di array1 presenti in array2
+  // console.log(array3);
+  // console.log(array4);
+  console.log(array5);
+}
+
+//==============================================================================
+// ex. 
 function ex() {
   console.log(`
   ========================================================
   ex: 
-  video 
   `);
+
 }
 
 //==============================================================================
-// ex. 24
-function ex() {
-  console.log(`
-  ========================================================
-  ex: 
-  video 
-  `);
-}
+// ex. 

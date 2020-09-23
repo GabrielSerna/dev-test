@@ -18,6 +18,7 @@ function ex01 () {
   staff.unshift('Bertaggia');                                                   // adds a new element at the start of an array
   staff.pop();                                                                  // removes array's last element
   staff.shift();                                                                // removes array's first element
+  staff.sort();                                                                 // ordina l'array in modo alfabetico
   console.log(`l'indice di Riccardo é ${staff.indexOf('Riccardo')}`);           // .indexOf restituisce la posizione dell'elemnento indicato
 }
 

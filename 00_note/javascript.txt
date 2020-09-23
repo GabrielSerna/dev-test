@@ -44,7 +44,7 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI / EVENTI
             1 = "1";                                                            // false
         
 
-    *logiici (!, &&, ||)
+    *logici (!, &&, ||)
         ! é l operatore di negazione NOT. ha un unico operando (booleano) posto alla sua destra e il suo risultato é l opposto del valore dell operando
             !true           // false
             !false          // true
