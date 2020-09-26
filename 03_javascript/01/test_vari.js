@@ -512,14 +512,177 @@ function ex24() {
 }
 
 //==============================================================================
+// ex. 25 restituire `pari` o `dispari` a seconda del numero - LET
+function ex25() {
+  console.log(`
+  ========================================================
+  ex: 25 restituire 'Even' o 'Odd' a seconda del numero - LET
+  `);
+
+  let numbers1 = 2;
+  let numbers2 = 9;
+  let numbers3 = 877;
+  let numbers4 = 990;
+  let numbers5 = 234;
+
+ function check (x) {
+    if ( x % 2 === 0 ) {
+      return "Even";
+    } else {
+      return "Odd";
+    }
+  }
+  console.log(`${numbers1} is ${check(numbers1)}`);
+}
+
+//==============================================================================
+// ex. 26 restituire `pari` o `dispari` a seconda del numero - ARRAY
+function ex26() {
+  console.log(`
+  ========================================================
+  ex: 26 restituire 'Even' o 'Odd' a seconda del numero - ARRAY
+  `);
+
+  let numbers = [2, 9, 877, 990, 234];
+
+  for (i = 0; i < numbers.length; i++) {   
+      if ( i % 2 === 0 ) {
+        console.log(`${i} is a number Even`);
+      } else {
+        console.log(`${i} is a number Odd`);
+      }
+  }
+}
+
+//==============================================================================
+// ex. 27 prendere una stringa, separarla e creare un array con tutti gli elementi separati
+function ex27() {
+  console.log(`
+  ========================================================
+  ex: 27 prendere una stringa, separarla e creare un array con tutti gli elementi separati
+  `);
+
+  let str = 'jkhdfabvjadfhiubajinkjsdvopueqwmnvc';
+  console.log(`la stringa é ${str}`);
+  let arr = str.split('');
+  console.log(`l'array creato é ${arr}`);
+  console.log(str[2]);
+  console.log(str.replace(str, 'questa é la nuova stringa da restituire'));
+}
+
+//==============================================================================
+// ex. 28 this: this: é il riferimento all'attuale contesto di esecuzione (in modo implicito)
+function ex28() {
+  console.log(`
+  ========================================================
+  ex: 28 this: é il riferimento all'attuale contesto di esecuzione (in modo implicito)
+  `);
+  
+  function test() {
+    console.log(this.p1);
+  }
+
+  let obj1 = {
+    p1 : 20,
+    fn : test
+    };
+
+    let obj2 = {
+      p1 : 40,
+      fn : test
+    };
+  
+  obj1.fn();
+  obj2.fn();
+}
+
+//==============================================================================
+// ex. 29 bind, call, apply: riferimenti ad un contensto (in modo esplicito)
+function ex29() {
+  console.log(`
+  ========================================================
+  ex: 29 bind, call, apply: riferimenti ad un contensto (in modo esplicito)
+  `);
+
+  let obj1 = {
+    nome : 'Marco'
+  };
+
+  let obj2 = {
+    nome : 'Francesca'
+  };
+
+  function saluta(cittá, lavoro) {
+    console.log(`ciao sono ${this.nome}. Abito ${cittá} e faccio il ${lavoro}`);
+  }
+
+  saluta('Milano', 'dottore');                                                  // nome é 'undefined' perché 'nome' non é associato ad alcun oggetto.
+  saluta.call(obj1, 'Milano', 'dottore');                                       // nome é associato all'oggetto 'obj1'.
+  saluta.call(obj2, 'Pavia', 'chirurgo');                                       // nome é associato all'oggetto 'obj2'.
+  saluta.apply(obj1, ['Milano', 'dottore']);                                    // con 'apply' gli elementi devono essere passati come array
+  saluta.apply(obj2, ['Pavia', 'chirurgo']);
+  let rif1 = saluta.bind(obj1);                                                 // 'bind' associa alla funzione l'oggetto passato come parametro e restituisce un riferimento alla funzione
+  rif1('Como', 'pilota');
+}
+
+//==============================================================================
 // ex. 
 function ex() {
   console.log(`
   ========================================================
   ex: 
   `);
-
+  
 }
 
 //==============================================================================
 // ex. 
+function ex() {
+  console.log(`
+  ========================================================
+  ex: 
+  `);
+  
+}
+
+//==============================================================================
+// ex. 
+function ex() {
+  console.log(`
+  ========================================================
+  ex: 
+  `);
+  
+}
+
+//==============================================================================
+// ex. 
+function ex() {
+  console.log(`
+  ========================================================
+  ex: 
+  `);
+  
+}
+
+//==============================================================================
+// ex. 
+function ex() {
+  console.log(`
+  ========================================================
+  ex: 
+  `);
+  
+}
+
+//==============================================================================
+// ex. 
+function ex() {
+  console.log(`
+  ========================================================
+  ex: 
+  `);
+  
+}
+
+//==============================================================================
