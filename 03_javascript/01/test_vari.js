@@ -730,13 +730,30 @@ function ex32() {
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 33 creare una classe con una constructor function
+function ex33() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 33 creare una classe con una constructor function
   `);
   
+  function User(nome, anni) {                                                   // creo un oggetto da una constructor function
+    this.nome = nome;
+    this.anni = anni;
+  }
+
+  let gabriel = new User('Gabriel', 35);
+  console.log(gabriel);
+
+  class UserClass {                                                             // creo un oggetto da una classe
+    constructor(nome, anni) {
+      this.nome = nome;
+      this.anni = anni;
+    }
+  }
+
+  let sara = new UserClass('Sara', 30);
+  console.log(sara);
 }
 
 //==============================================================================
