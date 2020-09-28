@@ -448,11 +448,19 @@ function ex21() {
     p8 : 'v8'
   };
 
-  // console.log(obj2);                                                         //{p5: 'v5', p6: 'v6', p7: 'v7', p8: 'v8'}
+  // console.log(obj2);                                                            //{p5: 'v5', p6: 'v6', p7: 'v7', p8: 'v8'}
 
-  Object.setPrototypeOf(obj2, obj1);                                            // assegna a obj2 le proprietá di obj1
+  // Object.setPrototypeOf(obj2, obj1);                                            // assegna a obj2 le proprietá di obj1
 
-  console.log(obj2.p1);
+  // for (a in obj2) {
+  //   console.log(a, obj2[a]);
+  // }
+
+  // let items = Object.keys(obj2);                                                // mi da le KEYS dell'oggetto
+  // console.log(items);                                                           // (4) ['p5', 'p6', 'p7', 'p8']  
+
+  // let items = Object.values(obj2);                                                // mi da le VALUES dell'oggetto
+  // console.log(items);    
 }
 
 //==============================================================================
@@ -626,13 +634,99 @@ function ex29() {
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 30 trovare la radice quadrata di un numero
+function ex30() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 30 trovare la radice quadrata di un numero
   `);
   
+    let a = 16;
+    let b = Math.pow(a, 1 / 2);
+    let c = Math.pow(a, 1 / 3);
+    let d = Math.pow(a, 1 / 4);
+    let e = Math.pow(a, 1 / 5);
+    let f = Math.pow(a, 0.5);
+        
+    /*
+    Trovare l'ennesima radice è l'inverso di elevare all'ennesima potenza. Ad esempio 2 alla potenza
+    di 5 è 32 . La quinta radice di 32 è 2 .
+    */
+
+    console.log(b);
+    console.log(c);
+    console.log(d);
+    console.log(e);
+    console.log(f);
+}
+
+//==============================================================================
+// ex. 31 arrotondare i valori
+function ex31() {
+  console.log(`
+  ========================================================
+  ex: 31 arrotondare i valori
+  `);
+  
+  let a = 2.3;
+  let b = 2.5;
+  let c = 2.7;
+  let d = 2.1;
+  let e = -1.1;
+  let f = 2 / 3;                                                                // 0.6666666666666666
+  let g = 10000 / 3;                                                            // 3333.3333333333335
+  let h = 1                                                                     // ogni zero messo dopo l'1 diventa un numero dopo la virgola
+  let i = 10
+  let j = 100
+
+
+  console.log(Math.round(a));                                                   // Math.round() arrotonda al valore all'intero piú vicino
+  console.log(Math.round(b));
+  console.log(Math.round(c));
+
+  console.log(Math.ceil(a));
+  console.log(Math.ceil(d));                                                    // Math.ceil() arrotonda al valore intero superiore 
+  console.log(Math.ceil(e));                                                     
+
+  console.log(Math.floor(a));                                                   // Math.floor() arrotonda al valore intero inferiore 
+  console.log(Math.floor(c));
+  console.log(Math.floor(e));
+
+  console.log(Math.round(f * 100) / 100);                                       // 0.67 é il numero arrotondato al decimale
+  console.log(Math.round(g * h) / h);  
+  console.log(Math.round(g * i) / i);  
+  console.log(Math.round(g * j) / j);  
+
+}  
+
+//==============================================================================
+// ex. 32 call di un oggetto o di un array
+function ex32() {
+  console.log(`
+  ========================================================
+  ex: 32 call di un oggetto o di un array
+  `);
+ 
+  let obj = {
+    key1: 'value1',
+    key2: 'value2',
+    key3: 'value3'
+   };
+   
+   for(let key in obj) {
+     console.log(`obj = ${key, obj[key]}`);
+   }
+
+   let array = [
+    { key1: 'value1' },
+    { key2: 'value2' },
+    { key3: 'value3' }
+   ];
+
+   for(i in array) {
+    console.log(array[i]);
+    i++;
+  }
 }
 
 //==============================================================================
@@ -664,25 +758,3 @@ function ex() {
   `);
   
 }
-
-//==============================================================================
-// ex. 
-function ex() {
-  console.log(`
-  ========================================================
-  ex: 
-  `);
-  
-}
-
-//==============================================================================
-// ex. 
-function ex() {
-  console.log(`
-  ========================================================
-  ex: 
-  `);
-  
-}
-
-//==============================================================================
