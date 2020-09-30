@@ -693,9 +693,9 @@ function ex31() {
   console.log(Math.floor(e));
 
   console.log(Math.round(f * 100) / 100);                                       // 0.67 é il numero arrotondato al decimale
-  console.log(Math.round(g * h) / h);  
-  console.log(Math.round(g * i) / i);  
-  console.log(Math.round(g * j) / j);  
+  console.log(Math.round(g * h) / h);                                           // 3333
+  console.log(Math.round(g * i) / i);                                           // 3333.3
+  console.log(Math.round(g * j) / j);                                           // 3333.33
 
 }  
 
@@ -757,21 +757,182 @@ function ex33() {
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 34 accedere alla proprietá di un oggetto
+function ex34() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 34 accedere alla proprietá di un oggetto
   `);
   
+  let user = {
+    name : 'gabriel',                                                           // internamente JS trasforma le chiavi delle proprietá in stringhe
+    anni : 35,
+    'buon giorno' : 'hola'
+  };
+  
+  let nome = 'name';                                                            // le proprietá di un obj vanno richiamate come stringhe
+  
+  console.log(`user[nome] = ${user[nome]}`);                                    // le proprietá che sono stringhe si richiamano tra []
+  console.log(`user.name = ${user.name}`);
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 35 creare piú oggetti con sintassi letterare e con constructor function
+function ex35() {
+  console.log(`
+  ========================================================
+  ex: 35 creare piü oggetti con sintassi letterale e con constructor function
+  `);
+
+// funzioni letterali ----------------------------------------------------------
+
+  let user1 = {
+    name : 'mattia',
+    descrivimi : function() {
+      return `Nome utente chiamato : ${this.name}`;
+   }
+  }
+
+  let user2 = {
+    name : 'jessica',
+    descrivimi : function() {
+      return `Nome utente chiamato : ${this.name}`;
+   }
+  }
+
+  let user3 = {
+    name : 'claudio',
+    descrivimi : function() {
+       return `Nome utente chiamato : ${this.name}`;
+    }
+  }
+
+  console.log(user3.descrivimi());
+
+// factory function ------------------------------------------------------------
+
+  function user(nome) {
+    obj = {
+      name : nome,
+      descrivimi : function() {
+        return `Nome utente chiamato : ${this.name}`;
+     }
+    }
+    return obj;
+  }
+
+  let user4 = user('millionDollarMarasita');
+  console.log(user4.descrivimi());
+
+// constructor function --------------------------------------------------------
+
+  function utenti(nome) {
+    this.name = nome;
+    this.descrivimi = function() {
+       return `Nome utente chiamato : ${this.name}`;
+    };
+  };
+
+  let user5 = new utenti('michele');
+  let user6 = new utenti('paolo');
+  let user7 = new utenti('luca');
+
+  console.log(user5.descrivimi());
+}
+
+//==============================================================================
+// ex. 36 funzione con dati pubblici e privati
+function ex36() {
+  console.log(`
+  ========================================================
+  ex: 36 funzione con dati pubblici
+  `);
+ 
+  function dati(name, altezza) {
+    this.name = name;
+    this.altezza = altezza;
+    this.pesoIdeale = function () {
+      return `Peso ideale = ${this.calcolaPesoIdeale() }`;
+    };
+    this.calcolaPesoIdeale = function () {
+      return Math.ceil((altezza - 100) * 0.95);                                 // Math.ceil()
+    };
+  }
+
+  let dati1 = new dati('gabriel', 175);
+  console.log(dati1.pesoIdeale());
+}
+
+//==============================================================================
+// ex. 37 funzione con dati privati
+function ex37() {
+  console.log(`
+  ========================================================
+  ex: 37 funzioni con dati privati
+  `);
+ 
+    function dati(name, altezza) {
+      let privata = `informazione privata`;
+      this.name = name;
+      this.altezza = altezza;
+      this.pesoIdeale = function () {
+        return `Peso ideale = ${calcolaPesoIdeale()}`;
+      }
+      let calcolaPesoIdeale = function () {
+        return Math.ceil((altezza - 100) * 0.95);
+      }
+    }
+    let dati1 = new dati(`riccardo`, 180);
+    console.log(dati1.pesoIdeale());
+    console.log(dati1.privata);
+}
+
+//==============================================================================
+// ex. 38 arrotondare un numero alle decine o alle centinaia
+function ex38() {
+  console.log(`
+  ========================================================
+  ex: 38 arrotondare un numero alle decine o alle centinaia
+  `);
+ 
+  let myNum = 10000 / 3;
+  let a = 0.01;                                                                 // 1 / 100
+  let b = Math.round(myNum * a) / a;
+  let c = 0.1;                                                                 // 1 / 10
+  let d = Math.round(myNum * c) / c;
+
+  console.log(b);  
+  console.log(d);  
+
+}
+
+//==============================================================================
+// ex. 39 funzione per arrotondare un numero
+function ex39() {
+  console.log(`
+  ========================================================
+  ex: 39 funzione per arrotondare un numero
+  `);
+
+  function roundTO (value, quantity) {
+    let power = Math.pow(10, quantity);
+    return Math.round(value * power) / power;
+  } 
+  let myNum = 10000 / 3;                                                        // 3333.3333333333335
+  console.log(roundTO(myNum, 2));                                               // 3333.33
+  console.log(roundTO(myNum, 1));                                               // 3333.3
+  console.log(roundTO(myNum, 0));                                               // 3333
+}
+
+//==============================================================================
+// ex. 40
+function ex40() {
   console.log(`
   ========================================================
   ex: 
   `);
-  
+ 
+  console.log(Math.random() * (10 - 1) + 1);
+
 }
+ex40();
