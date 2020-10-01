@@ -27,13 +27,13 @@ function ex01 () {
 
 // staff.splice(staff.length -3);                                               // removes last 3 elements starting from the bottom
 
-staff.splice(staff.length -3, 3, 'Claudio', 'Michele', 'Michela');              // removes and replaces 3 elements starting from -3 position from the bottom
+// staff.splice(staff.length -3, 3, 'Claudio', 'Michele', 'Michela');              // removes and replaces 3 elements starting from -3 position from the bottom
 
 // staff.splice(3, 1);                                                          // removes element number 3 of the array
 
-staff.splice(3, 1, 'Eleonora');                                                 // replaces elemenet number 3 of the array
+// staff.splice(3, 1, 'Eleonora');                                                 // replaces elemenet number 3 of the array
 
-staff.splice(1, 0, 'Chiara');                                                   // adds Chiara at position 1 of the array
+// staff.splice(1, 0, 'Chiara');                                                   // adds Chiara at position 1 of the array
 
 // console.log(staff[5]);                                                       // retunrs element at position 5
 
