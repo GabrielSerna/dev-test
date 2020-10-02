@@ -29,7 +29,7 @@ function ex41 () {
 function ex42() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 42 iterare un array
   `);
 
   let accessori = ['tastiera', 'mouse', 'SSD', 'scheda video'];
@@ -156,91 +156,164 @@ function ex47() {
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 48 aggiungere degli elementi ad un array tramite splice
+function ex48() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 48 aggiungere degli elementi ad un array tramite splice
   `);
 
+  let arr = [1, 2, 4, 5];
+  arr.splice(2, 0, 3);                                                          // [1, 2, 3, 4, 5]
+  console.log(arr);
+}
+
+//==============================================================================
+// ex. 49 trovare l'indice di un elemento in un array tramite lastIndexOf
+function ex49() {
+  console.log(`
+  ========================================================
+  ex: 49 trovare l'indice di un elemento in un array tramite lastIndexOf
+  `);
+
+  let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 11, 12];   
+
+  arr.splice(arr.lastIndexOf(9), 1);                                            // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+  console.log(arr);
+}
+
+//==============================================================================
+// ex. 50 riordinare un array tramite .sort
+function ex50() {
+  console.log(`
+  ========================================================
+  ex: 50 riordinare un array tramite .sort
+  `);
+
+  const fruit = ['pesche', 'mele', 'banane'];
+  const scores = [01, 2, 10, 24, 55, 46, 05, 11, 3];
+  const things = ['libri', 'Libri', '1 libro', '2 libri'];
+  
+  compareNumbers = (a, b) => a - b;                                             // 1,2,3,5,10,11,24,46,55
+  
+  console.log(`ordine crescente: ${scores.sort(compareNumbers)}` );             
+
+   compareNumbersReverse = (a, b) => -1;                                        // 55,46,24,11,10,5,3,2,1
+  
+  console.log(`ordine decrescente: ${scores.sort(compareNumbersReverse)}` );
+}
+
+//==============================================================================
+// ex. 51 .indexOf()
+function ex51() {
+  console.log(`
+  ========================================================
+  ex: 51 .indexOf()
+  `);
+
+  const noi = ['Luca', 'Riccardo', 'Gabriel', 'Mattia', 'Michela', 'Claudio'];
+
+  console.log(noi.indexOf('Riccardo'));                                         // 1
+  console.log(noi.indexOf('Gabriel', 3));                                       // lo cerca a partire dall'indice 3 e restituisce -1
+  console.log(noi.indexOf('Gabriel'));                                          // 2
+  console.log(noi.indexOf('Chiara'));                                           // -1
+
+function updateStaff (noi, persona) {
+    if (noi.indexOf('Chiara') === -1) {
+        noi.push('Chiara');
+        console.log(`Now we are : ${noi}`);
+    } else if (noi.indexOf('Chiara') > -1) {
+        console.log(`Chiara already exists in the staff.`);
+    }
+}
+
+updateStaff(noi, 'Chiara'); 
+updateStaff(noi, 'Chiara'); 
 
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 52 .join()
+function ex52() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 52 .join()
   `);
 
+  const marchi = ['Ferrari', 'Lamborghini', 'McLaren'];
+
+  console.log(marchi.join(' + '));                                              // Ferrari + Lamborghini + McLaren
+  console.log(marchi.join(' altrimenti '));                                     // Ferrari altrimenti Lamborghini altrimenti McLaren
+  console.log(marchi.join(''));                                                 // FerrariLamborghiniMcLaren
 
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 53 .values()
+function ex53() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 53 .values()
   `);
 
+  const valori = ['a', 'b', 'c', 'd', 'e'];
+  const estrai = valori.values();
+  for (let lettere of estrai) {
+  console.log(lettere);
+  }
+
+  /*
+  restituisce:
+  a
+  b
+  c
+  d
+  e
+  */
 
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 54 riordinare un array di oggetti tramite .sort()
+function ex54() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 54 riordinare un array di oggetti tramite .sort()
   `);
+  
+  let tv = [
+    { modello: 'LG',        dimensione: '50',     prezzo: 680},
+    { modello: 'Philips',   dimensione: '60',     prezzo: 750},
+    { modello: 'Sony',      dimensione: '55',     prezzo: 540},
+    { modello: 'Samsung',   dimensione: '70',     prezzo: 1100},
+    { modello: 'Sharp',     dimensione: '65',     prezzo: 900}
+  ];
 
+  // tv.sort((a, b) => b.dimensione - a.dimensione);
+  tv.sort((a, b) => a.prezzo - b.prezzo);
 
+  console.table(tv);
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 55 cambiare i valori di un array tramite .fill()
+function ex55() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 55 cambiare i valori di un array tramite .fill()
   `);
 
+  let arr = [0, 1, 2, 3, 4, 5, 6, 7];
 
-}
+  // arr.fill(0);                                                                  // [0, 0, 0, 0, 0, 0, 0, 0]
+  // arr.fill(0, 4);                                                               // [0, 1, 2, 3, 0, 0, 0, 0] primo indice compreso
+  // arr.fill(0, 4, 6);                                                            // [0, 1, 2, 3, 0, 0, 6, 7] secondo indice escluso
 
-//==============================================================================
-// ex. 
-function ex() {
-  console.log(`
-  ========================================================
-  ex: 
-  `);
-
-
-}
-
-//==============================================================================
-// ex. 
-function ex() {
-  console.log(`
-  ========================================================
-  ex: 
-  `);
-
-
-}
-
-//==============================================================================
-// ex. 
-function ex() {
-  console.log(`
-  ========================================================
-  ex: 
-  `);
-
-
+  // arr1 = new Array(3);                                                          // crea un array con 3 elementi 'undefined'
+  // arr1 = new Array(3).fill(1);                                                  // crea un array con 3 elementi [1, 1, 1]
+  
+  console.log(arr1)
 }
 
 //==============================================================================

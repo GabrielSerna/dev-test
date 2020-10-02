@@ -15,7 +15,7 @@ function ex01() {
 }
 
 //==============================================================================
-// ex. 02 valore massimo e minino di un array
+// ex. 02 valore massimo e minino di un array con .max e .min
 function ex02() {
   console.log(`
   ========================================================
@@ -31,7 +31,7 @@ function ex02() {
 }
 
 //==============================================================================
-// ex. 03 trovare la radice quadrata di un numero
+// ex. 03 trovare la radice quadrata di un numero con .sqrt
 function ex03() {
   console.log(`
   ========================================================
@@ -85,7 +85,7 @@ function ex05() {
 }
 
 //==============================================================================
-// ex. 06 restituire la lunghezza dei valori di un array
+// ex. 06 restituire la lunghezza dei valori di un array con .map
 function ex06() {
   console.log(`
   ========================================================
@@ -98,27 +98,43 @@ function ex06() {
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 07 creare un array che soddisfa una condizione su un altro array con .filter
+function ex07() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 07 creare un array che soddisfa una condizione su un altro array con .filter
   `);
 
-  
-
+  let arr1 = [1, 2, 3, 4, 5, 6];
+  let arr2 = arr1.filter( v => v > 3);                                          // [4, 5, 6]
+  console.log(arr2);  
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 08 forEach applicato ad un oggetto
+function ex08() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 08 forEach applicato ad un oggetto
   `);
 
+  let people = [
+    { id: 1, name: 'Gabriel',   age: 35},
+    { id: 2, name: 'Mattia',    age: 28},
+    { id: 3, name: 'Michele',   age: 28}
+  ];
   
+  let check = people.filter( i => i.age < 30);
 
+  console.log(check);
+
+  /*
+  return:
+  [
+  { id: 2, name: 'Mattia', age: 28 },
+  { id: 3, name: 'Michele', age: 28 }
+  ]
+  */
 }
 
 //==============================================================================

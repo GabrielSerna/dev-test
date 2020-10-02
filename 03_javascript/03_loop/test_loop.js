@@ -9,6 +9,7 @@ function ex1() {
   let a1 = [1, 2, 3, 4, 5];
   console.log(`a1: ${a1}`);
 
+  
   for ( i = 0; i < a1.length; i++ ) {
       console.log(a1[i]*10);
   }
