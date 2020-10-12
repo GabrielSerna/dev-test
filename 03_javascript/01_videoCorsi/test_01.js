@@ -8,16 +8,26 @@ function ex01 () {
   ex: 01 metodi degli array
   `);
   // .find => restituisce il primo elemento che soddisfa la condizione
-  console.log(numbers.find(el => el > 5));                                        // 7
+  numbers1 = numbers.find(el => el > 5);                                        // 7
 
-  // .map => restituisce un array di elementi true e false indicando se soddisfa la consizione. inoltre é distruttivo in quanto modifica l'array
-  // console.log(numbers.map(el => el > 5));                                      // [false, false, false, true, false, true]
+  // .map => restituisce un array di elementi true e false che soddisfano la consizione. inoltre é distruttivo in quanto modifica l'array
+  numbers2 = numbers.map(el => el > 5);                                         // [false, false, false, true, false, true]
 
   // .filter => restituisce gli elementi che soddisfano la consizione
-  console.log(numbers.filter(el => el > 5));                                      // [7, 6]
+  numbers3 = numbers.filter(el => el > 5);                                      // [7, 6]
 
   // .join converte in stringa l'array inserendo un separatore (opzionale)
-  console.log(numbers.join(' - '));                                               // 2 - 3 - 4 - 7 - 5 - 6
+  numbers4 = numbers.join(' - ');                                               // 2 - 3 - 4 - 7 - 5 - 6
+
+  // .some itera gli elementi dell'array e restituisce 'true' o 'false' se almeno uno soddisfa la condizione
+  numbers5 = numbers.some( x => x === 3);                                       // true
+  numbers6 = numbers.some( x => x === 1);                                       // false
+
+  // .every restituisce 'true' o 'false' se tutti gli elementi dell'array soddisfano la condizione
+  numbers7 = numbers.every( x => x > 0 && x <= 10);                             // true
+  numbers8 = numbers.every( x => x > 0 && x <= 6);                              // false
+
+  console.log();
 }
 
 //==============================================================================
@@ -271,7 +281,7 @@ function ex14() {
   );
 
   function User(nome) {
-    this.name = nome;                                                             // tramite this possiamo assegnare valori diversi per ogni singolo oggetto user1 e user2
+    this.name = nome;                                                             // tramite this. possiamo assegnare valori diversi per ogni singolo oggetto user1 e user2
     this.age = null;
     this.type = 'Utente Standard';
   }
@@ -459,7 +469,7 @@ function ex21() {
   // let items = Object.keys(obj2);                                                // mi da le KEYS dell'oggetto
   // console.log(items);                                                           // (4) ['p5', 'p6', 'p7', 'p8']  
 
-  // let items = Object.values(obj2);                                                // mi da le VALUES dell'oggetto
+  // let items = Object.values(obj2);                                              // mi da le VALUES dell'oggetto
   // console.log(items);    
 }
 
@@ -593,12 +603,12 @@ function ex28() {
   let obj1 = {
     p1 : 20,
     fn : test
-    };
+  };
 
-    let obj2 = {
-      p1 : 40,
-      fn : test
-    };
+  let obj2 = {
+    p1 : 40,
+    fn : test
+  };
   
   obj1.fn();
   obj2.fn();
@@ -777,7 +787,7 @@ function ex34() {
 }
 
 //==============================================================================
-// ex. 35 creare piú oggetti con sintassi letterare e con constructor function
+// ex. 35 creare piú oggetti con sintassi letterale e con constructor function
 function ex35() {
   console.log(`
   ========================================================

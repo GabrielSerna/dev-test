@@ -249,45 +249,43 @@ function ex14() {
 }
 
 //==============================================================================
-// ex. 15 classe e sottoclasse
+// ex. 15 
 function ex15() {
   console.log(`
   ========================================================
-  ex: 15 classe e sottoclasse
+  ex: 15
   `);
 
-  class Car {
-    constructor (make, model) {
-      this.make = make;
-      this.model = model;
-    };
+  class SomeThing {
+    constructor (data) {
+      this.data = data;
+    }
 
-    function dati() {
+    doSomeThing (text) {
       return {
-        make:   this.make, 
-        model:  this.model
+        data : this.data,
+        text
       };
-    }  
-  }
-  
-  let mazdampv = new Car('mazda', 'mpv');
+    };
+  };
 
-  mazdampv.dati();
-  
+  let s = new SomeThing ({});
+
+  console.log(s.doSomeThing('hola hola'));
 }
-ex15();
+
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 16
+function ex16() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 16
   `);
 
-  
+  console.log(['B','o','B'].join('') === 'BoB');
 
 }
-
+ex16();
 //==============================================================================
 // ex. 
 function ex() {

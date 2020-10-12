@@ -317,60 +317,111 @@ function ex55() {
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 56 iterare un array di oggetti tramite .same
+function ex56() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 56 iterare un array di oggetti tramite .same
   `);
 
+  let camere, disponibile;
 
+  camere = [
+    { numero: 10,     tipo: 'doppia',      libera: false},
+    { numero: 13,     tipo: 'tripla',      libera: false},
+    { numero: 17,     tipo: 'doppia',      libera: true},
+  ];
+
+  // let disponibile;                                                           // check fatto con forEach()
+
+  // camere.forEach ((camera, i) => {
+  //   if (camera.tipo === 'doppia' && camera.libera) {
+  //     disponibile = true;
+  //   }
+  // });
+  // console.log(disponibile);
+
+  disponibile = camere.some ( camera => camera.tipo === 'doppia' && camera.libera);
+  console.log(disponibile);
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 57 restituire un nuovo array chiamato tramite array.from()
+function ex57() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 57 restituire un nuovo array chiamato tramite array.from()
   `);
 
+  let a = 'ciao';
+  let b = Array.from(a);                                                        // ['c', 'i', 'a', 'o']
 
+let obj = {
+  0   : 'P1',
+  1   : 'P2',
+  '2' : 'P3',
+  length : 3
+};
+
+  let arr = Array.from (obj, v => `it_${v}`);                                   // duplica obj in arr e passa la callback aggiungendo it_ ad ogni valore dell'array
+
+  console.log(arr);
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 58
+function ex58() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 58
   `);
 
+  let a = [1, 2, 3, 4, 5];
+  let b = a;                                                                    // b prende gli stessi valori di a
+  // b[0] = 100                                                                    // modifico il contenuto del riferimento. quindi 100 ci sarà sia in a che in b
 
+  let c = a.slice();                                                            // copia a in c gli elementi primitivi. se ci fossero oggetti copia il riferimento invece degli elementi
+  c[0] = 100;                                                                   // [0] = 100 solo in c e non in a
+
+  let d = [1, 2, [ 3, 4], 5, 6];
+  let e = d.slice();
+  e[2][0] = 200;                                                                // copia un oggetto quindi copia la referenza e non l'elemento
+
+  console.table( { d, e} );
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 59 trasformare un array JavaScript in una stringa JSON e viceversa
+function ex59() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 59 trasformare un array JavaScript in una stringa JSON e viceversa
   `);
 
+  let a = [1, 2, [ 3, 4], 5, 6];
 
+  // let aInFormatoJson = JSON.stringify(a);                                       // JSON.stringify() trasforma un array JS in stringa JSON
+  // let diNuovoArray = JSON.parse(aInFormatoJson);                                // JSON.parse() trasforma una stringa JSON in un oggetto JS
+
+  let b = JSON.parse(JSON.stringify(a));                                        // JSON.parse() trasforma in oggetto JS quello che JSON.stringify() ha trasformato in stringa JSON
+  b[2][0] = `ciao`;                                                             // b[2][0] modifica solo l'array di b senza toccare a
+  console.table( { a, b } );
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 60
+function ex60() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 60
   `);
 
+  let a = [10, [20, 30], 40, [50, 60, [70, 80, 90]], 100];
 
+  let b = JSON.stringify(a);
+  console.log(b);
 }
-
+ex60();
 //==============================================================================
 // ex. 
 function ex() {
