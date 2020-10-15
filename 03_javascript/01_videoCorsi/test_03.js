@@ -7,7 +7,6 @@ let filtriamo = num.filter(el => el < 100);
 let insieme = num.join(' + ');
 let unisci = insieme.split(' + ');
 
-
 let votoRicevuto = 5
 let valutazione01;
 
@@ -230,10 +229,61 @@ function user(nome, cognome) {
     return `${this.persona} ${this.lastname}`;
     }
   };
-
   return obj
 }
-
 let ex35obj = user('Gabriel', 'Serna');
-
 // console.log(ex35obj.person()); 
+
+
+// console.time();                                                              // start timer
+// for ( i = 0; i < 3000000; i++) {
+//   i += 1;
+// };
+// console.timeEnd();                                                           // stop timer
+
+
+function a() {                                                                  // funzione ricorsiva (richiama se stessa)
+  a();
+};
+// a();                                                                         // a chiama se stessa infinite volte
+// console.log(1);
+
+
+function * gen() {
+  yield 1;
+  yield 2;
+  yield 3;
+};
+const genObj = gen();
+// console.log(genObj.next().value);
+// console.log(genObj.next().value);
+// console.log(genObj.next().value);
+// for (let n of genObj) {
+//   console.log(n);
+// };
+
+
+function * gen01() {
+  let index = 0;
+
+  while (true) {
+    yield index++;
+  };  
+}
+const genObj01 = gen01();
+// console.log(genObj01.next().value);
+// console.log(genObj01.next().value);
+// console.log(genObj01.next().value);
+// console.log(genObj01.next().value);
+// console.log(genObj01.next().value);
+// console.log(genObj01.next().value);
+// console.log(genObj01.next().value);
+// console.log(genObj01.next().value);
+// console.log(genObj01.next().value);
+// console.log(genObj01.next().value);
+// console.log(genObj01.next().value);
+// console.log(genObj01.next().value);
+
+
+
+

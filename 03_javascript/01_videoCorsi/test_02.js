@@ -409,39 +409,76 @@ function ex59() {
 }
 
 //==============================================================================
-// ex. 60
+// ex. 60 prendere un array dentro altri array e creare un unicoi array con tutti i dati
 function ex60() {
   console.log(`
   ========================================================
-  ex: 60
+  ex: 60 prendere un array dentro altri array e creare un unico array con tutti i dati
   `);
 
   let a = [10, [20, 30], 40, [50, 60, [70, 80, 90]], 100];
 
-  let b = JSON.stringify(a);
+  let b = a.reduce(nuoviValori, []);
+
+  function nuoviValori(accumulatore, elemento) {
+    if (Array.isArray(elemento)) {
+      elemento.reduce(nuoviValori, accumulatore);
+    } else {
+      accumulatore.push(elemento);
+    };
+    return accumulatore;
+  }
   console.log(b);
 }
-ex60();
+
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 61 mischiare casualmente gli elementi di un array con un altro
+function ex61() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 61 mischiare casualmente gli elementi di un array con un altro
   `);
 
+  const nomi = ['Simone', 'Davide', 'Cristian', 'Luca'];
+  const cognomi = ['Gatti', 'Sangiorgio', 'Stano', 'Savi'];
 
+  function * generaNomiCasuali (nomi, cognomi) {
+    while (nomi.length > 0) {
+      let nomeIndex = (Math.random() * nomi.length) | 0,
+          cognomeIndex = (Math.random() * cognomi.length) | 0,
+          nome = nomi[nomeIndex],
+          cognome = cognomi[cognomeIndex];
+
+          nomi.splice(nomeIndex, 1);
+          cognomi.splice(cognomeIndex, 1);
+          yield { nome, cognome };
+    }
+  }
+
+  const gen = generaNomiCasuali(nomi, cognomi);
+  for (user of gen) {
+    console.log(user);
+  };
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 62 error handling - video 144
+function ex62() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 62 error handling
   `);
 
+  function fn() {
+    fn();
+  }
 
+  try {
+    fn() ;
+  } catch (e) {
+      console.dir(e);
+  };
+  console.log(1)
 }
 
 //==============================================================================
