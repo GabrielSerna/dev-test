@@ -482,69 +482,125 @@ function ex62() {
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 63 troncare un numero all'intero
+function ex63() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 63 troncare un numero all'intero
   `);
 
+  let number = 9.99;
+  let truncNumber = Math.trunc(number);
+  let truncWithOr = number | 0;
 
+  console.log(truncNumber);
+  console.log(truncWithOr);
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 64 destrutturazione di un oggetto
+function ex64() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 64 destrutturazione di un oggetto
   `);
 
+  let palazzo = {
+    piani : 5,
+    mq : 240,
+    colore : 'rosso',
+    numeroCamere : 21
+  };
 
+  let descrizione = function descriviPalazzo ( { piani, mq, colore} ) {
+    return `piani= ${piani}, mq=${mq}, colore: ${colore}`;
+  }
+  console.log(descrizione);
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 65
+function ex65() {
   console.log(`
   ========================================================
   ex: 
   `);
 
-
+  function fn ( nome = '' ) {
+    let nomeIndicato = nome || 'Nessuno';
+    console.log(nomeIndicato);
+  }
+  fn();                                                                         // Nessuno
+  fn('Gabriel');                                                                // Gabriel
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 66 node.js callback sincrona
+function ex66() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 66 node.js callback
   `);
 
+  function sayHello ( name, callback ) {
+    return callback ( `Hello ${name}!`);
+  }
 
+  console.log('prima');
+  sayHello('Davide', result => console.log(result));
+  console.log('dopo');
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 67 
+function ex67() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 67
   `);
 
+  contatore = (() => {
+    contatorePrivato = 0
+    
+    cambia = (val) => {
+      contatorePrivato += val
+    }
+    return {
+      incrementa: () => {
+        cambia(1)
+      },
+      decrementa: () => {
+        cambia(-1)
+      },
+      valore: () => {
+        return contatorePrivato
+      }
+    }
+  })()
 
+  console.log(contatore.valore()) // log 0
+  contatore.incrementa()
+  contatore.incrementa()
+  console.log(contatore.valore()) // log 2
+  contatore.decrementa()
+  console.log(contatore.valore()) // log 1
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 68 node.js callback asincrona
+function ex68() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 68 node.js callback asincrona
   `);
 
+  function sayHelloAsync ( name, callback ) {
+    process.nextTick (_ => callback ( `Hello, ${name}!`));
+  }
 
+  console.log('prima');
+  sayHelloAsync('Davide', result => console.log(result));
+  console.log('dopo');
 }
 
 //==============================================================================

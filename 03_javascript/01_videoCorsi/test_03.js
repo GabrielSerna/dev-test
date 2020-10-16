@@ -285,5 +285,8 @@ const genObj01 = gen01();
 // console.log(genObj01.next().value);
 
 
+// let tipoSaluto, saluto = 'salve';
+// tipoSaluto = ( saluto === 'salve' ? 'Gentile' : 'Classico');
+// console.log(tipoSaluto);
 
 
