@@ -604,25 +604,41 @@ function ex68() {
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 69 eseguire un'azione con setInterval e fermarlo con setTiomeout
+function ex69() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 69 eseguire un'azione con setInterval e fermarlo con setTiomeout
   `);
 
+  let int = setInterval ( ()  => {
+    console.log('ciao');
+    }, 1000 )
+    
+    setTimeout ( () => {
+      clearInterval(int);
+    }, 10000)
 
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 70 promise
+function ex70() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 70 promise
   `);
 
-
+  const promiseTest = function(par1) {
+    return new Promise((resolve, reject) => {
+       if(par1) {
+          resolve(true)
+       } else {
+          reject(false);
+       }
+    })};
+    
+    promiseTest();
 }
 
 //==============================================================================

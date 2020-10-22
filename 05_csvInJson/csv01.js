@@ -5,9 +5,9 @@ function test02() {
   const fs = require('fs');
   const staff = './05_csvInJson/data01.csv';
   let dataDipe = fs.readFileSync(staff, 'utf8', (err, data) => {
-    // if (err) {
-    //   console.error(err);
-    // } 
+    if (err) {
+      console.error(err);
+    }
       return data;
   });
   console.log(dataDipe);
