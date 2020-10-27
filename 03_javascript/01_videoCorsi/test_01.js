@@ -7,29 +7,46 @@ function ex01 () {
   ========================================================
   ex: 01 metodi degli array
   `);
-  // .find => restituisce il primo elemento che soddisfa la condizione
+  // .find() => restituisce il primo elemento che soddisfa la condizione
   numbers1 = numbers.find(el => el > 5);                                        // 7
 
-  // .map => restituisce un array di elementi true e false che soddisfano la consizione. inoltre é distruttivo in quanto modifica l'array
+  // .map() => restituisce un array di elementi con il risultato della callback passata. inoltre é distruttivo in quanto modifica l'array
   numbers2 = numbers.map(el => el > 5);                                         // [false, false, false, true, false, true]
+  numbers2 = numbers.map(el => el * 5);                                         // [10, 15, 20, 35, 25, 30]
 
-  // .filter => restituisce gli elementi che soddisfano la consizione
+  // .filter() => restituisce gli elementi che soddisfano la consizione
   numbers3 = numbers.filter(el => el > 5);                                      // [7, 6]
 
-  // .join converte in stringa l'array inserendo un separatore (opzionale)
+  // .join() converte in stringa l'array inserendo un separatore (opzionale)
   numbers4 = numbers.join(' - ');                                               // 2 - 3 - 4 - 7 - 5 - 6
 
-  // .some itera gli elementi dell'array e restituisce 'true' o 'false' se almeno uno soddisfa la condizione
+  // .some() itera gli elementi dell'array e restituisce 'true' o 'false' se almeno uno soddisfa la condizione
   numbers5 = numbers.some( x => x === 3);                                       // true
   numbers6 = numbers.some( x => x === 1);                                       // false
 
-  // .every restituisce 'true' o 'false' se tutti gli elementi dell'array soddisfano la condizione
+  // .every() restituisce 'true' o 'false' se tutti gli elementi dell'array soddisfano la condizione
   numbers7 = numbers.every( x => x > 0 && x <= 10);                             // true
   numbers8 = numbers.every( x => x > 0 && x <= 6);                              // false
 
-  console.log();
-}
+  // .trim() Remove whitespace from both sides of a string:
+  str1 = `        hello world        `;
+  str1Trim = str1.trim(); 	                                                    // hello world
 
+  // .splice()
+
+
+  // .slice() return a section of an string
+
+
+  // .reduce() 
+
+
+  // .chatAt()
+  
+
+  console.log(numbers2);
+}
+ex01();
 //==============================================================================
 // ex. 02 operatore ternario ?
 let valutazione, voto = 22;
