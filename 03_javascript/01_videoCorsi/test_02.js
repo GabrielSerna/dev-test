@@ -642,14 +642,18 @@ function ex70() {
 }
 
 //==============================================================================
-// ex. 
-function ex() {
+// ex. 71 destructuring
+function ex71() {
   console.log(`
   ========================================================
-  ex: 
+  ex: 71 destructuring
   `);
+  
+  let userArray = ['sex', 'username', 'mail', 'phone', 'age'];
+  let userObj = {};
+  [, userObj.username, userObj.email ] = userArray;
 
-
+  console.log(userObj); // {username: "jdoe", email: "john@doe.com"}
 }
 
 //==============================================================================
