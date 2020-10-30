@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/capocolo/dev-test#readme",
   "dependencies": {
-    "count-to-6": "^0.8.5"
+    "count-to-6": "^0.8.5",
+    "learnyounode": "^4.2.2"
   }
 }
