@@ -1,0 +1,1 @@
+module.exports = ( lower = 0, endPoint = 1) => (lower + endPoint)/2;
