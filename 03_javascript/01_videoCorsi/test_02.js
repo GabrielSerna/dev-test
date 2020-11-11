@@ -192,7 +192,7 @@ function ex50() {
   `);
 
   const fruit = ['pesche', 'mele', 'banane'];
-  const scores = [01, 2, 10, 24, 55, 46, 05, 11, 3];
+  const scores = [1, 2, 10, 24, 55, 46, 5, 11, 3];
   const things = ['libri', 'Libri', '1 libro', '2 libri'];
   
   compareNumbers = (a, b) => a - b;                                             // 1,2,3,5,10,11,24,46,55

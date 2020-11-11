@@ -1,0 +1,29 @@
+{
+  "name": "dev-test",
+  "version": "1.0.0",
+  "description": "practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capocolo/dev-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/capocolo/dev-test/issues"
+  },
+  "homepage": "https://github.com/capocolo/dev-test#readme",
+  "dependencies": {
+    "count-to-6": "^0.8.5",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "learnyounode": "^4.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-plugin-react": "^7.21.5"
+  }
+}

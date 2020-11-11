@@ -1,0 +1,1 @@
+module.exports = ( text, number = text.length ) => text + "!".repeat(number);
