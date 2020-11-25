@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/capocolo/dev-test#readme",
   "dependencies": {
-    "count-to-6": "^0.8.5",
+    "count-to-6": "^0.6.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.1",
     "learnyounode": "^4.2.2"
