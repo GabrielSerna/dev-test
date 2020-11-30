@@ -16,6 +16,7 @@
     "url": "https://github.com/capocolo/dev-test/issues"
   },
   "homepage": "https://github.com/capocolo/dev-test#readme",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+
+  }
 }
