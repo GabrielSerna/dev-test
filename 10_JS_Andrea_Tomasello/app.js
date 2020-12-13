@@ -300,15 +300,66 @@ let ex12 = () => {
 }
 
 //==============================================================================
-// FUNCTION 2.25.28
+// FUNCTION
 let ex13 = () => {
 
+  // function declaration
+
+  function saluta(nome, cognome = 'Serna') { // se cognome non riceve il parametro prende di default Serna
+    console.log(`Buongiorno ${nome} ${cognome}`);
+  };
+
+  saluta('Gabriel') // qui non passo l'elemento per cognome
+
+
+  // function expression ( assegnare ad una costante/variabile una funzione )
+
+  const doppio = function (x) {
+    console.log(x * 2);
+  }
+
+  doppio(10);
 
 }
 
 //==============================================================================
-//
-let ex1x = () => {
+// IIFE ( INMEDIATELY INVOKED FUNCTION EXPRESSION )
+let ex14 = () => {
+
+  // bisogna racchiudere la funzione deltro () e richiamarla sempre con ()
+  (function saluta() {
+    console.log(`Hello world`);
+  })();
+
+  (function saluta(nome) {
+    console.log(`ciao ${nome}`);
+  })('Gabriel');
+
+}
+
+//==============================================================================
+// PROPERTY METHODS ( le funzioni dentro gli oggetti si chiamano metodi)
+let ex15 = () => {
+
+  const persona = {
+    saluta: function (nome, cognome) {
+      console.log(`Ciao io sono ${nome} ${cognome}`);
+     }
+  };
+
+  persona.saluta(`Gabriel`, `Serna`);
+
+  persona.ringrazia = function() {
+    console.log('grazie');
+  }
+
+  persona.ringrazia();
+
+}
+ex15();
+//==============================================================================
+// LOOP 2.44.45
+let ex16() {
 
 
 }
