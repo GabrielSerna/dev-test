@@ -136,3 +136,21 @@ function ex09() {
 
 //==============================================================================
 // ex. 10
+function ex10() {
+
+  let tipo = 'Ferrari';
+  let posti = 2;
+  
+  let auto = {
+    tipo,
+    posti,
+
+    duplicaPosti() {
+      return posti * 2;
+    }
+  };
+
+  console.log(auto.duplicaPosti());
+}
+ex10();
+//==============================================================================
