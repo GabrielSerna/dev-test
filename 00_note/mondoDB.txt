@@ -69,27 +69,99 @@ Delete  = remove
 in mongo gli operators sono sempre preceduti da $
 
 Query di ricerca:
-$gt
-$lt
-$or
-$and
-$in
-$nin
+$gt  = greather then - db.collection.find({ score: { $gt: 95}})
+$lt  = less then - db.collection.find({ score: { $lt: 5}})
+$gte = greather than equal
+$lte = less than equal
+
+$or  = true || true - db.coll.find({$or:[{cond1}, {cond2}]})
+db.coll.find({$or:[{score:{$gt: 95}}, {score:{$lt: 10}}]})
+$and = true && true - db.coll.find({$and:[{cond1}, {cond2}]})
+db.coll.find({$and:[{score:{$gt: 95}}, {score:{$lt: 10}}]})
+
+$all = db.collection.find({ <chiave> { $all: ["<valore1>", "<valore2"]}})
+entrambi i valori devono essere presenti nel documento ( true && true )
+$in  = db.collection.find({ <chiave> { $in: ["<valore1>", "<valore2"]}})
+basta che ci sia anche solo 1 dei valori nel documento ( true || true )
+$nin = db.collection.find({ <chiave> { $nin: ["<valore1>", "<valore2"]}})
+non ci deve essere neanche 1 dei valori nel documento ( !true && !true )
+
 $type
-$exist
-$regex
+$exists = db.collection.find({ city: { $exists: true}})
+$regex  = regular expression - db.collection.find({ name: { $regex: "a"}})
 
 Query di update:
-$set
-$unset
-$inc
+$set   =
+$unset =
+$inc   =
 
 query di update su array:
-$push
-$pop
-$pull
-$pushAll
-$pullAll
-$addToSet
+$push = 
+$pop  =
+$pull = 
+$push = 
+$pull = 
+$addT = 
 
 //======================================================================================================================
+// db.collection.find() applicato agli array
+
+{"title" : "secondo", "tags" : [ "Query", "Array" ] }
+db.collection.find( tags: "Query") - mongo da solo cerca "Query" nel primo livello
+di un array. Mongo non ha modo di fare ricerca nei livelli più interni del primo
+
+{"title" : "secondo", "tags" : [ "Query",[ "Array"] ] } - in questo caso "Array"
+è impossibile da trovare 
+
+//======================================================================================================================
+// db.collection.find() per cercare un sotto-documento
+
+{name : "Gabriel Serna", socials : { "facebook" : "Gabriel", "instagram" : "capocolo" } }
+
+db.collection.find({{socials : { "facebook" : "Gabriel", "instagram" : "capocolo"}}})
+*bisogna passare tutta la proprietà in quanto fa una ricerca esatta di quanto inserito,
+ricerca esattamente quanto inserito perchè trasforma i parametri in bite e cerca quelli
+
+db.collection.find({"socials.facebook":"Gabriel"})
+*cerca i documenti con il sotto documento socials il cui valore è "gabriel"
+
+db.collection.find({socials: { $exists: true}})
+*cerca i documenti con il sotto documento socials
+
+//======================================================================================================================
+// UPDATE di un documento
+
+1. sostituzione completa del documento
+2. aggiungta o modifica di un attributo del documento
+3. update del documento se esiste o creazione se non esiste
+4. multi update
+
+1. db.collection.update({actual key:"value"},{new key:"value"})
+{ "name" : "Gabriel", "surname" : "Serna", "city" : "Pavia" }
+*db.users.update({name:"Gabriel"}, {name:"Juan Gabriel"})
+aggiorna la key "name" e cancella TUTTE le keys non passate nell'update
+R = { "name" : "Juan Gabriel" }
+
+2. db.collection.update({ key1:"value1"}, $set:{ {key2:"value2"}})
+{ "name" : "Gabriel", "surname" : "Serna", "city" : "Pavia", "age": 35 }
+*db.collection.update({name:"Gabriel"}, {$set :{city:"Milano"}})
+trova il documento con la key1 e modifica SOLO la key2, se non esiste la crea
+R = { "name" : "Gabriel", "surname" : "Serna", "city" : "Milano", "age": 35 }
+
+*****************************************************
+db.users.update({ name:"Jose"}, { $set: { age: 14}})
+*****************************************************
+
+2.1 db.collection.update({ key1:"value1"}, $inc:{ {key2: x }})
+{ "name" : "Gabriel", "surname" : "Serna", "city" : "Pavia", "age": 35 }
+*db.collection.update({name:"gabriel"}, { $inc:{ age: 2}})
+trova il documento con la key1 e aumenta di x il valore della key2
+R = { "name" : "Gabriel", "surname" : "Serna", "city" : "Pavia", "age": 37 }
+
+2.2 db.collection.update({ key1:"value1"}, $unset:{ {key2: true }})
+{ "name" : "Gabriel", "surname" : "Serna", "city" : "Pavia", "age": 35 }
+*db.users.update({name:"Gabriel", { $unset:{ age: true}}})
+trova il documento con la key1 e cancella la key2
+{ "name" : "Gabriel", "surname" : "Serna", "city" : "Pavia" }
+
+3.

@@ -6,7 +6,7 @@ db.anilams.insert({name:"pantera", color:"nero"})
 let panter = db.anilams.findOne({name:"pantera"})
 
 // aggiungo una propiertà all'oggetto (al momento la modifica non è salvata nel DB)
-p.lengs = 4
+panter.lengs = 4
 
 // salvo la modifica nel db
 // db.animals.save(p)
