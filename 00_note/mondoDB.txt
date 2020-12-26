@@ -1,0 +1,95 @@
+//======================================================================================================================
+// SHELL
+
+lanciare 'mongo' dalla shell.
+
+comandi:
+'db': mostra il db che stiamo utilizzando
+'show dbs': mostra tutti i db
+'show collections': mostra tutte le collections nel db che sto usando
+`use <database's name>`: per spostarsi da un db all'altro
+`db.<collection' name>.find()`: cerca nel db in uso la collezione passata
+`db.<collection' name>.find( { name: "" } ).pretty()`: come sopra, esposto in modo migliore
+`db.<collection' name>.findOne( { name: "" } )`: restituisce 1 oggetto in modalità pretty()
+
+`db.<collection' name>.insert( { name:"delfino", color:"grigio"} )`: inserisce nel db in uso, nella collezione passata, l'oggetto con le propriertà passate
+
+//======================================================================================================================
+// .JSON
+
+{ "chiave": valore }
+
+*"chiave":
+è sempre una stringa, se non vengono messi di doppi apici "" JS la riconosce
+come stringa,a patto che inizi con una lettera, se inizia con un numero
+è OBBLIGATORIO mettere i doppi apici ""
+
+*valore:
+puo essere di 6 tipi:
+"stringa"
+number
+boolean
+null
+array: []
+obj: {string: "sono una stringa",
+      number: 111 
+    }
+
+*in caso chiave duplicata viene considerato il valore dell'ultima.
+
+{name: "Gabriel",
+.............
+name:"Sara"}
+
+name:"Sara"<===========
+
+*tutti gli oggetti su mongo devono avere l'attributo {_id: ""}
+
+//======================================================================================================================
+MongoDB = shcema dinamico
+
+schema interno di mongo:
+*È un catalogo di:
+    *Databases
+      *Collections
+        *Documents
+        *indexes
+
+*_id e index obbligatori e impliciti
+//======================================================================================================================
+
+// CRUD
+Create  = insert
+Read    = find
+Update  = update
+Delete  = remove
+
+
+// OPERATORS
+in mongo gli operators sono sempre preceduti da $
+
+Query di ricerca:
+$gt
+$lt
+$or
+$and
+$in
+$nin
+$type
+$exist
+$regex
+
+Query di update:
+$set
+$unset
+$inc
+
+query di update su array:
+$push
+$pop
+$pull
+$pushAll
+$pullAll
+$addToSet
+
+//======================================================================================================================

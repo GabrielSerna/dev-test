@@ -1,0 +1,24 @@
+//======================================================================================================================
+// creo nella collezione animals l'oggetto passato
+db.anilams.insert({name:"pantera", color:"nero"})
+
+// dichiaro una variabile che contiene l'oggetto passato
+let panter = db.anilams.findOne({name:"pantera"})
+
+// aggiungo una propiertà all'oggetto (al momento la modifica non è salvata nel DB)
+p.lengs = 4
+
+// salvo la modifica nel db
+// db.animals.save(p)
+
+//======================================================================================================================
+// popolare un DB con risultati di esami per 1000 * 3 studenti
+
+for ( let i = 0; i < 1000; i++) {
+  names = ["esame", "prova", "quiz"];
+  for( let j = 0; j < 3; j++) {
+    db.scores.insert ({ student: i, type: names[j], score: Math.round( Math.random()*100)});
+  }
+  }
+
+//======================================================================================================================

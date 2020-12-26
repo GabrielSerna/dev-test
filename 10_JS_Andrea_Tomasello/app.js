@@ -354,12 +354,116 @@ let ex15 = () => {
   }
 
   persona.ringrazia();
+  console.log(persona);   // {saluta: ƒ, ringrazia: ƒ}
 
 }
-ex15();
+
 //==============================================================================
-// LOOP 2.44.45
+// LOOP
+// for loop
 let ex16 = () => {
 
+  for ( i = 0; i <= 5; i++) {
+    if ( i === 3 ) {
+      console.log(`mi piace ${i}`);
+      continue // senza di questa keyword il codice stampa di nuovo '8'
+      // break // stoppa l'esecuzione del loop ed esce
+    };
+
+    console.log(i);
+  };
+
+
+  const fruits = ['apple', 'banana', 'kiwi', 'ananas'];
+
+  for ( i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+  }
 
 }
+
+//==============================================================================
+// LOOP
+// while loop
+let ex17 = () => {
+
+  let i = 1
+
+  while ( i <= 10 ) {
+    console.log(i);
+    i++;
+  }
+
+}
+
+//==============================================================================
+// LOOP
+// do while
+let ex18 = () => {
+
+  let i = 1;
+
+  do {
+    console.log(i);
+    i++;
+  } while ( i <= 10 );
+
+}
+
+//==============================================================================
+// LOOP - ITERAZIONE SU ARRAY
+// forEach
+let ex19 = () => {
+
+  const fruits = ['apple', 'banana', 'kiwi', 'ananas'];
+
+  fruits.forEach( function(value, index, all) {
+    // console.log(index, value);
+    console.log(all); // (4) ['apple', 'banana', 'kiwi', 'ananas']
+  })
+
+}
+
+//==============================================================================
+// LOOP - ITERAZIONE SU ARRAY
+// map (similar to forEach, and returns an array that contains the results)
+let ex20 = () => {
+
+  const fruits = ['apple', 'banana', 'kiwi', 'ananas'];
+
+  let newFruits = fruits.map( function(value, index, all) {
+    return all
+  })
+
+  console.log(newFruits); // (4) [Array(4), Array(4), Array(4), Array(4)]
+}
+
+//==============================================================================
+// LOOP - ITERAZIONE SU ARRAY E OBJ
+// for In
+let ex21 = () => {
+
+  const persona = {
+    name: 'Gabriel',
+    age: 35,
+    sex: 'Male',
+    hobby: 'Moto'
+  }
+
+  for (let i in persona) {
+    console.log(persona[i]);
+  }
+
+}
+
+//==============================================================================
+//
+ 
+let ex22 = () => {
+
+
+
+}
+
+//==============================================================================
+// 
