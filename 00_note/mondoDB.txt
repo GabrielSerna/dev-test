@@ -96,12 +96,13 @@ $unset =
 $inc   =
 
 query di update su array:
-$push = 
-$pop  =
-$pull = 
-$push = 
-$pull = 
-$addT = 
+$push = db.collection.update({key: value}, { $push : { key: <value to push>}}) // aggiunge in coda
+$pushAll = 
+$pop  = db.collection.update({key: value}, { $pop : { key: 1}})   // elimina il primo valore
+$pop  = db.collection.update({key: value}, { $pop : { key: -1}})  // elimina l'ultimo valore
+$pull = db.collection.update({key: value}, { $pull : { key: <value to pull>}}) // elimina il valore ovunque si trovi
+$pullAll = 
+$addT = come $push, solo che non aggiunge doppioni. verifica se il valore esiste, e se non esiste lo aggiunge
 
 //======================================================================================================================
 // db.collection.find() applicato agli array
@@ -148,10 +149,6 @@ R = { "name" : "Juan Gabriel" }
 trova il documento con la key1 e modifica SOLO la key2, se non esiste la crea
 R = { "name" : "Gabriel", "surname" : "Serna", "city" : "Milano", "age": 35 }
 
-*****************************************************
-db.users.update({ name:"Jose"}, { $set: { age: 14}})
-*****************************************************
-
 2.1 db.collection.update({ key1:"value1"}, $inc:{ {key2: x }})
 { "name" : "Gabriel", "surname" : "Serna", "city" : "Pavia", "age": 35 }
 *db.collection.update({name:"gabriel"}, { $inc:{ age: 2}})
@@ -164,4 +161,23 @@ R = { "name" : "Gabriel", "surname" : "Serna", "city" : "Pavia", "age": 37 }
 trova il documento con la key1 e cancella la key2
 { "name" : "Gabriel", "surname" : "Serna", "city" : "Pavia" }
 
-3.
+3. db.collection.update({ new key: "value"}, { $set: { key2: "new value2"}}, { upsert: true})
+*db.users.update({name: "Luca"},{ $set: {city: "Assago"}}, {upsert: true})
+aggiunge e modifica l oggetto passato. se l oggetto esiste lo aggiorna, altrimenti lo crea
+
+4. db.collection.update( {}, { $set: { key2: "new value2"}}, { multi: true} )
+*db.users.update( {}, { $set: { city: "Pavia"}}, { $multi: true})
+modifica o aggiunge la key city: "Pavia" a tutti i documenti.
+per modificare solo alcuni documenti devo mettere la key:value nella prima {}
+
+//======================================================================================================================
+// REMOVE AND DROP A Collections
+
+1. eliminare un documento
+2. eliminare una collezione
+
+
+
+
+1. db.collection.remove({key: value})
+2. db.collection.drop()
