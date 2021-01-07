@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>DEFINITION LISTS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background: #000;
+                margin:30px auto;
+                color:#fff;
+                width:800px;
+            }
+            dl{
+                width: 400px;
+                border:1px solid brown;
+
+            }
+            dt {
+                color:red;
+                border-bottom: 1px solid #fff;
+                font-weight: bold;
+                padding:5px;
+            }
+            dd{
+                color:#fff;
+                padding:5px;
+            }
+            dl.userData dt {
+                border:none;
+            }
+            dl.userData dt:after {
+                content:" :"
+            }
+             dl.userData dd:before {
+                content:" - "
+            }
+        </style>
+    </head>
+    <body>
+        <dl>
+            <dt> Dog</dt>
+            <dd> Cane</dd>
+            <dd>Perro</dd>
+            <dd>Chien</dd>
+            <dt>Cat</dt>
+            <dd>Gatto</dd>
+            <dd>Gato</dd>
+            <dd>Chat</dd>
+
+        </dl>
+        <dl class="userData">
+            <dt>Name</dt>
+            <dd>Hidra</dd>
+            <dt>Last name</dt>
+            <dd>Arias</dd>
+            <dt>Born</dt>
+            <dd>Cuba</dd>
+        </dl>
+    </body>
+</html>

@@ -1,0 +1,1 @@
+Sono quei caratteri speciali che vanno inseriti con &[]; ad esempio se vogliamo inserire < andremo a mettere &tl;

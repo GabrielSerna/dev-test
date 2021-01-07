@@ -1,0 +1,29 @@
+/*
+
+In questo esercizio, devi migliorare lo stile grafico con cui è rappresentato il menù di navigazione tra le varie pagine. Usa le regole CSS che abbiamo visto per dare l'impressione che nella pagina siano presenti delle schede (tab), come quelli usati dai browser. Di solito non sono dei veri contenitori, ma una semplice lista di link visualizzata in modo particolare. Puoi provare a seguire questo procedimento: 
+x inserisci all’intero di un div, con id = menu, i link alle pagine che compongono il tuo progetto; 
+x seleziona un colore per delineare il contorno delle schede;
+x imposta il bordo inferiore dell'intera lista (​ul) di quel colore, scegliendo uno spessore;
+x imposta il ​display degli ​li della lista in questione ad ​inline-block. Questo permette di impostare una dimensione fissa per tutte le schede (i nostri ​li) senza che questi vengano disegnati nella riga successiva;
+x imposta i bordi destro, sinistro e superiore degli li con il colore per il contorno delle schede;
+x imposta i margin degli ​li ed il padding del tag ​ul in modo che il bordo destro e sinistro delle schede tocchi il bordo inferiore dell'​ul
+
+*/
+
+#menu ul {
+    border-bottom-color: black;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+#menu li {
+    display: inline-block;
+    border-top-color: black;
+    border-right-color: black;
+    border-left-color: black;
+    border-width: 2px;
+    border-style: solid;
+
+    margin: 0px 2px 0px 2px;
+    padding: 0px 40px 0px 40px;
+}

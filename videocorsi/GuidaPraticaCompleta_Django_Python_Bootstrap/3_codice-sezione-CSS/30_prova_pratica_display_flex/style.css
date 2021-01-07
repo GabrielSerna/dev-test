@@ -1,0 +1,43 @@
+h1 {
+    border: 1px solid black;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 600px;
+}
+
+h2:hover{
+    color: white;
+}
+
+#general {
+    display: flex;
+}
+
+#id1 {
+    background-color: #007F5F;
+    flex: 1;
+    height: 800px;
+}
+
+#id2 {
+    background-color: #2B9348;
+    flex: 1;
+}
+
+#id3 {
+    background-color: #55A630;
+    flex: 1;
+}
+
+#id4 {
+    background-color: #80B918;
+    flex: 1;
+}
+
+#id5 {
+    background-color: #AACC00;
+    flex: 1;
+}

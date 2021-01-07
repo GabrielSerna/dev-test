@@ -1,0 +1,58 @@
+
+/* 
+    Created on : 27-ott-2015, 22.50.13
+    Author     : hidran
+*/
+body{
+    margin: 0px ;
+    padding: 0px;
+    width: 600px;
+    background-color:#000;
+    text-align: left;
+    /*color:#fff;
+    
+     color:brown;
+     color: rgb(255,255,0);
+    color: rgba(255,255,0,.5);
+     color: rgb(0%,30%,20%);
+    */
+     color:#fff;
+    font-family: Tahoma;
+    font-size: 14px;
+    
+}
+div.poem{
+    width: 100%;
+    margin:25px ;
+    margin-left: 0px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    background-color:#a81a1a;
+ /* text-align: right; 
+  text-align: left; 
+  text-align: center; 
+  
+ */
+  text-align: justify; 
+  padding: 25px;
+  text-indent: 25px;
+  line-height: 35px;
+ /* text-transform: uppercase;
+ text-transform: lowercase;
+ 
+ text-transform: capitalize;
+ text-decoration: overline;
+ text-decoration: underline
+ */
+ text-decoration: line-through;
+ 
+}
+h1 {
+    
+    color:#fff;
+    /*font-size: 200%;
+    font-size: 2em;
+    */
+    font-size: 25px;
+    
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>html select tag</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h2>User's data</h2>
+        <form action="http://localhost:8088/NETBEANS/index.php" method="POST">
+            <p> 
+                <label for="firstname">First name</label>
+                <input  placeholder="Enter first name"   maxlength="32"   pattern="[a-zA-Z]+"  type="text" id="firstname" name="firstName">
+            </p>
+            
+           <p> 
+                <label for="lastname">Last name</label>
+                <input required placeholder="Enter your lastname"  autofocus type="text" id="lastname" name="lastname">
+            </p>
+            <p>
+                <label> Gender</label>
+                F <input type="radio" checked name="gender" value="F">
+                M <input type="radio" checked name="gender" value="M">
+            </p>
+             <p>
+            <label for="country">Country</label>
+            <select name="country" id="country">
+                <option value="">Select</option>
+                <optgroup label="Norh America">
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+                </optgroup>
+                <optgroup label="Europe">
+                <option value="FR">Francia</option>
+                <option value="IT">Italia</option>
+                </optgroup>
+            </select>
+            </p>
+            <p>
+            <label for="state">STATE</label>
+            <select name="state" id="state">
+                <option value="">Select</option>
+                <option value="WA">WASHINGTON</option>
+                <option value="FL">FLORIDA</option>
+                <option value="TX">TEXAS</option>
+            </select>
+            </p>
+             <p>
+            <label for="languages">Languages</label>
+            <select name="languages[]" id="languages" multiple size="5">
+                <option value="">Select</option>
+                <option value="es">Spanish</option>
+                <option value="en">English</option>
+                <option value="it">Italiano</option>
+                 <option value="fr">French</option>
+            </select>
+            </p>
+            <p>
+                <label> PC type</label>
+                Windows <input type="checkbox" id="Windows" name="pcType[]" checked  value="W">
+                Mac <input type="checkbox"     id="M" name="pcType[]" value="M">
+                 Linux <input type="checkbox" id="L" name="pcType[]" value="L">
+            </p>
+            <p>
+                <input type="reset" value="RESET"> 
+                <input type="submit" value="SEND">
+                
+            </p>
+                   
+        </form>
+    </body>
+</html>

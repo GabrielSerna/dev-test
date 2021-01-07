@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SOLUZIONE HTML</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Benvenuti nel Nostro Sito!</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Consequuntur magnam maiores corporis tempora, <br>ducimus facilis praesentium commodi. Tenetur dolorem <br>similique illo laboriosam? Fugit vitae beatae nisi cupiditate quia? <br>Unde, nesciunt?</p>
+        <h2>Crea un Nuovo Account</h2>
+        <form>
+            <input placeholder="Nome">
+            <input placeholder="Cognome">
+            <br>
+            <input type="email" placeholder="Il tuo indirizzo email" required>
+            <br>
+            <input type="password" placeholder="Password" required>
+            <br>
+            <input type="radio" name="sesso"> <!--per fare in modo di selezionarne solo 1 devono avere lo stesso NAME -->
+            <label>Uomo</label>
+            <input type="radio" name="sesso">
+            <label>Donna</label>
+            <br><br>
+            <label>Come hai conosciuto il Sito?</label>
+            <select>
+                <option value="amici">Amici</option>
+                <option value="internet">Internet</option>
+                <option value="tv">TV</option>
+            </select>
+            <h3>Parlaci di te</h3>
+            <textarea rows="10" cols="50"></textarea>
+            <br><br>
+            <input type="checkbox" value="accetto" required> accetto le <a href="#">condizioni d'uso</a>
+            <br><br>
+            <input type="submit" value="crea account">
+        </form>
+    </body>
+</html>

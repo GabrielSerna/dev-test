@@ -1,0 +1,137 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 31-ago-2015, 1.15.31
+    Author     : hidran
+*/
+section, nav, article,footer, header,article, main{
+    display: block;
+    box-sizing:border-box
+}
+body{
+    padding: 0;
+    width: 960px;
+    margin: 0 auto;
+}
+#header{
+    position: relative;
+    background: url('bg.jpg') no-repeat;
+    height: 120px;
+    text-align:center;
+}
+#header h1{
+    text-transform: uppercase;
+    text-align: center;
+    color:#fff;
+    margin-left: 250px;
+    margin-top: 50px;
+    position: absolute;
+}
+section{
+    border: 1px solid #c0c0c0;
+    background-color: #dedede;
+    padding: 5px;
+    margin: 10px;
+}
+nav {
+    border: 1px solid #c0c0c0;
+    background-color: #aaa;
+    padding: 5px;
+    margin: 10px; 
+}
+footer{
+    background-color: #dedede;
+    color:#222;
+    font-style: italic;
+    color: red;
+}
+aside{
+    font-style: italic;
+    color: #222;
+    border:1px solid #c0c0c0;
+    padding: 5px;
+    font-size: 90%;
+}
+address{
+    font-style: italic;
+}
+code{
+    margin-left:20px;
+    padding:5px;
+}
+#footer{
+    clear: both;
+   
+    font-style: italic;
+    color: red;
+}
+#footer nav{
+    background-color: #DEDEDE;
+    border:0px solid #fff;
+}
+#right{
+    background-color: #dedede;
+    color:#222;
+    font-style: italic;
+    border: 1px dashed aqua;
+     margin: 10px;
+     padding: 4px;
+    color: red;
+    float: left;
+    margin-left: 5px;
+    width: 300px;
+   
+}
+#maincontent{
+    float: left;
+    width: 600px;
+}
+main{
+   position: relative;
+    width: 98%;
+    margin: auto;
+    clear: both;
+}
+nav ul{
+    padding: 0;
+    margin: 0;
+     list-style-type: none;
+    
+}
+nav ul li{
+    display: inline;
+    padding: 4px;
+    margin-left: 5px;
+    width:130px
+   
+}
+nav ul li a{
+     border: 0px solid black;
+     font-weight: bold;
+     
+}
+nav ul li a:link,nav ul li a:visited {
+     
+     text-decoration: none;
+     
+}
+nav ul li a:hover,nav ul li a:active {
+     background-color:#ffffcc;
+     text-decoration: none;
+     border-bottom: 1px solid red;
+     
+}
+footer nav li{
+    display: block;
+    font-size: 90%;
+}
+p{
+    line-height: 1.5em;
+    text-indent: 4em;
+    padding: 5px;
+    margin-top: 10px;
+    
+}

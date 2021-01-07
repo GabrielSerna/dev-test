@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 31-ago-2015, 1.15.31
+    Author     : hidran
+*/
+section, nav, article,footer, header,article{
+    display: block;
+    box-sizing:border-box;
+}
+section{
+    border: 1px solid #c0c0c0;
+    background-color: #dedede;
+    padding: 5px;
+    margin: 10px;
+}

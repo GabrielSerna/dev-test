@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html5 forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="main">
+    <form action="processForm.php" method="POST">
+        <h1>PLEASE, REGISTER</h1>
+        <div class="form-group">
+        <label for="name">name</label> 
+        <input title="insert your name" required maxlength="60"
+
+         size="120"   placeholder="Insert your name"  
+         pattern ="[a-zA-Z]+"
+         type="text" id="name" name="name">
+       </div>
+       <div  class="form-group">
+        <label for="name">first name</label> 
+        <input   type="text" placeholder="Insert your lastname" id="lastname"
+         name="lastname">
+       </div>
+       <div  class="form-group buttons">
+     <!-- <input width="100" height="100" type="image" 
+     src="https://www.wikihow.com/images/d/dc/Label-an-Envelope-Step-13.jpg">-->
+      <!-- <input type="reset" value="Reset">
+          <input type="submit" value="Send form" name="send">--> 
+          <button  type="reset"> Reset</button>
+           <button> Send data</button>
+            
+            <!-- <button type="button"> Does not send form with button</button>-->
+       </div>
+    </form>
+    </section>
+</body>
+</html>

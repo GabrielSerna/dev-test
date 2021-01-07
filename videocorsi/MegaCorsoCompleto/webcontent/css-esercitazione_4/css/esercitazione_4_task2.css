@@ -1,0 +1,26 @@
+/*
+
+x Ora devi fare in modo che la scheda attuale sembri selezionata. Generalmente questo si ottiene facendo in modo che il bordo sotto la scheda non si veda:
+x per tutti gli ​li imposta la proprietà ​position: relative
+x ‘abbassa’ gli ​li di un numero di pixel uguale allo spessore del bordo dell’​ul utilizzando la proprietà ​top
+x imposta lo stesso colore sia al bordo che allo sfondo, bianco per l'esempio.
+
+*/
+
+#menu li {
+    position: relative;
+    top: 2px;
+
+}
+
+#current_page {
+    border-bottom-color: white;
+}
+
+.opacity {
+    opacity: 1;
+}
+
+.opacity:hover {
+    opacity: .5;
+}

@@ -1,0 +1,51 @@
+body{
+    background-color:#ccc;
+    color:#000;
+}
+#main{
+    width:650px;
+    margin:auto;
+    text-align:center
+}
+label{
+    border: 1px solid #fff;
+    display:inline-block;
+    width:47%;
+    background: #c0c0c0;
+    padding:5px;
+}
+ input{
+     width:47%;
+     border: 1px solid #fff;
+     padding:5px;
+ }
+
+ form{
+     padding:5px;
+     border:1px solid #fff;
+     width: 100%;
+
+ }
+ h1{
+     text-align:center;
+ }
+
+ button, input[type=submit]{
+     border: 1px solid #dedede;
+     border-radius:5px;
+     background:#ddaa11;
+     width: 200px;
+     height:30px;
+     cursor:pointer;
+ }
+ button[type=reset]{
+     background:#fff;
+     color:red;
+ }
+ .buttons{
+     margin-top:20px;
+     padding:5px;
+ }
+input:disabled{
+    color: green
+}

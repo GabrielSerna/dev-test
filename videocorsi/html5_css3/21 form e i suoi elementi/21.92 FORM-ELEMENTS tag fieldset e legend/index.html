@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html5 forms</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <section id="main">
+      <form action="processForm.php" method="POST">
+        <h1>PLEASE, REGISTER</h1>
+        <fieldset>
+          <legend id="legend-fullname"> NATION & HOBBY</legend>
+        <div class="form-group">
+          <label for="name">name</label>
+          <input title="insert your name" required maxlength="60" size="120" placeholder="Insert your name"
+            pattern="[a-zA-Z]+" type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="name">first name</label>
+          <input type="text" placeholder="Insert your lastname" id="lastname" name="lastname">
+        </div>
+      </fieldset>
+      <fieldset >
+        <legend id="legend-hobbies"> NATION & HOBBY</legend>
+        <div class="form-group">
+          <label>European citizen?</label>
+          YES <input type="radio" value="Y" checked name="europeancitizen">
+          NO <input type="radio" value="N" name="europeancitizen">
+        </div>
+        <div class="form-group">
+          <label>Hobbies</label>
+          Traveling<input name="hobbies[]" value="travel" type="checkbox">
+          Guitar<input name="hobbies[]" value="guitar" type="checkbox">
+          Computers<input name="hobbies[]" value="computer" type="checkbox">
+        </div>
+        <div class="form-group">
+          <label for="country_code">Country</label>
+        <select name="country_code" id="country_code">
+          <optgroup label="EUROPE">
+          <option value="IT">ITALY</option>
+          <option value="ES">SPAIN</option>
+          </optgroup>
+          <option value="CU">CUBA</option>
+         <optgroup label="NORTHAMERICA">
+          <option value="CA">CANADA</option>
+          <option value="US">USA</option>
+        </optgroup>
+          <option value="AU">AUSTRALIA</option>
+        </select>
+        
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend id="legend-biography"> LANGUAGES & BIOGRAPHY</legend>
+      <div class="form-group">
+        <label for="language">LANGUAGE</label>
+        <select id="language" name="language[]" multiple size="5">
+          <option value="it">ITALIAN</option>
+          <option value="es">SPANISH</option>
+          <option value="fr">FRENCH</option>
+          <option value="de">GERMAN</option>
+          <option value="pt">PORTIGUESE</option>
+       </select>
+      </div>
+      <div class="form-group">
+        <label for="biography">biography</label>
+        <textarea maxlength="300" cols="30"
+         wrap="hard" 
+         rows="16" id="biography" name="biography">
+
+        </textarea>
+      </div>
+    </fieldset>
+        <div class="form-group buttons">
+          <!-- <input width="100" height="100" type="image" 
+     src="https://www.wikihow.com/images/d/dc/Label-an-Envelope-Step-13.jpg">-->
+          <!-- <input type="reset" value="Reset">
+          <input type="submit" value="Send form" name="send">-->
+          <button type="reset"> Reset</button>
+          <button> Send data</button>
+
+          <!-- <button type="button"> Does not send form with button</button>-->
+        </div>
+      </form>
+    </section>
+  </body>
+
+</html>

@@ -1,0 +1,46 @@
+body{
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    margin:0;
+    padding: 0;
+    text-align: left;
+}
+form{
+    background: #dedede;
+    padding:5px;
+    width:400pX;
+    margin-left:0;
+    border:1px solid red;
+    color:#000;
+}
+p{padding:5px}
+
+label {
+    padding :5px;
+    border :0px solid #fff;
+    margin:5px;
+    color:#000;
+    font-weight: bold;
+}
+input{
+    padding: 5px;
+    border: 1px solid #000;
+    color: red;
+}
+input[type=submit]{
+    color:#fff;
+    font-weight: bold;
+    background: #c0c0c0;
+    width: 130px;
+    margin-left: 20px;
+}
+input[type=reset]{
+    color:#fff;
+    font-weight: bold;
+    background: red;
+    width: 130px;
+}
+#Windows{
+    border: 1px solid red;
+}

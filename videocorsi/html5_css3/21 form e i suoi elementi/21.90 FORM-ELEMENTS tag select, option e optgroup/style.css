@@ -1,0 +1,65 @@
+body{
+    background-color:#ccc;
+    color:#000;
+}
+#main{
+    width:650px;
+    margin:auto;
+    text-align:center
+}
+label{
+    border: 1px solid #fff;
+    display:inline-block;
+    width:47%;
+    background: #c0c0c0;
+    padding:5px;
+    margin: 0px 5px;
+}
+ input{
+     width:47%;
+     border: 1px solid rgb(145, 137, 137);
+     padding:5px;
+     border-radius: 4px;
+ }
+
+ form{
+     padding:5px;
+     border:1px solid #fff;
+     width: 100%;
+
+ }
+.form-group{
+    display: flex;
+    margin: 5px 0px
+}
+
+ h1{
+     text-align:center;
+ }
+
+ button, input[type=submit]{
+     border: 1px solid #dedede;
+     border-radius:5px;
+     background:#ddaa11;
+     width: 200px;
+     height:30px;
+     cursor:pointer;
+ }
+ button[type=reset]{
+     background:#fff;
+     color:red;
+ }
+
+  input[type=radio],
+    input[type=checkbox]
+  {
+    width:auto;
+   
+ }
+ .buttons{
+     margin-top:20px;
+     padding:5px;
+ }
+input:disabled{
+    color: green
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>HTML TABLES: ADAVANCED TAGS AND FORMATTING</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Cut and paste this css style to an external style sheet if needed -->
+        <style>
+            body{
+                margin:0;
+                padding:0;
+                text-align: center;
+                background-color: #fff;
+            }
+            #orders{
+                width: 850px;
+                margin: 0px auto;
+                border: 1px solid #000;
+                margin-top:30px;
+                border-collapse: collapse;
+                
+            }
+            #orders caption {
+                text-transform: uppercase;
+                color:#222;
+                padding:5px;
+            }
+           #orders  th, td {
+                border: 1px solid lightblue;
+                padding:5px;
+                color:#000;
+            }
+            #orders thead th{
+                background-color: #ffff00;
+                color: #000;
+                text-transform: uppercase
+            }
+            #orders tfoot th {
+                background-color: blue;
+                color:#fff;
+                text-align: right;
+            }
+            #orders tbody th {
+                text-align: right;
+                background-color: red;
+            }
+            table#orders tbody tr:nth-child(even) {
+                background: #f0f0f0;
+                    color: #000
+           }
+           table#orders tbody#last tr:nth-child(even) {
+                background-color: #ccc;
+                    color: #000
+           }
+            table#orders colgroup .firstCol{
+               background: green
+           }
+           table#orders col.lastCol {
+               background-color: #ffff00
+           }
+        </style>
+       
+    </head>
+    <body>
+        <table  id="orders">
+            
+            <caption>
+                Sales orders
+            </caption>
+            <colgroup>
+                <col class="firstCol">
+                
+                <col span="5">
+                <col  class="lastCol"> 
+            </colgroup>
+            <thead>
+            <tr> 
+                <th> 
+                    Order Date
+                </th>
+                <th> 
+                   Region
+                </th>
+                <th> 
+                   Rep
+                </th>
+                <th> 
+                   Item
+                </th>
+                <th> 
+                    Units
+                </th>
+                <th> 
+                    Cost
+                </th>
+                <th> 
+                   Total
+                </th>
+            </tr>
+            </thead>
+             <tfoot>
+                <tr>
+                    <th colspan="4">Grand totals</th>
+                   
+                    <th>4444</th>
+                     <th>444.49</th>
+                      <th>444.46</th>
+                </tr>
+            </tfoot>
+            <tbody>
+            <tr>
+                <td> 
+                    1/6/2014
+                </td>
+                <td> 
+                    East
+                </td>
+                <td> 
+                    Jones
+                </td>
+                <td> 
+                    Pencil
+                </td>
+                <th> 
+                    95
+                </th>
+                <th> 
+                    1.99 
+                </th>
+                <th> 
+                    189.05 
+                </th>
+            </tr>
+            <tr>
+                <td> 
+                    1/23/2014
+                </td>
+                <td> 
+                    Central
+                </td>
+                <td> 
+                    Kivell
+                </td>
+                <td> 
+                    Binder
+                </td>
+                <th> 
+                    50
+                </th>
+                <th> 
+                    19.99 
+                </th>
+                <th> 
+                    999.50 
+                </th>
+            </tr>
+            </tbody>
+            <tbody id="last">
+            <tr>
+                <td> 
+                    2/9/2014
+                </td>
+                <td> 
+                    Central
+                </td>
+                <td> 
+                    Jardine
+                </td>
+                <td> 
+                    Pencil
+                </td>
+                <td> 
+                    36
+                </td>
+                <td> 
+                    4.99 
+                </td>
+                <td> 
+                    179.64 
+                </td>
+            </tr>
+            <tr>
+                <td> 
+                    2/26/2014
+                </td>
+                <td> 
+                    Central
+                </td>
+                <td> 
+                    Gill
+                </td>
+                <td> 
+                    Pen
+                </td>
+                <td> 
+                    27
+                </td>
+                <td> 
+                    19.99 
+                </td>
+                <td> 
+                    539.73 
+                </td>
+            </tr>
+            <tr>
+                <td> 
+                    3/15/2014
+                </td>
+                <td> 
+                    West
+                </td>
+                <td> 
+                    Sorvino
+                </td>
+                <td> 
+                    Pencil
+                </td>
+                <td> 
+                    56
+                </td>
+                <td> 
+                    2.99 
+                </td>
+                <td> 
+                    167.44 
+                </td>
+            </tr>
+            <tr>
+                <td> 
+                    4/1/2014
+                </td>
+                <td> 
+                    East
+                </td>
+                <td> 
+                    Jones
+                </td>
+                <td> 
+                    Binder
+                </td>
+                <td> 
+                    60
+                </td>
+                <td> 
+                    4.99 
+                </td>
+                <td> 
+                    299.40 
+                </td>
+            </tr>
+            <tr>
+                <td> 
+                    4/18/2014
+                </td>
+                <td> 
+                    Central
+                </td>
+                <td> 
+                    Andrews
+                </td>
+                <td> 
+                    Pencil
+                </td>
+                <td> 
+                    75
+                </td>
+                <td> 
+                    1.99 
+                </td>
+                <td> 
+                    149.25 
+                </td>
+            </tr>
+           
+            </tbody>
+        </table>
+    </body>
+</html>

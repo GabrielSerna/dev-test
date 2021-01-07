@@ -1,0 +1,64 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6-set-2015, 15.44.00
+    Author     : hidran
+*/
+body{
+    background-color: #000;
+   
+    
+}
+table{
+    background-color: #c0c0c0;
+    width:400px;
+    margin: 0px auto;
+    border: 2px solid #fff;
+     border-spacing: 4px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    border:1px solid #fff;
+}
+th {
+    background-color:#ffff00;
+    text-transform: uppercase;
+    text-align: center;
+}
+td{
+  /*  color: #fff;*/
+}
+
+/* Orders table*/
+table#orders {
+    width:800px;
+}
+table#orders thead th {
+    width:120px;
+    background-color:red;
+    
+}
+table#orders colgroup{
+    background-color: blue;
+    text-align: right;
+}
+
+
+tbody tr:nth-child(odd) {
+  background: #c0c0c0;
+}
+table#orders tbody tr:nth-child(even) {
+  background: #f0f0f0;
+  color: #000
+}
+
+col.alignRight  {
+    text-align: right;
+    background-color: green;
+    padding: 10px;
+}

@@ -1,0 +1,18 @@
+
+#footer{
+
+   position: relative; 
+
+  clear:both;
+}
+#content{
+ position: relative;
+  float: right;
+}
+#right{
+  float: right;
+
+}
+#left{
+ float: right;
+}

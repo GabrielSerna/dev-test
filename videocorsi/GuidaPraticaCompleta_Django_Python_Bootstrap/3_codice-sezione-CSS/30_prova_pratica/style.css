@@ -1,0 +1,39 @@
+h1 {
+    border: 1px solid black;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 400px;
+}
+
+h2:hover{
+    color: white;
+}
+
+div{
+    display: inline-block;
+    width: 20%;
+    height: 500px;
+}
+
+#id1 {
+    background-color: #007F5F;
+}
+
+#id2 {
+    background-color: #2B9348;
+}
+
+#id3 {
+    background-color: #55A630;
+}
+
+#id4 {
+    background-color: #80B918;
+}
+
+#id5 {
+    background-color: #AACC00;
+}

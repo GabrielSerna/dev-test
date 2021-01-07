@@ -1,0 +1,17 @@
+/*
+
+Nel CSS, impostare il font per l'elemento body con i seguenti parametri:
+- Grandezza 18 pixel;
+- Carattere 'Open Sans’;
+- Prevedere il font 'Arial' come riserva qualora il browser non abbia il font precedente;
+- Prevedere il font 'sans-serif' come riserva qualora il browser non abbia il font precedente;
+- Colore nero.
+
+*/
+
+body
+{
+    font-size: 18px;
+    font-family: 'Open Sans', Arial, sans-serif;
+
+}

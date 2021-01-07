@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8"> <!-- quale tipologia di caratteri riconoscere  -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- come viene visualizzata la pagina -->
+        <meta name="author" content="Gabriel">
+        <meta name="description" content="learn different html5 tags like author and description">
+        <meta name="keywords" content="author, description">
+        <title>HTML TANGS</title> <!-- viene visualizzato in alto nella scheda della pagina -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> <!-- collegamento ad un file CSS attraverso un link -->
+        <link rel="stylesheet" href="css/style.css"> <!-- collegamento ad un file CSS contenuto in una cartella -->
+        <style>
+            h1{
+                color: green; /* CSS può essere inserito direttamente nella pagina mantenendo la priorità a cascata */
+            }
+        </style>
+        <script src="js/script.js"></script> <!-- collegamento ad un file JavaScript contenuto in una cartella -->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!-- collegamento ad un file JavaScript attraverso un link -->
+        <script>
+            alert('i am inline javascript'); /* JavaScrip può essere inserito direttamente nella pagina */
+        </script>
+    </head>
+
+    <body>
+        <h1 style="color: red" title="è un'altra scritta">HTML5 meta tags :-)</h1> <!-- CSS può essere inserito direttamente nel TAG html mantenendo la priorità a cascata. Il TAG TITLE fa comparire una scritta in più -->
+        <button class="btn btn-success">BUTTON</button>
+
+        <script>
+            $('h1').css({color: 'yellow'}); /* JavaScrip può essere inserito direttamente nel TAG html */
+        </script>
+    </body>
+</html>

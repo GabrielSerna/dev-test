@@ -1,0 +1,36 @@
+
+   
+            body{
+                background: #000;
+                color:#fff;
+                width: 800px;
+                margin: 10px 0px auto;
+                text-align: left;
+                line-height: 25px;
+                font-size: 11px;
+                font-family: Tahoma, Helvetica, sans-serif;
+                text-indent: 25px;
+                font-weight: bold;
+                font-style: italic
+                
+            }
+           p img.imgfloat{
+                float: left;
+                margin: 10px;
+                border-radius: 15px;
+                border: 2px solid brown;
+            }
+            p:first-letter{
+               font-size: 34px;
+               letter-spacing: 5px;
+               font-style: italic;
+            }
+           
+            p{
+              padding: 10px;
+              margin: 10px;
+              border: 1px solid red;
+              height:350px;
+              width:600px;
+            }
+      

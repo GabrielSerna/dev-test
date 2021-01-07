@@ -1,0 +1,8 @@
+/*per tutti gli elementi*/
+*{
+    font-size:16px;
+}
+/*posso usare anche il tag html oppure body*/
+body {
+    font-size:16px;
+}

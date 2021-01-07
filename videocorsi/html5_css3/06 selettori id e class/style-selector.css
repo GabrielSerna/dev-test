@@ -1,0 +1,11 @@
+body{
+    color: #000;
+    background-color: #fff;
+}
+p {
+    line-height: 35px;
+}
+div.poem {
+    color: brown;
+    font-weight: bold;
+}

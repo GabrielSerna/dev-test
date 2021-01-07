@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>BACKGROUND CSS PROPERTIES</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <style>
+        body{
+            
+          
+           color:#fff;
+          
+           background-color:#000;
+        }  
+        #main{
+             background-image: url("images/pattern1.jpg"),
+                 url("images/pattern2.jpg")
+                 
+                 ;
+           background-repeat: no-repeat, repeat; 
+           background-position: top left, top right;
+           height: 800px;
+          
+        }
+        p{
+            margin:25px;
+            border: 1px solid red;
+            padding:10px;
+            background-color:green;
+            background-clip: content-box
+        }
+        #test {
+            background: green url('images/pome.jpg') repeat-x top left;
+            height: 400px;
+            background-size: 100px 100px;
+        }
+    </style> 
+    </head>
+   
+    <body>
+        <div id="test">
+            sdasdsad
+            asdasd<br>
+             asdasd<br>
+              asdasd<br>
+               asdasd<br>
+                asdasd<br>
+        </div>
+        background test
+        <div id="main">
+            dsdsdsd
+        </div>
+        
+        <p>
+            dsfsdfsdfsdfsdfsdfdf<br>
+           sdfsdfsdfsdf<br>
+           sdfsdfsdfdsf<br>
+           dsfsdfsdfsdfds<br>
+           
+        </p>
+    </body>
+</html>

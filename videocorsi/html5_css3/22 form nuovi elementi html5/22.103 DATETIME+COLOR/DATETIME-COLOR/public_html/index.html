@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Date, time, week, month, colors</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+            body{
+                margin:0 auto;
+                padding:0;
+                width:800px;
+                background-color: #000;
+                color:#fff;
+                font-size : 14px;
+            }
+            form{
+                margin-top:20px;
+                border:1px outset red;
+                background-color:#222;
+                width: 700px;
+                padding:5px;
+
+            }
+            fieldset{
+                margin-bottom :10px;
+                border: 1px solid #fff;
+            }
+            legend{
+                border:1px solid #fff;
+                color:#222;
+                background-color:#c0c0c0;
+                width:150px;
+            }
+
+            input,
+            select{
+                display: inline-block; 
+                margin-bottom:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>
+                    Date and time
+                </legend>
+                <label>
+                    Birth date and time 
+                    <input type="datetime-local" name="dtob" id="dtob"> 
+                </label>
+                <label>
+                    Birth date 
+                    <input type="date" name="dob" id="dob"> 
+                </label>
+                 <label>
+                    Birth time 
+                    <input type="time" name="tob" id="tob"> 
+                </label>
+                 <label>
+                    Birth week 
+                    <input type="week" name="wob" id="wob"> 
+                </label>
+                 <label>
+                   Birth Month  
+                   <input type="month" name="mob" id="mob"> 
+                </label>
+               
+            </fieldset>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+/*
+	● immagine di sfondo: l'immagine che avete salvato
+	● nessuna ripetizione dello sfondo
+	● immagine di sfondo centrata verticalmente
+	● immagine di sfondo posizionata a sinistra orizzontalmente
+*/
+
+
+h1.logo
+{
+    background-image: url('../images/sviluppo-web.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-position: left center;
+    background-size: 200px;
+
+    padding-left: 250px;
+}

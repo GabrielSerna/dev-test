@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <strong>Stiamo aspettando ad andare a mangiare. Oggi andiamo alle</strong>
+    <button name="uno" type="submit">prova</button>
+    </div> 
+    <script>
+        var LunchTime;
+        LunchTime = 13;
+        document.write(LunchTime);
+        var testoSingoli = ' testo di <span style="color:blue;">prova</span> dell\'albero<br/> ${LunchTime}' + LunchTime;
+        var testoDoppi = " testo di <span style=\"color:blue;\">prova</span> dell\'albero<br/> ${LunchTime}" + LunchTime;
+        var testoBT = ` testo bt "Luca" 'Luca' ${LunchTime}`;
+        console.log(testoSingoli);
+        console.log(testoDoppi);
+        document.write(testoSingoli);
+        document.write(testoDoppi);
+        document.write(testoBT);
+
+    </script>
+</body>
+</html>

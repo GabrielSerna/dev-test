@@ -1,0 +1,38 @@
+  
+            body{
+                margin:  0 0 auto;
+                width:800px;
+                height:100%;
+                background-color: #000;
+                color:#fff;
+                border:1px solid #fefe00;
+            }
+            div {
+                padding: 10px;
+                
+            }
+            ul{
+                padding:0;
+                margin:0;
+            }
+            li{
+                background: #000;
+                display: inline-block;
+                margin: 5px;
+            }
+            h1{ color:#fff}
+           /* a:link{
+                color:red;
+                text-decoration: none;
+                padding:5px;
+                display: inline-block;
+                width: 150px;
+            }
+            */
+            img {
+                border:2px solid #fff;
+                border-radius: 15px;
+                width: 120px;
+                height:120px;
+            }
+       

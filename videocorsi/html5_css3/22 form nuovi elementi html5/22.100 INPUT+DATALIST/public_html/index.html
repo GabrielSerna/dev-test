@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML5 INPUT: datalist</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                margin:0 auto;
+                padding:0;
+                width:800px;
+                background-color: #000;
+                color:#fff;
+                font-size : 14px;
+            }
+            form{
+                margin-top:20px;
+                border:1px outset red;
+                background-color:#222;
+                width: 700px;
+                padding:5px;
+
+            }
+            fieldset{
+                margin-bottom :10px;
+                border: 1px solid #fff;
+            }
+            legend{
+                border:1px solid #fff;
+                color:#222;
+                background-color:#c0c0c0;
+                width:150px;
+            }
+
+            input,
+            select{
+                display: inline-block; 
+                margin-bottom:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Please, fill in the following data</h1>
+        <form  action="http://localhost:8888/server.php" method="POST">
+            <fieldset id="userData">
+                <legend> User's data</legend>
+                <label>
+                    First name
+                    <input name="firstName">
+                </label>
+                <label>
+                    Last name
+                    <input name="lastName">
+                </label>
+                <p>
+                    <label>
+                        Phone
+                        <input required name="tel" type="tel">
+                    </label>
+
+                    <label>
+                        Email
+                        <input required name="email" type="email">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Your website
+                        <input required name="website" type="url">
+                    </label>
+                    <label>
+                        Your age
+                        <input  value="30" 
+                                onchange="document.getElementById('lblAge').innerHTML = this.value"
+                                min="18" max="99"
+                                name="age" type="range">
+
+                        <span id="lblAge">30</span>
+
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Number of children
+                        <input step="4" min="1" max="16" type="number" name="children">
+                    </label>
+                </p>
+            </fieldset>
+            <fieldset id="loginData">
+
+                <legend> Login Data</legend>
+                <label>
+                    Login
+                    <input type="text" name="login">
+                </label>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                <input type="hidden" name="token" value="Xassss222223232">
+                <label>Birthdate
+                    <input type="datetime-local">
+                </label>
+            </fieldset>
+
+            <fieldset  id="userAddress">
+                <legend> User's Address</legend>
+                <p>
+                    <label>
+                        Address
+                        <input type="text" name="address">
+                    </label>
+                    <label>
+                        Street Number
+                        <input type="text" name="addressNo">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        State
+                        <input type="text" name="state" list="states">
+                        <datalist id="states">
+                            <option value="FL" label="Florida">
+                            <option value="WA" label="Washington">
+                            <option value="TX" label="Texas">
+                        </datalist>
+                    </label>
+                    <label>
+                        Country
+                        <select name="addressNo">
+                            <option value="">Select</option>
+                            <option value="UK">
+                                United Kingdom
+                            </option>
+                            <option value="US">
+                                USA
+                            </option>
+                            <option value="IT">
+                                Italy
+                            </option>
+                        </select>
+                    </label>
+                </p>
+            </fieldset>
+            <p>
+                <button>Save</button>
+            </p>
+        </form>
+    </body>
+</html>
