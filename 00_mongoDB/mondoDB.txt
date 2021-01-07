@@ -20,9 +20,8 @@ comandi:
 { "chiave": valore }
 
 *"chiave":
-è sempre una stringa, se non vengono messi di doppi apici "" JS la riconosce
-come stringa,a patto che inizi con una lettera, se inizia con un numero
-è OBBLIGATORIO mettere i doppi apici ""
+è sempre una stringa, se non vengono messi di doppi apici "" JS la riconosce come stringa,a patto che inizi con una lettera
+se inizia con un numero è OBBLIGATORIO mettere i doppi apici ""
 
 *valore:
 puo essere di 6 tipi:
