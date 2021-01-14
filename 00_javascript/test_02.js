@@ -707,13 +707,22 @@ function ex74() {
 }
 
 //==============================================================================
-// ex. 75
+// ex. 75 forEach()
 function ex75() {
   console.log(`
   ========================================================
-  ex: 
+  ex: forEach()
   `);
 
-}
+  let days = [ 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat' ];
 
+  let sayHello = function () {
+    console.log('Today is a great day!!!');
+  }
+
+  let allDays = days.forEach(sayHello);
+  
+  console.log(allDays);
+}
+ex75();
 //==============================================================================
