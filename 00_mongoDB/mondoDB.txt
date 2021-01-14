@@ -7,12 +7,12 @@ comandi:
 'db': mostra il db che stiamo utilizzando
 'show dbs': mostra tutti i db
 'show collections': mostra tutte le collections nel db che sto usando
-`use <database's name>`: per spostarsi da un db all'altro
-`db.<collection' name>.find()`: cerca nel db in uso la collezione passata
-`db.<collection' name>.find( { name: "" } ).pretty()`: come sopra, esposto in modo migliore
-`db.<collection' name>.findOne( { name: "" } )`: restituisce 1 oggetto in modalità pretty()
+`use <database name>`: per spostarsi da un db all'altro
+`db.<collection name>.find()`: cerca nel db in uso la collezione passata
+`db.<collection name>.find().pretty()`: come sopra, esposto in modo migliore
+`db.<collection name>.findOne( { name: "" } )`: restituisce 1 oggetto in modalità pretty()
 
-`db.<collection' name>.insert( { name:"delfino", color:"grigio"} )`: inserisce nel db in uso, nella collezione passata, l'oggetto con le propriertà passate
+`db.<collection name>.insert( { name:"delfino", color:"grigio"} )`: inserisce nel db in uso, nella collezione passata, il documento con le propriertà passate
 
 //======================================================================================================================
 // .JSON
@@ -174,9 +174,6 @@ per modificare solo alcuni documenti devo mettere la key:value nella prima {}
 
 1. eliminare un documento
 2. eliminare una collezione
-
-
-
 
 1. db.collection.remove({key: value})
 2. db.collection.drop()
