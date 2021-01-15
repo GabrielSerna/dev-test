@@ -10,7 +10,7 @@ comandi:
 `use <database name>`: per spostarsi da un db all'altro
 `db.<collection name>.find()`: cerca nel db in uso la collezione passata
 `db.<collection name>.find().pretty()`: come sopra, esposto in modo migliore
-`db.<collection name>.findOne( { name: "" } )`: restituisce 1 oggetto in modalità pretty()
+`db.<collection name>.findOne( { name: "" } )`: restituisce 1 documento in modalità pretty() e restituisce TUTTO il documento
 
 `db.<collection name>.insert( { name:"delfino", color:"grigio"} )`: inserisce nel db in uso, nella collezione passata, il documento con le propriertà passate
 
