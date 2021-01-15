@@ -707,22 +707,36 @@ function ex74() {
 }
 
 //==============================================================================
-// ex. 75 forEach()
+// ex. 75 loop array
 function ex75() {
   console.log(`
   ========================================================
-  ex: forEach()
+  ex: loop array
   `);
 
-  let days = [ 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat' ];
+  let master = 'Paolo Borzacchiello';
 
-  let sayHello = function () {
-    console.log('Today is a great day!!!');
-  }
-
-  let allDays = days.forEach(sayHello);
-  
-  console.log(allDays);
+  let course = { 
+      name: 'master 1',
+      level: 'one',
+      args: 'sales',
+      modules: [
+        {
+          id: '123456789',
+          trainer: 'Paolo Borzacchiello'
+        }
+      ]  
+    };
+    
+  for (let prop in course.modules) {
+    // console.log(prop);
+    // console.log(course[prop]);
+    if (course.modules[prop].trainer === master)  {
+       console.log('eccolo') 
+      } else {
+        console.log('ancora niente');
+      } 
+  } 
 }
 ex75();
 //==============================================================================
