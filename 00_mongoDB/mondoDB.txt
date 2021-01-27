@@ -3,19 +3,23 @@
 
 lanciare 'mongo' dalla shell.
 
-comandi:
-'db': mostra il db che stiamo utilizzando
+COMANDI SHELL:
+'db': mostra il db che sto utilizzando
 'show dbs': mostra tutti i db
 'show collections': mostra tutte le collections nel db che sto usando
-`use <database name>`: per spostarsi da un db all'altro
+`use <database name>`: per usare un db
+`db.(<collection>).count()`: restituisce il numero di documenti nella collezione
 `db.<collection name>.find()`: cerca nel db in uso la collezione passata
 `db.<collection name>.find().pretty()`: come sopra, esposto in modo migliore
 `db.<collection name>.findOne( { name: "" } )`: restituisce 1 documento in modalità pretty() e restituisce TUTTO il documento
 
 `db.<collection name>.insert( { name:"delfino", color:"grigio"} )`: inserisce nel db in uso, nella collezione passata, il documento con le propriertà passate
+`db.<collection name>.insertMany( [ {}, {}, {} ] )`: inserisce nel db i documenti passati
 
 //======================================================================================================================
 // .JSON
+
+gli file di tipo JSON non hanno oggetti 'ObjectId', questi fanno parte esclusivamente dei file BSON
 
 { "chiave": valore }
 
@@ -148,13 +152,13 @@ R = { "name" : "Juan Gabriel" }
 trova il documento con la key1 e modifica SOLO la key2, se non esiste la crea
 R = { "name" : "Gabriel", "surname" : "Serna", "city" : "Milano", "age": 35 }
 
-2.1 db.collection.update({ key1:"value1"}, $inc:{ {key2: x }})
+2. db.collection.update({ key1:"value1"}, $inc:{ {key2: x }})
 { "name" : "Gabriel", "surname" : "Serna", "city" : "Pavia", "age": 35 }
 *db.collection.update({name:"gabriel"}, { $inc:{ age: 2}})
 trova il documento con la key1 e aumenta di x il valore della key2
 R = { "name" : "Gabriel", "surname" : "Serna", "city" : "Pavia", "age": 37 }
 
-2.2 db.collection.update({ key1:"value1"}, $unset:{ {key2: true }})
+2. db.collection.update({ key1:"value1"}, $unset:{ {key2: true }})
 { "name" : "Gabriel", "surname" : "Serna", "city" : "Pavia", "age": 35 }
 *db.users.update({name:"Gabriel", { $unset:{ age: true}}})
 trova il documento con la key1 e cancella la key2
