@@ -738,5 +738,89 @@ function ex75() {
       } 
   } 
 }
-ex75();
+
 //==============================================================================
+// ex. 76 diversi tipi di arrow function
+function ex76() {
+  console.log(`
+  ========================================================
+  ex: diversi tipi di arrow function
+  `);
+
+  // funzione classica
+  let test = function(){
+    return 1;
+  }
+
+  // arrow function che restituisce 2 valori
+  let  test2 = (arg1, arg2) => {
+  console.log(arg1);
+  return  arg1*arg2;
+  }
+
+  // arrow function che restituisce 1 valore
+  let test3 = () => 2+2;
+
+  let test4 = (arg1, arg2) => arg1+ arg2;
+
+  let test5 = arg1 => arg1*2;
+  console.log(test5(7));
+
+  let test6 = arg1 => {
+  console.log('test');
+  return arg1*2;
+  }
+  
+}
+
+//==============================================================================
+// ex. 77 arrow function e this - video 141 corso Node.js Master. Da zero a esperti in API e Javascript ES67
+function ex77() {
+  console.log(`
+  ========================================================
+  ex: arrow function e this
+  `);
+
+  let obj = {
+    name : 'Gabriel',
+
+    displayName: function() {
+      console.log(this.name);
+    }
+  };
+
+  obj.displayName();
+
+  //------------------------
+  //------------------------
+  
+  let name1 = 'Gabriel';
+  
+  displayName1 = function() {
+    console.log(name1);
+  }
+  displayName1();
+};
+
+//==============================================================================
+// ex. 78 arrow function e spread operator
+function ex78() {
+  console.log(`
+  ========================================================
+  ex: arrow function e spread operator
+  `);
+
+  // calc = (operation, ...a) => console.log(a);
+  // calc('+', 2, 3, 4, 5, 6, 7, 8);
+
+}
+
+//==============================================================================
+// ex. 79
+function ex79() {
+  console.log(`
+  ========================================================
+  ex:
+  `);
+
+}
