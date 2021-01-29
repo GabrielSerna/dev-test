@@ -33,8 +33,6 @@ let newModule = [
   }
 ]
 
-
-
 // let mod = courses.moduleNumber;
 // let order = mod.sort();
 // let newModNum = mod.filter(el => el !== 1)
@@ -54,17 +52,27 @@ function compare(a, b) {
   return comparison;
 }
 
-// let newOrder1 = course.modules.sort(compare);
-// console.log(newOrder1);
 
-const totalModules = ( modules, module, order) => {
-  
-  let addModule = [...modules, module];
-  
-  let newOrder = addModule.sort(order);
+export const reorderAll = (unordered, newEl, prop, renum) => {
 
-  console.log(newOrder);
-  
+
+
+
+
+
 }
+
+let newOrder1 = courses.modules.sort(compare);
+console.log(newOrder1);
+
+// const totalModules = ( modules, module, order) => {
   
-totalModules(course.modules, newModule, compare());
+//   let addModule = [...modules, module];
+  
+//   let newOrder = addModule.sort(order);
+
+//   console.log(newOrder);
+  
+// }
+  
+// totalModules(course.modules, newModule, compare());
