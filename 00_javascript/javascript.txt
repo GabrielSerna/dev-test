@@ -1,4 +1,4 @@
-JAVASCRIPT --------> LINGUAGGIO AD OGGETTI / EVENTI
+JAVASCRIPT --------> LINGUAGGIO AD OGGETTI / EVENTI lato client e lato server
 
 //======================================================================================================================
 // PROPRIETÀ
@@ -180,6 +180,7 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI / EVENTI
 
     [] array (indice numerico)
     {} array (indice stringa) (associativo)
+    
 //======================================================================================================================
 
 
