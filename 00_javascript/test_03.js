@@ -5,23 +5,23 @@ let courses = {
   modules: [
     {
       module_id: "ddd00000000000000ca00002",
-      order: 2,
+      order: 12,
     },
     {
       module_id: "ddd00000000000000ca00005",
-      order: 5,
+      order: 15,
     },
     {
       module_id: "ddd00000000000000ca00007",
-      order: 7,
+      order: 17,
     },
     {
       module_id: "ddd00000000000000ca00003",
-      order: 3,
+      order: 13,
     },
     {
       module_id: "ddd00000000000000ca00010",
-      order: 10,
+      order: 20,
     }
   ]
 }
@@ -35,36 +35,31 @@ let newModule = [
 
 let modules = courses.modules;
 
-// METODO 1
-// function compare(a, b) {
-//   const moduleA = a.order;
-//   const moduleB = b.order;
-//   let comparison = 0;
-//   if (moduleA > moduleB) {
-//     comparison = 1;
-//   } else if (moduleA < moduleB) {
-//     comparison = -1;
-//   }
-//   return comparison;
-// }
-
 // METODO 2
 function compare(a, b) {
   a.order - b.order;
   }
 // console.log(modules.sort(compare));
 
+let newOrder;
+let start = 1;
+
 
 const reOrderAll = (unordered, newEl, prop, renum) => {
 
-let allEl = [...unordered, newEl];
+  let allEl = [...unordered, newEl];
+  reorder = (a, b) => a.order - b.order;
+  newOrder = allEl.sort(reorder)
 
-reorder = (a, b) => {
-  a.order - b.order;
-} 
+  for ( el of newOrder) {
+    el.order = start;
+    start += 1;
+  }
 
-console.log(allEl.sort(reorder));
+  return newOrder;
 
 }
 
-reOrderAll(modules, newModule);
+reOrderAll(modules, newModule[0], modules.order);
+
+console.log(newOrder);
