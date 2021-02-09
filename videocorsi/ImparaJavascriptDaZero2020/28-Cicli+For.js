@@ -4,9 +4,10 @@
 //FOR LOOP    INIZIARE| ARRIVO| STEP
 var car = ['Mercedes','Bmw','Fiat','Citroen'];
 var carObj = [
-  {marca : 'Mercedes',colore : 'Rosso'},
-  {marca : 'Bmw',colore : 'Giallo'},
-  {marca : 'Citroen',colore : 'Blu'}];
+  {marca : 'Mercedes',  colore : 'Rosso'},
+  {marca : 'Bmw',       colore : 'Giallo'},
+  {marca : 'Citroen',   colore : 'Blu'}];
+  
 for(let x = 0;x < car.length;x++){
   console.log(car[x]);
 }
