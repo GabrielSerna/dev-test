@@ -823,6 +823,11 @@ function ex79() {
   ex:
   `);
 
+  const some = 'ecco una stringa';
+  const someIte = [...some];
+
+  console.log(someIte.length);
+
 }
 ex79()
 //==============================================================================

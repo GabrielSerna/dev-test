@@ -6,92 +6,27 @@ function ex01() {
   ex: REORDER
   `)
 
-  let courses = {
-    _id: "ddd00000000000000ba00001",
-    active: true,
-    moduleNumber: [7, 2, 8, 4, 1],
+  const courses = {
+    arrMix: [7, 2, 8, 4, 1, ()  => 'questa è una funzione', 'sono una stringa', 'anche io', 666, 999 ],
     modules: [
-      {
-        module_id: "ddd00000000000000ca00002",
-        order: 12,
-      },
-      {
-        module_id: "ddd00000000000000ca00005",
-        order: 15,
-      },
-      {
-        module_id: "ddd00000000000000ca00007",
-        order: 17,
-      },
-      {
-        module_id: "ddd00000000000000ca00003",
-        order: 13,
-      },
-      {
-        module_id: "ddd00000000000000ca00010",
-        order: 20,
-      }
+      { module_id: "ddd00000000000000ca00002", order: 12 },
+      { module_id: "ddd00000000000000ca00005", order: 15 },
+      { module_id: "ddd00000000000000ca00007", order: 17 },
+      { module_id: "ddd00000000000000ca00003", order: 13 },
+      { module_id: "ddd00000000000000ca00010", order: 20 }
     ]
   }
 
-  let newModule = [
-    {
-      module_id: "ddd00000000000000ca00001",
-      order: 1
-    }
+  const newModule = [
+    { module_id: "ddd00000000000000ca00001", order: 1 }
   ]
 
-  let modules = courses.modules;
+  let newCourses = [];
 
-  // METODO 2
-  function compare(a, b) {
-    a.order - b.order;
-    }
-  // console.log(modules.sort(compare));
-
-  let newOrder;
-  let start = 1;
-
-
-  const reOrderAll = (unordered, newEl, prop, renum) => {
-
-    let allEl = [...unordered, newEl];
-    reorder = (a, b) => a.order - b.order;
-    newOrder = allEl.sort(reorder)
-
-    for ( el of newOrder) {
-      el.order = start;
-      start += 1;
-    }
-
-    return newOrder;
-
+  for ( let el of courses.modules) {
+    newCourses + el;
   }
 
-  reOrderAll(modules, newModule[0], modules.order);
-
-  console.log(newOrder);
-
-};
-
-//==============================================================================
-// ex.
-function ex02() {
-  console.log(`
-  ========================================================
-  ex:
-  `);
-
-
+  console.log(newCourses);
 }
-
-//==============================================================================
-// ex.
-function ex03() {
-  console.log(`
-  ========================================================
-  ex:
-  `);
-
-
-}
+ex01();
