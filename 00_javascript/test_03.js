@@ -17,16 +17,15 @@ function ex01() {
     ]
   }
 
-  const newModule = [
-    { module_id: "ddd00000000000000ca00001", order: 1 }
-  ]
+  const newModule = { module_id: "ddd00000000000000ca00001", order: 1 }
 
   let newCourses = [];
 
-  for ( let el of courses.modules) {
-    newCourses + el;
+  for ( let key of courses.modules) {
+    console.log(`${key} => ${courses.modules[key]}`);
   }
 
-  console.log(newCourses);
+  console.log('eccolo')
+
 }
 ex01();
