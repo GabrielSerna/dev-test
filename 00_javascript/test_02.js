@@ -845,11 +845,11 @@ function ex80() {
 }
 // ex80();
 //==============================================================================
-// ex. 81
+// ex. 81 setInterval and clearInterval
 function ex81() {
   console.log(`
   ========================================================
-  ex: 81
+  ex: 81 setInterval and clearInterval
   `);
 
   
