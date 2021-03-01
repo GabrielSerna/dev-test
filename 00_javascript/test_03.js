@@ -28,4 +28,28 @@ function ex01() {
   console.log('eccolo')
 
 }
-ex01();
+// ex01();
+//==============================================================================
+// ex. EXPORT JSON IN TO EXCEL AND SAVE IT
+function ex02() {
+  console.log(`
+  ========================================================
+  ex: EXPORT JSON IN TO EXCEL AND SAVE IT
+  `)
+
+  const objToSave = [
+    { module_id: "ddd00000000000000ca00002", order: 12 },
+    { module_id: "ddd00000000000000ca00005", order: 15 },
+    { module_id: "ddd00000000000000ca00007", order: 17 },
+    { module_id: "ddd00000000000000ca00003", order: 13 },
+    { module_id: "ddd00000000000000ca00010", order: 20 }
+  ]
+
+  const saveObj = data => {
+    new ObjectsToCsv(data).toDisk('../../exports/data.csv', { append: true });
+  }
+
+  saveObj(objToSave);
+
+}
+// ex02();
