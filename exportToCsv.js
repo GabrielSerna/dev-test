@@ -5,8 +5,6 @@ import express from 'express';
 
 const app = express();
 
-app.listen(5000);
-
 const data = [
   { module_id: "ddd00000000000000ca00002", order: 12 },
   { module_id: "ddd00000000000000ca00005", order: 15 },
@@ -16,11 +14,14 @@ const data = [
 ];
 
 app.get('/', async (req, res) => {
- 
-    const newCsv = new objectsToCsv(data);
-    
-    await newCsv.toDisk('./data.csv');
-    
-    console.log( await newCsv.toString());
-  }  
-);
+  
+  const newCsv = new objectsToCsv(data);
+  
+  await newCsv.toDisk('./test.csv');
+  
+  console.log( await newCsv.toString());
+
+  return res.download('./test.csv');
+});
+
+app.listen(5000);
