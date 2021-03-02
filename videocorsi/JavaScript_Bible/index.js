@@ -81,27 +81,44 @@ function ex04() {
 }
 // ex04();
 //==============================================================================
-// ex. 05 video 65 - logical operators
+// ex. 05 video 65 - logical operators and operators
 function ex05() {
   console.log(`
   ========================================================
-  ex: 05 video 65 - logical operators
+  ex: 05 video 65 - logical operators and operators
   `);
 
-  console.log(3 || true && null || false);                // 3 because || has more precedence than &&
+  console.log(3 || true && null || false);                // 3 because "||" has more precedence than "&&"
 
+  let a = 10;
 
+  a = a + 1;
+  a += 1;
+
+  a = a * 2;
+  a *= 2;
+
+  a = a - 5;
+  a -= 5;
 }
-ex05();
+// ex05();
 //==============================================================================
-// ex. 06
+// ex. 06 call a function, return a function and pass an argument
 function ex06() {
   console.log(`
   ========================================================
-  ex: 06
+  ex: 06 call a function, return a function and pass an argument
   `);
 
+  function fn() {
+    console.log("greeting from the FN function");
 
+    return function(a) {
+      console.log(a);
+    };
+  }
+
+  fn()('Greeting from the second function');
 }
 // ex06();
 //==============================================================================
