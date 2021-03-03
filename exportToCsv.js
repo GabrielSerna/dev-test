@@ -1,9 +1,5 @@
 // import ObjectsToCsv from 'objects-to-csv';
-const objectsToCsv = require('objects-to-csv');
-
-import express from 'express';
-
-const app = express();
+const ObjectsToCsv = require('objects-to-csv');
 
 const data = [
   { module_id: "ddd00000000000000ca00002", order: 12 },
@@ -13,15 +9,15 @@ const data = [
   { module_id: "ddd00000000000000ca00010", order: 20 }
 ];
 
-app.get('/', async (req, res) => {
-  
-  const newCsv = new objectsToCsv(data);
-  
-  await newCsv.toDisk('./test.csv');
-  
-  console.log( await newCsv.toString());
 
-  return res.download('./test.csv');
-});
+  const dataToSave = async () => {
+    const csv = new ObjectsToCsv(data);
+  
+    // Save to file:
+    await csv.toDisk('./test.csv');
+  
+    // Return the CSV file as string:
+    console.log(await csv.toString());
+  };
 
-app.listen(5000);
+dataToSave();
