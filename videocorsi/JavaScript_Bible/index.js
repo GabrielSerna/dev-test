@@ -144,11 +144,11 @@ function ex07() {
 }
 // ex07();
 //==============================================================================
-// ex. 08 video 98 TASK 2 - check an array, if new number is not present add it
+// ex. 08 video 97 98 99 TASK 2 - check an array, if new number is not present add it
 function ex08() {
   console.log(`
   ========================================================
-  ex: 08 video 97 TASK 2 - check an array, if new number is not present add it
+  ex: 08 video 97 98 99 TASK 2 - check an array, if new number is not present add it
   `);
 
   const min = 1000;
