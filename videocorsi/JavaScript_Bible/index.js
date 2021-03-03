@@ -122,24 +122,145 @@ function ex06() {
 }
 // ex06();
 //==============================================================================
-// ex. 07
+// ex. 07 video 97 TASK 1 - loop sull'oggetto e stampa le proprietà che gli dico
 function ex07() {
   console.log(`
   ========================================================
-  ex: 07
+  ex: 07 video 97 TASK 1 - loop sull'oggetto e stampa le proprietà che gli dico
   `);
 
+  const myObject = {
+    key1: true,
+    key5: 10,
+    key3: "abc",
+    key4: null,
+    key9: NaN
+  };
 
+  for ( let key in myObject) {
+    // se presenti key1 || key2 mi stampa i loro values
+    if ( key === "key1" || key === "key3") console.log(myObject[key]);
+  }
 }
 // ex07();
 //==============================================================================
-// ex. 08
+// ex. 08 video 98 TASK 2 - check an array, if new number is not present add it
 function ex08() {
   console.log(`
   ========================================================
-  ex: 08
+  ex: 08 video 97 TASK 2 - check an array, if new number is not present add it
+  `);
+
+  const min = 1000;
+  const max = 9999;
+  const myNumbers = [
+    2355,
+    7235,
+    8135,
+    1762,
+    2361,
+    8351
+  ];
+
+  let newRandomNumber;
+
+  function getRandomInt(min, max) {
+    // return a number between 1000 and 9999
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function isNotUnique(num) {
+    // compare num with numbers in the myNumbers array
+    for ( let number of myNumbers ) {
+      if (number === newRandomNumber) {
+        return true;
+      }
+    }
+  }
+
+  do {
+    newRandomNumber = getRandomInt(min, max);
+  } while (isNotUnique(newRandomNumber));
+
+  myNumbers.push(newRandomNumber);
+
+  console.log(myNumbers);
+}
+// ex08();
+//==============================================================================
+// ex. 09
+function ex09() {
+  console.log(`
+  ========================================================
+  ex: 09
   `);
 
 
 }
-// ex08();
+// ex09();
+//==============================================================================
+// ex. 10
+function ex10() {
+  console.log(`
+  ========================================================
+  ex: 10
+  `);
+
+
+}
+// ex10
+//==============================================================================
+// ex. 11
+function ex11() {
+  console.log(`
+  ========================================================
+  ex: 11
+  `);
+
+
+}
+// ex11();
+//==============================================================================
+// ex. 12
+function ex12() {
+  console.log(`
+  ========================================================
+  ex: 12
+  `);
+
+
+}
+// ex12();
+//==============================================================================
+// ex. 13
+function ex13() {
+  console.log(`
+  ========================================================
+  ex: 13
+  `);
+
+
+}
+// ex13();
+//==============================================================================
+// ex. 14
+function ex14() {
+  console.log(`
+  ========================================================
+  ex: 14
+  `);
+
+
+}
+// ex14();
+//==============================================================================
+// ex. 15
+function ex52() {
+  console.log(`
+  ========================================================
+  ex: 15
+  `);
+
+
+}
+// ex15();
