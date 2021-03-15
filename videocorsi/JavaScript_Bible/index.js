@@ -188,27 +188,57 @@ function ex08() {
 }
 // ex08();
 //==============================================================================
-// ex. 09 video 100 -
+// ex. 09 video 100 - task about properties and Object.prototype
 function ex09() {
   console.log(`
   ========================================================
-  ex: 09 video 100 -
+  ex: 09 video 100 - task about properties and Object.prototype
   `);
 
+  let myObj = {
+    name: "Gabriel",
+    age: 35,
+    city: "Pavia"
+  };
+
+  Object.prototype.country = "Italy";
+
+  for ( prop in myObj) {
+    //  console.log(myObj[prop]); // Gabriel 35 Pavia Italy
+     
+    if (myObj.hasOwnProperty(prop)) { // true true true false
+    console.log(myObj[prop]);     // Gabriel 35 Pavia
+    }
+  };
 
 }
 // ex09();
 //==============================================================================
-// ex. 10
+// ex. 10  - new Array()
 function ex10() {
   console.log(`
   ========================================================
-  ex: 10
+  ex: 10 - new Array()
   `);
 
+  let myObj1 = {
+    name: "Gabriel",
+    age: 35,
+    city: "Pavia"
+  };
+
+  let myObj2 = {
+    name: "Claudio",
+    age: 32,
+    city: "Assago"
+  };
+
+  const myArr = new Array(myObj1, myObj2);
+
+  console.log(myArr); // [{myObj1}, {myObj2}]
 
 }
-// ex10
+// ex10();
 //==============================================================================
 // ex. 11
 function ex11() {
