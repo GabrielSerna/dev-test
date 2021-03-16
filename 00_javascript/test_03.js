@@ -30,11 +30,11 @@ function ex01() {
 }
 // ex01();
 //==============================================================================
-// ex. ARRAY tests
+// ex. 02 - Object embedded into an Array and return a specific property of Obj
 function ex02() {
   console.log(`
   ========================================================
-  ex:
+  ex: 02 - Object embedded into an Array and return a specific property of Obj
   `)
 
   const arrMix = [7, 2, 8, 4, 1, ()  => 'questa è una funzione', 'sono una stringa', 'anche io', 666, 999 ];
@@ -46,30 +46,60 @@ function ex02() {
     { _id: "ddd00000000000000ca00010", order: 20 }
   ];
 
-  console.log(modules.map( prop => prop._id ));
+  console.log(modules.map( prop => prop._id )); // ['ddd00000000000000ca00002', 'ddd00000000000000ca00005', 'ddd00000000000000ca00007', 'ddd00000000000000ca00003', 'ddd00000000000000ca00010']
 
 }
-ex02();
+// ex02();
 //==============================================================================
-// ex. 03
+// ex. 03 - verify an argument
 function ex03() {
   console.log(`
   ========================================================
-  ex:
+  ex: 03 - verify an argument
   `)
 
+  const myObj = { name: "Gabriel", age: 35 };
+
+  function checkObj( object ) {
+    
+    console.log(typeof object === "object" && !Array.isArray(object) && object !== null);
+  };
+
+  checkObj(myObj); // true
 
 }
 // ex03();
 //==============================================================================
-// ex. 04
+// ex. 04 - make pairs key and value
 function ex04() {
   console.log(`
   ========================================================
-  ex:
+  ex: 04 - make pairs key and value
   `)
 
+  const myObj = { a: 1, b: 2, c: 3};
 
+  function makePairs1( objs ) {
+    let myArr = [];
+    for ( let key in objs ) {
+      myArr.push( [key, objs[key]] );
+    }
+    return myArr;
+  }
+  
+  function makePairs2( objs ) {
+    return Object.entries(myObj);
+  };
+    
+  function makePairs3( objs ) {
+    return Object.keys(myObj).map( el => [el, myObj[el]]);
+  };
+
+  console.log(`---`)
+  console.log(makePairs1(myObj));
+  console.log(makePairs2(myObj));
+  console.log(makePairs3(myObj));
+  console.log(`---`)
 }
 // ex04();
 //==============================================================================
@@ -77,8 +107,11 @@ function ex04() {
 function ex05() {
   console.log(`
   ========================================================
-  ex:
+  ex: 05
   `)
+
+
+
 
 
 }
