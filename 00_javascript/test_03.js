@@ -111,17 +111,16 @@ function ex05() {
   `)
 
   const myObj = { a: 1, b: 2, c: 3};
+  let newObject = {};
 
   let without = (obj, ...args) => {
-    let newObject = { ...obj };
+    newObject = { ...obj };
 
     args.forEach( arg => delete newObject[arg] );
-
-    // return newObject;
-    console.log(newObject);
   };
-
+  
   without(myObj, 'a', 'c');
+  console.log(newObject);
   
 }
 // ex05();
@@ -187,14 +186,24 @@ function ex07() {
 }
 // ex07();
 //==============================================================================
-// ex. 08
+// ex. 08 - iterare un oggetto, trasformando le sue prop in Array, ciclo e stampo l'Array
 function ex08() {
   console.log(`
   ========================================================
-  ex: 08
+  ex: 08 - iterare un oggetto, trasformando le sue prop in Array, ciclo e stampo l'Array
   `)
 
+  let user = {
+    name: "Gabriel",
+    age: 35,
+    city: "Pavia" 
+  }
 
+  // let ciclo = Object.entries(user).map( (key, value) => `${key}`);
+
+  for ( const [key, value] of Object.entries(user)) {
+    console.log(`${key} - ${value}`);
+  };
 }
 // ex08();
 //==============================================================================
