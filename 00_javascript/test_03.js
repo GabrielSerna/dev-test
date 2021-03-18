@@ -70,11 +70,11 @@ function ex03() {
 }
 // ex03();
 //==============================================================================
-// ex. 04 - make pairs key and value
+// ex. 04 - 2. make pairs key and value
 function ex04() {
   console.log(`
   ========================================================
-  ex: 04 - make pairs key and value
+  ex: 04 - 2. make pairs key and value
   `)
 
   const myObj = { a: 1, b: 2, c: 3};
@@ -103,11 +103,106 @@ function ex04() {
 }
 // ex04();
 //==============================================================================
-// ex. 05
+// ex. 05 - 3. method that returns a new object without provided properties
 function ex05() {
   console.log(`
   ========================================================
-  ex: 05
+  ex: 05 - 3. method that returns a new object without provided properties
+  `)
+
+  const myObj = { a: 1, b: 2, c: 3};
+
+  let without = (obj, ...args) => {
+    let newObject = { ...obj };
+
+    args.forEach( arg => delete newObject[arg] );
+
+    // return newObject;
+    console.log(newObject);
+  };
+
+  without(myObj, 'a', 'c');
+  
+}
+// ex05();
+//==============================================================================
+// ex. 06 - 4. method that makes a shallow check is object empty 
+function ex06() {
+  console.log(`
+  ========================================================
+  ex: 06 - 4. method that makes a shallow check is object empty 
+  `)
+
+  const myObj1 = { a: 1, b: undefined};
+  const myObj2 = { a: undefined};
+  const myObj3 = [];
+  const myObj4 = [false];
+  const myObj5 = {};
+  const myObj6 = [{}];
+
+  // let isEmpty = ( obj ) => JSON.stringify(obj) === '{}' ;
+  let isEmpty = ( object ) => {
+    const objectKeys = Object.keys(object)
+    if (objectKeys.length === 0) {
+      return true;
+    };
+
+    return !objectKeys.filter((key) => object[key] || object[key] === 0 || object[key] === false).length;
+  };
+
+  // const isEmpty = (object) => {
+  //   const objectKeys = Object.keys(object);
+  //   if (objectKeys.length === 0) {
+  //     return true;
+  //   }
+  
+  //   return !objectKeys.filter((key) => object[key] || object[key] === 0 || object[key] === false).length;
+  // };
+    
+    console.log(isEmpty(myObj1)); // false
+    console.log(isEmpty(myObj2)); // true
+    console.log(isEmpty(myObj3)); // false
+    console.log(isEmpty(myObj4)); // false
+    console.log(isEmpty(myObj5)); // true
+    console.log(isEmpty(myObj6)); // false
+    
+};
+// ex06();
+//==============================================================================
+// ex. 07 - clone an array
+function ex07() {
+  console.log(`
+  ========================================================
+  ex: 07 - clone an array
+
+  `)
+
+  let cloneArray = data => {
+    return data.slice(0);
+  }
+
+  console.log(cloneArray([0, 1, 2, 4, 0]));
+  console.log(cloneArray([1, 2, [4, 5]]));
+
+}
+// ex07();
+//==============================================================================
+// ex. 08
+function ex08() {
+  console.log(`
+  ========================================================
+  ex: 08
+  `)
+
+
+}
+// ex08();
+//==============================================================================
+// ex. 09
+function ex09() {
+  console.log(`
+  ========================================================
+  ex: 09
   `)
 
 
@@ -115,4 +210,18 @@ function ex05() {
 
 
 }
-// ex05();
+// ex09();
+//==============================================================================
+// ex. 10
+function ex10() {
+  console.log(`
+  ========================================================
+  ex: 10
+  `)
+
+
+
+
+
+}
+// ex10();
