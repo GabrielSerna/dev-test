@@ -207,15 +207,51 @@ function ex08() {
 }
 // ex08();
 //==============================================================================
-// ex. 09
+// ex. 09 challenge 6.1 JavaScript Bible
 function ex09() {
   console.log(`
   ========================================================
-  ex: 09
+  ex: 09 challenge 6.1 JavaScript Bible
   `)
 
+  const photoGallery = (title, dimensions, date) => {
+    return {
+      title,
+      dimensions,
+      date,
+      [dimensions]: true,
+      info() {
+        console.log(
+          `Dimenstions of the foto "${title}" are ${dimensions}`
+        );
+      },
+      dimensions,
+      publishInfo() {
+        console.log(
+          `Foto ${title} was published ${Math.floor(
+            (new Date().getTime() - date.getTime()) / 1000
+          )} seconds ago`);
+      }
+    };
+  };
 
+  const testDimension1 = "1920x1080";
+  const testDimension2 = "1080x720";
 
+  const photo1 = photoGallery(
+    "My dog",
+    [testDimension1],
+    new Date()
+  );
+
+  photo1.info();
+  /* Dimenstions of the foto "My dog" are 1920x1080 */
+
+  setTimeout(() => photo1.publishInfo(), 2000);
+  /* Foto "My dog" was published 2 seconds ago */
+
+  console.log(photo1[testDimension1]); // true
+  console.log(photo1[testDimension2]); // undefined
 
 }
 // ex09();
