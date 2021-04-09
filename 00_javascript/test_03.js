@@ -88,11 +88,11 @@ function ex04() {
   }
   
   function makePairs2( objs ) {
-    return Object.entries(myObj);
+    return Object.entries( objs );
   };
     
   function makePairs3( objs ) {
-    return Object.keys(myObj).map( el => [el, myObj[el]]);
+    return Object.keys(objs).map( el => [el, objs[el]]);
   };
 
   console.log(`---`)
@@ -101,7 +101,7 @@ function ex04() {
   console.log(makePairs3(myObj));
   console.log(`---`)
 }
-// ex04();
+ex04();
 //==============================================================================
 // ex. 05 - 3. method that returns a new object without provided properties
 function ex05() {
