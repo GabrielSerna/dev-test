@@ -1,89 +1,14 @@
 //==============================================================================
-// ex. 01 metodi dell'array
-function ex01 () {
-  let numbers = [2, 3, 4, 7, 5, 6];
-
-  console.log(`
-  ========================================================
-  ex: 01 metodi degli array
-  `);
-  // .find() => restituisce il primo elemento che soddisfa la condizione
-  numbers1 = numbers.find(el => el > 5);                                        // 7
-
-  // .map() => restituisce un array di elementi con il risultato della callback passata. inoltre é distruttivo in quanto modifica l'array
-  numbers2 = numbers.map(el => el > 5);                                         // [false, false, false, true, false, true]
-  numbers2 = numbers.map(el => el * 5);                                         // [10, 15, 20, 35, 25, 30]
-
-  // .filter() => restituisce gli elementi che soddisfano la consizione
-  numbers3 = numbers.filter(el => el > 5);                                      // [7, 6]
-
-  // .join() converte in stringa l'array inserendo un separatore (opzionale)
-  numbers4 = numbers.join(' - ');                                               // 2 - 3 - 4 - 7 - 5 - 6
-
-  // .some() itera gli elementi dell'array e restituisce 'true' o 'false' se almeno uno soddisfa la condizione
-  numbers5 = numbers.some( x => x === 3);                                       // true
-  numbers6 = numbers.some( x => x === 1);                                       // false
-
-  // .every() restituisce 'true' o 'false' se tutti gli elementi dell'array soddisfano la condizione
-  numbers7 = numbers.every( x => x > 0 && x <= 10);                             // true
-  numbers8 = numbers.every( x => x > 0 && x <= 6);                              // false
-
-  // .trim() Remove whitespace from both sides of a string:
-  str1 = `        hello world        `;
-  str1Trim = str1.trim(); 	                                                    // hello world
-
-  // .splice()
-
-
-  // .slice() return a section of an string
-
-
-  // .reduce() 
-
-  // .chatAt()
-  
-
-  console.log(numbers2);
-}
-ex01();
-//==============================================================================
-// ex. 02 operatore ternario ?
-let valutazione, voto = 22;
-
-function ex02() {
-  console.log(`
-  ========================================================
-  ex: 02 operatore ternario '?'`
-  );
-
-  if (voto > 18) {
-    valutazione = true;
-  } else {
-    valutazione = false;
-  }
-  console.log(valutazione);
-}
-
-function ex02a() {
-  console.log(`
-  ========================================================
-  ex: 02 operatore ternario '?'`
-  );
-  valutazione = voto >= 18 ? true : false;
-  console.log(valutazione);
-}
-
-//==============================================================================
 // ex. 03 switch
 function ex03 () {
-  let votoRicevuto = 6
-  let valutazione01;
-
+  
   console.log(`
   ========================================================
   ex: 03 switch`
   );
-
+  
+  let votoRicevuto = 6
+  let valutazione01;
   switch (votoRicevuto) {
     case 1 : valutazione01 = 'pessima'; break;
     case 2 : valutazione01 = 'migliorabile'; break;
@@ -92,28 +17,7 @@ function ex03 () {
   }
   console.log(valutazione01);
 }
-
-//==============================================================================
-// ex. 04 oggetti e le loro proprietá
-function objs() {
-  let Ferrari = {
-    modello : '458',
-    motore : {
-      cilindrata : '1600',
-      cavalli : '720',
-      coppia_max : '900'
-    }
-  }
-
-  console.log(`
-  ========================================================
-  ex: 04 oggetti e proprietá`
-  );
-
-  console.log(Ferrari.modello);                                                 // stampa il valore della proprietá dell'oggetto
-  console.log(Ferrari.motore.cavalli);                                          
-}
-
+// ex03();
 //==============================================================================
 // ex. 05 stringa da modificare
 function ex05() {
@@ -132,7 +36,7 @@ function ex05() {
   str = arr.join(' ');                                                          // crea una stringa unendo gli elementi di un array separandoli dal carattere indicato
   console.log(str);                                                             // stampa "Stringa Da Modificare"
 }
-
+// ex05();
 //==============================================================================
 // ex. 06 trovare la posizione di un carattere e sostituirlo con qualcos'altro
 function ex06() {
@@ -152,56 +56,13 @@ function ex06() {
 
   console.log(str);
 }
-
+// ex06();
 //==============================================================================
-// ex. 07 stroncare una stringa dopo 16 caratteri
-function ex07 () {
-  console.log(`
-  ========================================================
-  ex: 07 stroncare una stringa dopo 16 caratteri`
-  );
-
-  let str = `questa é la stringa da stroncare dopo 16 caratteri`;
-  let strL = str.length;
-  console.log(`${str} ed é lunga ${strL} caratteri`);
-
-  str = str.length > 16 ? str.substring(0, 16).concat(`...`) : str;
-  console.log(str);
-}
-
-//==============================================================================
-// ex. 08 funzione che restituisce un'altra funzione
-function ex08() {
-  console.log(`
-  ========================================================
-  ex: 08 funzione che restituisce una funzione`
-  );
-
-  function ciao() {                                                             // una funzione che riceve come parametro un'altra funzione si chiama funzione di ordine superiore
-    return 'ciao';
-  };
-
-  function arrivederci() {
-    return 'arrivederci';
-  };
-
-  function saluta(salutoFn) {
-    console.log(`${salutoFn()}`);                                               // dichiaro che il parametro ricevuto é una funzione
-  };
-
-  saluta(ciao);                                                                 // una funzione passata come parametro di un'altra funzione viene chiamato CALLBACK
-  saluta(arrivederci);                                                          // una funzione passata come parametro di un'altra funzione viene chiamato CALLBACK
-  saluta(function() {                                                           // dichiaro una nuova funzione all'interno della funzione 'saluta'
-    return 'salve'                                                              
-  });
-}
-
-//==============================================================================
-// ex. 09 function e arguments
+// ex. 09 function e "ARGUMENTS"
 function ex09() {
   console.log(`
   ========================================================
-  ex: 09 function e arguments`
+  ex: 09 function e "ARGUMENTS"`
   );
 
   function test() {
@@ -211,7 +72,7 @@ function ex09() {
   }
   test(1, 'stringa', 7, true);
 }
-
+// ex09();
 //==============================================================================
 // ex. 10 spread operator '...'
 function ex10() {
@@ -230,10 +91,9 @@ function ex10() {
   let due = ['d', 'e', 'f'];
   let tre = [...uno, ...due];
   console.log(`
-  i due array uniti formano ${tre}`
-  );
+  risultato: [${tre}] - typeOf: ${typeof(tre)} - Array: ${Array.isArray(tre)}`);
 }
-
+// ex10();
 //==============================================================================
 // ex. 11 function expression                                                   // é una funzione assegnata ad una variabile e la funzione viene invocata immediatamente (IIFE)
 function ex11() {
@@ -253,23 +113,7 @@ function ex11() {
   calcola2();`
   );
 }
-
-//==============================================================================
-// ex. 12 arrow function
-function ex12() {
-  console.log(`
-  ========================================================
-  ex: 12 arrow function`
-  );
-
-  let a = [1, 2, 3, 4, 5, 10, 15, 30];
-  console.log(a);
-
-  let b = a.filter( x => x%2 === 0);
-
-  console.log(`gli elementi pari sono ${b}`);
-}
-
+// ex11();
 //==============================================================================
 // ex. 13 constructor function
 function ex13() {
@@ -287,7 +131,7 @@ function ex13() {
   console.log(User.prototype.p1);
   console.log(User.prototype.p2(3));
 }
-
+// ex13();
 //==============================================================================
 // ex. 14 constructor function e this
 function ex14() {
@@ -296,15 +140,15 @@ function ex14() {
   ex: 14 constructor function e this`
   );
 
-  function User(nome) {
-    this.name = nome;                                                             // tramite this. possiamo assegnare valori diversi per ogni singolo oggetto user1 e user2
-    this.age = null;
-    this.type = 'Utente Standard';
+  function User(nome, age = null, type = "Utente Standard") {
+    this.name = nome;                                                           // tramite this. possiamo assegnare valori diversi per ogni singolo oggetto user1 e user2
+    this.age = age;
+    this.type = type
   }
 
   let user1 = new User();                                                       // creo la variabile e assegno l'elemento da trasmettere successivamente
   let user2 = new User();
-  let user3 = new User("Mario");                                                // passo l'elemento direttamente quando dichiaro la variabile
+  let user3 = new User("Mario", 50, "GM");                                      // passo l'elemento direttamente quando dichiaro la variabile
 
   user1.name = 'Luca';                                                          // assegno alla proprietá name di user1 il valore Luca
   user2.name = 'Claudio';                                                       // assegno alla proprietá name di user2 il valore Claudio
@@ -313,7 +157,7 @@ function ex14() {
   console.log(user2);
   console.log(user3);
 }
-
+// ex14();
 //==============================================================================
 // ex. 15 elevare un numero alla potenza
 function ex15() {
@@ -326,14 +170,15 @@ function ex15() {
     if ( x === 1) {
       return 1;
     } else {
-    return n === 1 ? x : x * potenza(x, --n);
+    // return n === 1 ? x : x * potenza(x, --n);
+    return n === 1 ? x : x ** n;
     }
   }  
-    let ris = potenza(5, 3);
+    let ris = potenza(300, 3);
 
     console.log(ris);
 }
-
+// ex15();
 //==============================================================================
 // ex. 16 crea stringa casuale
 function ex16() {

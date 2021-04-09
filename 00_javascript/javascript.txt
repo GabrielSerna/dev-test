@@ -4,7 +4,7 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI / EVENTI lato client e lato server
 // PROPRIETÀ
     caratteristica di un oggetto. esempio la sua lunghezza, qualcosa che ha.
 
-// MEDOTO
+// MEDOTO()
     una funzione che puó svolgere l'oggetto.
 
 //======================================================================================================================
@@ -131,7 +131,7 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI / EVENTI lato client e lato server
 
 
 // FUNZIONI:
-        *permettono di eseguire un comando senza doverlo riscrivere tutto, tutte le volte. riducono il numero di codice da scrivere.
+        *permettono di eseguire un comando senza doverlo riscrivere tutto, tutte le volte. DRY.
         
             function nomeFunzione (parametro_1, parametro_2, ecc) {
         
@@ -140,13 +140,16 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI / EVENTI lato client e lato server
 
         *variabili locali e globali, le locali vengono coinvolte solo dalla funzione che la comprende, le globali da tutte le funzioni del codice:
             all esterno della funzione 
-                a = 1                                                           // variabile globale
-                let b = 2                                                       // variabile globale
+                let a = 2                                                       // variabile globale
+                function() {
+
+                }
 
             all interno della funzione
+                
+                let b;
                 function test() {
-                    a = 1                                                       // variabile globale
-                    let b = 2                                                   // variabile locale
+                    b = 2                                                       // variabile globale
                     let c = 3                                                   // variabile locale
                 }
 
@@ -200,11 +203,6 @@ JAVASCRIPT --------> LINGUAGGIO AD OGGETTI / EVENTI lato client e lato server
 
 
         *for in
-
-
-
-
-
 
 
         *la ripetizione controllata di una parte di codice puó essere eseguita in 3 modi:
