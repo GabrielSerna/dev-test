@@ -101,7 +101,7 @@ function ex04() {
   console.log(makePairs3(myObj));
   console.log(`---`)
 }
-ex04();
+// ex04();
 //==============================================================================
 // ex. 05 - 3. method that returns a new object without provided properties
 function ex05() {
@@ -263,9 +263,87 @@ function ex10() {
   ex: 10
   `)
 
+  let courses = {
+    name: "course1",
+    code: "CC001",
+    levels: [
+      {
+        levelname: "level01",
+        order: 1,
+        modules: [
+          {
+            modulename: "MC1_01",
+            order: 1,
+            title: "module title 01",
+            test: "test01",
+            questions: [
+              {
+                title: "question number 1 of module 1",
+                question: "xxxxxxxxx"
+              },
+              {
+                title: "question number 2 of module 2",
+                question: "xxxxxxxxx"
+              }
+            ]
+          },
+          {
+            modulename: "MC1_02",
+            order: 2,
+            title: "module title 02",
+            test: "test01",
+            questions: [
+              {
+                title: "question number 1 of module 2",
+                question: "xxxxxxxxx"
+              },
+              {
+                title: "question number 2 of module 2",
+                question: "xxxxxxxxx"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 
+  // delete a specific prop
+  let question1 = () => {courses.levels[0].modules[1].questions.map( el => {
+    if ( el.title === "question number 1 of module 2" ) delete el.title;
+  })};
+  // question1();
 
+  // add a specific prop
+  let newQuestion = () => courses.levels[0].modules[0].questions[0].newQuestionProp = "this is a new question prop";
+  newQuestion();
 
+  // modify a specific prop
+  // let updQuestion = () => courses.levels[0].modules[0].questions[0].newQuestionProp = "this prop was upddated";
+  courses.levels[0].modules[0].questions[0].newQuestionProp = "this prop was upddated";
+  // updQuestion();
+
+  // console.log(courses);
 
 }
 // ex10();
+//==============================================================================
+// ex. 11
+function ex11() {
+  console.log(`
+  ========================================================
+  ex: 11
+  `)
+
+}
+// ex11();
+//==============================================================================
+// ex. 12
+function ex12() {
+  console.log(`
+  ========================================================
+  ex: 12
+  `)
+
+}
+// ex12();
