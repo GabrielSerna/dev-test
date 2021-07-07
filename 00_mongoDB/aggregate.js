@@ -71,7 +71,7 @@ db.students.aggregate( [
 
 //==============================================================================
 // 06.
-// OPERATOR STAGE: $sort and $group
+// OPERATOR STAGE: $sort, $group
 // ACCULUMATOR OPERATOR: $first and $last
 // OTHERS OPERATORS: 
 // DESCRIPTION: 
@@ -160,63 +160,138 @@ db.books.aggregate( [
 
 //==============================================================================
 // 12.
-// OPERATOR STAGE: 
-// ACCULUMATOR OPERATOR: 
+// OPERATOR STAGE: $group
+// ACCULUMATOR OPERATOR: $push
 // OTHERS OPERATORS: 
 // DESCRIPTION: 
 
-
+db.books.aggregate( [
+  { $group: {
+    _id: { author: '$author' },                                 // group by author
+    books: { $push: { titleId: '$_id', copies: '$copies' } },   // create array with fields 'title' and 'copies' for each author
+    totCopiesSold: { $sum: '$copies' }                          // sum al num of 'copies' for each author
+  } } ] );
 
 //==============================================================================
 // 13.
-// OPERATOR STAGE: 
+// OPERATOR STAGE: $lookup, $replaceroot, $mergeObjects, $project
 // ACCULUMATOR OPERATOR: 
 // OTHERS OPERATORS: 
-// DESCRIPTION: 
+// DESCRIPTION: merge 2 collections, if an obj exists in both collections, merge all informations, otherwise, get only the initial information
 
-
+db.items.aggregate( [
+  { $lookup: {                                    // call another collection
+    from: 'orders',                               // specify the external collection
+    localField: 'item',                           // choose local field to match
+    foreignField: 'item',                         // choose external field to match
+    as: 'ordersDetail' }                          // assing name for docs that satisfy the match
+  },
+  { $replaceRoot: {
+    newRoot: {                                                                  // create new field in ROOT
+      $mergeObjects: [ { $arrayElemAt: [ '$ordersDetail', 0 ] }, '$$ROOT' ]     // merge all docs from both collections
+    } } },
+    {
+      $project: {
+        itemsDetail: 0 } }                        // delete useless fierlds
+] );
 
 
 //==============================================================================
 // 14.
-// OPERATOR STAGE: 
-// ACCULUMATOR OPERATOR: 
+// OPERATOR STAGE: $group
+// ACCULUMATOR OPERATOR: $mergeObjects
 // OTHERS OPERATORS: 
 // DESCRIPTION: 
 
-
+db.sales2.aggregate( [
+  { $group: {
+    _id: '$item',                                 // group by 'item'
+    mergedSales: { $mergeObjects: '$quantity' } } // use $mergeObjects like accumulator. In this case $mergeObject WANTS A OBJECT
+  } ] );
 
 //==============================================================================
 // 15.
-// OPERATOR STAGE: 
-// ACCULUMATOR OPERATOR: 
+// OPERATOR STAGE: $group
+// ACCULUMATOR OPERATOR: $count
 // OTHERS OPERATORS: 
 // DESCRIPTION: 
 
+db.people.aggregate( [
+  { $group: {
+    _id: '$age',                                  // group all collection by 'age' (from 20 to 40 => tot 21 ages)
+  } },
+  { $count: 'docsPassed' }                        // count the number of docs input in this stage
+] );
 
+  // return { 'docsPassed': 21 }
 
 
 //==============================================================================
 // 16.
-// OPERATOR STAGE: 
+// OPERATOR STAGE: $group, $count
 // ACCULUMATOR OPERATOR: 
 // OTHERS OPERATORS: 
 // DESCRIPTION: 
 
+db.people.aggregate( [
+  { $match: {                                     // match only age = 40
+    age: 40
+  } },
+  { $count: 'just40' }                              // count number of documents input in this stage 
+] );
 
+// return { 'just40': 38 }
 
 //==============================================================================
 // 17.
-// OPERATOR STAGE: 
-// ACCULUMATOR OPERATOR: 
+// OPERATOR STAGE: $group
+// ACCULUMATOR OPERATOR: $sum
 // OTHERS OPERATORS: 
 // DESCRIPTION: 
 
-
-
+db.people.aggregate( [
+  { $group: {
+    _id: '$age',
+    count: { $sum: 1 }                            // sum total of documents merged
+  } } ] );
 
 //==============================================================================
 // 18.
+// OPERATOR STAGE: $addFields, $project
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: replace value of { '_id': 1 } with the value from { student: 'student name' }
+
+db.scores.aggregate( [
+  { $addFields: {
+    _id: '$student' } },
+    { $project: { student: 0 } }
+] )
+
+// return { _id: 'student name' }
+
+//==============================================================================
+// 19.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+
+//==============================================================================
+// 20.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+
+//==============================================================================
+// 21.
 // OPERATOR STAGE: 
 // ACCULUMATOR OPERATOR: 
 // OTHERS OPERATORS: 
@@ -225,7 +300,7 @@ db.books.aggregate( [
 
 
 //==============================================================================
-// 19.
+// 22.
 // OPERATOR STAGE: 
 // ACCULUMATOR OPERATOR: 
 // OTHERS OPERATORS: 
