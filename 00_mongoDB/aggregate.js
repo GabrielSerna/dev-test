@@ -237,7 +237,7 @@ db.people.aggregate( [
   { $match: {                                     // match only age = 40
     age: 40
   } },
-  { $count: 'just40' }                              // count number of documents input in this stage 
+  { $count: 'just40' }                            // count number of documents input in this stage 
 ] );
 
 // return { 'just40': 38 }
@@ -272,23 +272,34 @@ db.scores.aggregate( [
 
 //==============================================================================
 // 19.
-// OPERATOR STAGE: 
-// ACCULUMATOR OPERATOR: 
+// OPERATOR STAGE: $addFields
+// ACCULUMATOR OPERATOR: $concatArrays
 // OTHERS OPERATORS: 
-// DESCRIPTION: 
+// DESCRIPTION: add new field for all documents
 
-
-
+db.scores.aggregate( [
+  { $addFields: {
+    newField: { $concatArrays: ['$homework', [666] ] }
+  } } ] );
 
 //==============================================================================
 // 20.
-// OPERATOR STAGE: 
+// OPERATOR STAGE: $match, %$roup
 // ACCULUMATOR OPERATOR: 
 // OTHERS OPERATORS: 
 // DESCRIPTION: 
 
+db.articles.aggregate( [
+  { $match: {
+    $or: [
+      { score: { $gt: 70, $lt: 90 } },            // first condition
+      { views: { $gte: 1000 } } ]                 // second condition
+    } },
+    { $group: {                                   // without this Operator Stage the aggregate return all docs that satisfy conditions
+      _id: null, count: { $sum: 1 } } }           // return the number of doc that satisfy conditions
+] );
 
-
+// return { _id: null, count: 5 }
 
 //==============================================================================
 // 21.
