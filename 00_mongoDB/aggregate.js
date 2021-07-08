@@ -303,6 +303,131 @@ db.articles.aggregate( [
 
 //==============================================================================
 // 21.
+// OPERATOR STAGE: $replaceRoot
+// ACCULUMATOR OPERATOR: $concat
+// OTHERS OPERATORS: 
+// DESCRIPTION: replace field of all documents with new field 'fullName'
+
+db.contacts.aggregate( [
+  { $replaceRoot: {
+    newRoot: {
+      fullName: {                                 // create new field to replace root
+        $concat: [ '$first_name', '$last_name' ]  // new field contain concat 'first_name' and 'last_name'
+} } } } ] );
+
+//==============================================================================
+// 22.
+// OPERATOR STAGE: $replaceRoot
+// ACCULUMATOR OPERATOR: $mergeObjects
+// OTHERS OPERATORS: 
+// DESCRIPTION: To avoid the error, you can use $mergeObjects to merge the name document into some default document
+
+db.collection.insertMany( [
+  { "_id": 1, "name" : { "first" : "John", "last" : "Backus" } },
+  { "_id": 2, "name" : { "first" : "John", "last" : "McCarthy" } },
+  { "_id": 3, "name": { "first" : "Grace", "last" : "Hopper" } },
+  { "_id": 4, "firstname": "Ole-Johan", "lastname" : "Dahl" },
+] );
+
+db.collection.aggregate( [
+  { $replaceRoot: {
+    newRoot: {
+      $mergeObjects: [ { _id: "$_id", first: "", last: "" }, "$name" ]
+} } } ] );
+
+//==============================================================================
+// 23.
+// OPERATOR STAGE: $match, $replaceRoot
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: Alternatively, you can skip the documents that are missing the name field by including a $match stage
+// to check for existence of the document field before passing documents to the $replaceRoot stage:
+
+db.collection.insertMany( [
+  { "_id": 1, "name" : { "first" : "John", "last" : "Backus" } },
+  { "_id": 2, "name" : { "first" : "John", "last" : "McCarthy" } },
+  { "_id": 3, "name": { "first" : "Grace", "last" : "Hopper" } },
+  { "_id": 4, "firstname": "Ole-Johan", "lastname" : "Dahl" },
+] );
+
+db.collection.aggregate( [
+  { $match: {
+    name : {
+      $exists: true,                              // check 'name' field exists
+      $not: { $type: "array" },                   // check 'name' field isn't an array
+      $type: "object" }                           // check 'name' field is an object
+  } },
+  { $replaceRoot: { newRoot: "$name" } }          // replace with all docs that satisfy $match check
+] );
+
+//==============================================================================
+// 24.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: $eq ( query selector )
+// DESCRIPTION: 
+
+db.inventory2.insertMany( [
+{ _id: 1, item: { name: "ab", code: "123" }, qty: 15, tags: [ "A", "B", "C" ] },
+{ _id: 2, item: { name: "cd", code: "123" }, qty: 20, tags: [ "B" ] },
+{ _id: 3, item: { name: "ij", code: "456" }, qty: 25, tags: [ "A", "B" ] },
+{ _id: 4, item: { name: "xy", code: "456" }, qty: 30, tags: [ "B", "A" ] },
+{ _id: 5, item: { name: "mn", code: "000" }, qty: 20, tags: [ [ "A", "B" ], "C" ] }
+] );
+
+// match by field
+// db.inventory.find( { qty: 20 } ) === db.inventory.find( { qty: { $eq: 20 } } )
+
+// match by prop of object
+// db.inventory.find( { "item.name": "ab" } ) === db.inventory.find( { "item.name": { $eq: "ab" } } )
+
+// match by value of array
+// db.inventory.find( { tags: "B" } ) === db.inventory.find( { tags: { $eq: "B" } } )
+
+//==============================================================================
+// 25.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: $set ( query selector )
+// DESCRIPTION: 
+
+db.inventory2.insertMany( [
+  { _id: 1, item: { name: "ab", code: "123" }, qty: 15, tags: [ "A", "B", "C" ] },
+  { _id: 2, item: { name: "cd", code: "123" }, qty: 20, tags: [ "B" ] },
+  { _id: 3, item: { name: "ij", code: "456" }, qty: 25, tags: [ "A", "B" ] },
+  { _id: 4, item: { name: "xy", code: "456" }, qty: 30, tags: [ "B", "A" ] },
+  { _id: 5, item: { name: "mn", code: "000" }, qty: 20, tags: [ [ "A", "B" ], "C" ] }
+  ] );
+
+db.inventory2.update( {
+  qty: { $gte: 30 } },                            // find the document to update
+  { price: 40 } )                                 // replace all document with this prop/props
+
+// return { _id: 4, price: 40 }
+
+db.inventory2.update( {
+  qty: { $gte: 30 } },                            // find the document to update
+  { $set: { price: 40 } },                        // add to the document matched this prop/props without losing others props
+  { multi: true }                                 // apply modify for all docs that satisfy match
+  )
+
+// return   { _id: 4, item: { name: "xy", code: "456" }, qty: 30, tags: [ "B", "A" ], price: 40 },
+
+//==============================================================================
+// 26.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+db.inventory.insertMany([{ _id: 1, item: "abc", qty: 10, tags: [ "school", "clothing" ], sale: false }]);
+
+db.inventory.update(
+  { tags: { $in: ['appliciances', 'school'] } },  // match doc with 'tags' and values 'appliciances, school'
+  { $set: { sale: true } } )                      // set value true for 'sale'
+
+//==============================================================================
+// 27.
 // OPERATOR STAGE: 
 // ACCULUMATOR OPERATOR: 
 // OTHERS OPERATORS: 
@@ -311,7 +436,115 @@ db.articles.aggregate( [
 
 
 //==============================================================================
-// 22.
+// 28.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+//==============================================================================
+// 29.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+//==============================================================================
+// 30.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+//==============================================================================
+// 31.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+//==============================================================================
+// 32.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+//==============================================================================
+// 33.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+//==============================================================================
+// 34.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+//==============================================================================
+// 35.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+//==============================================================================
+// 36.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+//==============================================================================
+// 37.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+//==============================================================================
+// 38.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+//==============================================================================
+// 39.
+// OPERATOR STAGE: 
+// ACCULUMATOR OPERATOR: 
+// OTHERS OPERATORS: 
+// DESCRIPTION: 
+
+
+
+//==============================================================================
+// 40.
 // OPERATOR STAGE: 
 // ACCULUMATOR OPERATOR: 
 // OTHERS OPERATORS: 
