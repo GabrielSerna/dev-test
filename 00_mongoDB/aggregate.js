@@ -7,8 +7,11 @@
 db.people.aggregate( [
     { $group: { 
       _id: { age: '$age' },         // group by 'age'
-      names: { $push: "$name" }     // push all people by the same age
-    } } ] );
+      names: { $push: "$name" } } },// push all people by the same age
+      { $project: {
+        names: { 
+          $slice: ['$names', 0, 10] // limit the number of values inside the array
+} } } ] );
 
 //==============================================================================
 // 02.
