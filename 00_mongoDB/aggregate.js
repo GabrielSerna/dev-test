@@ -322,13 +322,6 @@ db.contacts.aggregate( [
 // OTHERS OPERATORS: 
 // DESCRIPTION: To avoid the error, you can use $mergeObjects to merge the name document into some default document
 
-db.collection.insertMany( [
-  { "_id": 1, "name" : { "first" : "John", "last" : "Backus" } },
-  { "_id": 2, "name" : { "first" : "John", "last" : "McCarthy" } },
-  { "_id": 3, "name": { "first" : "Grace", "last" : "Hopper" } },
-  { "_id": 4, "firstname": "Ole-Johan", "lastname" : "Dahl" },
-] );
-
 db.collection.aggregate( [
   { $replaceRoot: {
     newRoot: {
@@ -342,13 +335,6 @@ db.collection.aggregate( [
 // OTHERS OPERATORS: 
 // DESCRIPTION: Alternatively, you can skip the documents that are missing the name field by including a $match stage
 // to check for existence of the document field before passing documents to the $replaceRoot stage:
-
-db.collection.insertMany( [
-  { "_id": 1, "name" : { "first" : "John", "last" : "Backus" } },
-  { "_id": 2, "name" : { "first" : "John", "last" : "McCarthy" } },
-  { "_id": 3, "name": { "first" : "Grace", "last" : "Hopper" } },
-  { "_id": 4, "firstname": "Ole-Johan", "lastname" : "Dahl" },
-] );
 
 db.collection.aggregate( [
   { $match: {
@@ -367,14 +353,6 @@ db.collection.aggregate( [
 // OTHERS OPERATORS: $eq ( query selector )
 // DESCRIPTION: 
 
-db.inventory2.insertMany( [
-{ _id: 1, item: { name: "ab", code: "123" }, qty: 15, tags: [ "A", "B", "C" ] },
-{ _id: 2, item: { name: "cd", code: "123" }, qty: 20, tags: [ "B" ] },
-{ _id: 3, item: { name: "ij", code: "456" }, qty: 25, tags: [ "A", "B" ] },
-{ _id: 4, item: { name: "xy", code: "456" }, qty: 30, tags: [ "B", "A" ] },
-{ _id: 5, item: { name: "mn", code: "000" }, qty: 20, tags: [ [ "A", "B" ], "C" ] }
-] );
-
 // match by field
 // db.inventory.find( { qty: 20 } ) === db.inventory.find( { qty: { $eq: 20 } } )
 
@@ -390,14 +368,6 @@ db.inventory2.insertMany( [
 // ACCULUMATOR OPERATOR: 
 // OTHERS OPERATORS: $set ( query selector )
 // DESCRIPTION: 
-
-db.inventory2.insertMany( [
-  { _id: 1, item: { name: "ab", code: "123" }, qty: 15, tags: [ "A", "B", "C" ] },
-  { _id: 2, item: { name: "cd", code: "123" }, qty: 20, tags: [ "B" ] },
-  { _id: 3, item: { name: "ij", code: "456" }, qty: 25, tags: [ "A", "B" ] },
-  { _id: 4, item: { name: "xy", code: "456" }, qty: 30, tags: [ "B", "A" ] },
-  { _id: 5, item: { name: "mn", code: "000" }, qty: 20, tags: [ [ "A", "B" ], "C" ] }
-  ] );
 
 db.inventory2.update( {
   qty: { $gte: 30 } },                            // find the document to update
@@ -439,10 +409,20 @@ db.inventory.update(
 // 28.
 // OPERATOR STAGE: 
 // ACCULUMATOR OPERATOR: 
-// OTHERS OPERATORS: 
+// OTHERS OPERATORS: $elemMatch
 // DESCRIPTION: 
 
+db.scores.find( {
+  homework: {
+    $elemMatch: { $eq: 6 }                        // find in the array 'homework' a value equal to 6 and return all doc
+} } );
 
+db.survey.find( {
+  results: {
+    $elemMatch: {                                 // find in the array 'homework' a object with field $gte 6 and return all doc
+      product: 'xyz',
+      score: { $gte: 6 }
+} } } );
 
 //==============================================================================
 // 29.
@@ -451,7 +431,23 @@ db.inventory.update(
 // OTHERS OPERATORS: 
 // DESCRIPTION: 
 
+db.survey.find( {
+  results: {
+    $elemMatch: {                                 // return all objs inside the array that satisfy the bottom condition 
+      score: { $gte: 7 }
+} } } );
 
+// return { "_id" : 4, "results" : [ { "product" : "abc", "score" : 7 }, { "product" : "def", "score" : 8 } ] }
+
+db.survey.find( {
+  results: {
+    $elemMatch: {                                 // return all objs inside the array that satisfy the bottom condition 
+      score: { $gte: 7 }
+    } } },
+    { 'results.$': 1 }                            // limit the result just for the FIRST obj inside the array
+);
+
+// return { "_id" : 4, "results" : [ { "product" : "abc", "score" : 7 } ] }
 
 //==============================================================================
 // 30.
