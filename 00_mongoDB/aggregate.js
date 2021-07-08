@@ -428,7 +428,7 @@ db.survey.find( {
 // 29.
 // OPERATOR STAGE: 
 // ACCULUMATOR OPERATOR: 
-// OTHERS OPERATORS: 
+// OTHERS OPERATORS: $ projection
 // DESCRIPTION: 
 
 db.survey.find( {
